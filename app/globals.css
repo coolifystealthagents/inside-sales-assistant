@@ -8,3 +8,4 @@
 .design-conversation .hero-visual img{object-position:30% center}
 .design-commerce .hero-visual img{object-position:70% center}
 .design-clinical .hero-visual img{object-position:75% center}
+.article-thumbnail{display:block;width:min(100%,1000px);height:auto;margin:2rem 0 0;border-radius:18px;border:1px solid color-mix(in srgb,var(--ink) 18%,transparent)}

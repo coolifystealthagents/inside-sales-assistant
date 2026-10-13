@@ -1,0 +1,179 @@
+{
+  "site": "InsideSalesAssistant",
+  "canonicalDomain": "https://insidesalesassistant.com",
+  "repository": "coolifystealthagents/inside-sales-assistant",
+  "branch": "main",
+  "date": "2026-10-12",
+  "counts": {
+    "blog": 12,
+    "research": 5,
+    "total": 17
+  },
+  "articles": [
+    {
+      "site": "InsideSalesAssistant",
+      "section": "Blog",
+      "title": "Lead Routing Acceptance Checklist",
+      "slug": "lead-routing-acceptance-checklist",
+      "sourcePath": "lib/october12-blog.ts",
+      "thumbnailPath": "public/thumbnails/october-12/lead-routing-acceptance-checklist.svg",
+      "publicationDate": "2026-10-12"
+    },
+    {
+      "site": "InsideSalesAssistant",
+      "section": "Blog",
+      "title": "Inbound Inquiry Qualification Evidence",
+      "slug": "inbound-inquiry-qualification-evidence",
+      "sourcePath": "lib/october12-blog.ts",
+      "thumbnailPath": "public/thumbnails/october-12/inbound-inquiry-qualification-evidence.svg",
+      "publicationDate": "2026-10-12"
+    },
+    {
+      "site": "InsideSalesAssistant",
+      "section": "Blog",
+      "title": "CRM Ownership Transfer Protocol",
+      "slug": "crm-ownership-transfer-protocol",
+      "sourcePath": "lib/october12-blog.ts",
+      "thumbnailPath": "public/thumbnails/october-12/crm-ownership-transfer-protocol.svg",
+      "publicationDate": "2026-10-12"
+    },
+    {
+      "site": "InsideSalesAssistant",
+      "section": "Blog",
+      "title": "Sales Follow-Up Promise Register",
+      "slug": "sales-follow-up-promise-register",
+      "sourcePath": "lib/october12-blog.ts",
+      "thumbnailPath": "public/thumbnails/october-12/sales-follow-up-promise-register.svg",
+      "publicationDate": "2026-10-12"
+    },
+    {
+      "site": "InsideSalesAssistant",
+      "section": "Blog",
+      "title": "Demo Request Scheduling Handoff",
+      "slug": "demo-request-scheduling-handoff",
+      "sourcePath": "lib/october12-blog.ts",
+      "thumbnailPath": "public/thumbnails/october-12/demo-request-scheduling-handoff.svg",
+      "publicationDate": "2026-10-12"
+    },
+    {
+      "site": "InsideSalesAssistant",
+      "section": "Blog",
+      "title": "Duplicate Lead Reconciliation Queue",
+      "slug": "duplicate-lead-reconciliation-queue",
+      "sourcePath": "lib/october12-blog.ts",
+      "thumbnailPath": "public/thumbnails/october-12/duplicate-lead-reconciliation-queue.svg",
+      "publicationDate": "2026-10-12"
+    },
+    {
+      "site": "InsideSalesAssistant",
+      "section": "Blog",
+      "title": "Contact Consent and Channel Preference Record",
+      "slug": "contact-consent-channel-preference-record",
+      "sourcePath": "lib/october12-blog.ts",
+      "thumbnailPath": "public/thumbnails/october-12/contact-consent-channel-preference-record.svg",
+      "publicationDate": "2026-10-12"
+    },
+    {
+      "site": "InsideSalesAssistant",
+      "section": "Blog",
+      "title": "Sales Objection Feedback Capture",
+      "slug": "sales-objection-feedback-capture",
+      "sourcePath": "lib/october12-blog.ts",
+      "thumbnailPath": "public/thumbnails/october-12/sales-objection-feedback-capture.svg",
+      "publicationDate": "2026-10-12"
+    },
+    {
+      "site": "InsideSalesAssistant",
+      "section": "Blog",
+      "title": "Territory Exception Escalation Workflow",
+      "slug": "territory-exception-escalation-workflow",
+      "sourcePath": "lib/october12-blog.ts",
+      "thumbnailPath": "public/thumbnails/october-12/territory-exception-escalation-workflow.svg",
+      "publicationDate": "2026-10-12"
+    },
+    {
+      "site": "InsideSalesAssistant",
+      "section": "Blog",
+      "title": "Quote Request Preparation Boundary",
+      "slug": "quote-request-preparation-boundary",
+      "sourcePath": "lib/october12-blog.ts",
+      "thumbnailPath": "public/thumbnails/october-12/quote-request-preparation-boundary.svg",
+      "publicationDate": "2026-10-12"
+    },
+    {
+      "site": "InsideSalesAssistant",
+      "section": "Blog",
+      "title": "Dormant Lead Reactivation Review",
+      "slug": "dormant-lead-reactivation-review",
+      "sourcePath": "lib/october12-blog.ts",
+      "thumbnailPath": "public/thumbnails/october-12/dormant-lead-reactivation-review.svg",
+      "publicationDate": "2026-10-12"
+    },
+    {
+      "site": "InsideSalesAssistant",
+      "section": "Blog",
+      "title": "Inside Sales Daily Queue Reconciliation",
+      "slug": "inside-sales-daily-queue-reconciliation",
+      "sourcePath": "lib/october12-blog.ts",
+      "thumbnailPath": "public/thumbnails/october-12/inside-sales-daily-queue-reconciliation.svg",
+      "publicationDate": "2026-10-12"
+    },
+    {
+      "site": "InsideSalesAssistant",
+      "section": "Research",
+      "title": "Lead Response State Duration Study",
+      "slug": "lead-response-state-duration-study",
+      "sourcePath": "lib/october12-research.ts",
+      "thumbnailPath": "public/thumbnails/october-12/lead-response-state-duration-study.svg",
+      "publicationDate": "2026-10-12"
+    },
+    {
+      "site": "InsideSalesAssistant",
+      "section": "Research",
+      "title": "Qualification Data Completeness Audit",
+      "slug": "qualification-data-completeness-audit",
+      "sourcePath": "lib/october12-research.ts",
+      "thumbnailPath": "public/thumbnails/october-12/qualification-data-completeness-audit.svg",
+      "publicationDate": "2026-10-12"
+    },
+    {
+      "site": "InsideSalesAssistant",
+      "section": "Research",
+      "title": "CRM Ownership Transfer Reliability Review",
+      "slug": "crm-ownership-transfer-reliability",
+      "sourcePath": "lib/october12-research.ts",
+      "thumbnailPath": "public/thumbnails/october-12/crm-ownership-transfer-reliability.svg",
+      "publicationDate": "2026-10-12"
+    },
+    {
+      "site": "InsideSalesAssistant",
+      "section": "Research",
+      "title": "Follow-Up Commitment Reopen Rate Study",
+      "slug": "follow-up-commitment-reopen-rate",
+      "sourcePath": "lib/october12-research.ts",
+      "thumbnailPath": "public/thumbnails/october-12/follow-up-commitment-reopen-rate.svg",
+      "publicationDate": "2026-10-12"
+    },
+    {
+      "site": "InsideSalesAssistant",
+      "section": "Research",
+      "title": "Channel Preference Record Accuracy Audit",
+      "slug": "channel-preference-record-accuracy",
+      "sourcePath": "lib/october12-research.ts",
+      "thumbnailPath": "public/thumbnails/october-12/channel-preference-record-accuracy.svg",
+      "publicationDate": "2026-10-12"
+    }
+  ],
+  "systems": {
+    "blog": {
+      "registry": "lib/october12-blog.ts",
+      "index": "app/blog/page.tsx",
+      "route": "app/blog/[slug]/page.tsx"
+    },
+    "research": {
+      "registry": "lib/october12-research.ts",
+      "index": "app/research/page.tsx",
+      "route": "app/research/[slug]/page.tsx"
+    }
+  }
+}
