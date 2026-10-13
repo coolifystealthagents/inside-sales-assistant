@@ -1,0 +1,182 @@
+{
+  "site": "InsideSalesAssistant",
+  "canonicalDomain": "https://insidesalesassistant.com",
+  "repository": "coolifystealthagents/inside-sales-assistant",
+  "branch": "main",
+  "baseSha": "482e5c7b877e1ed1a78b1dfa341f6409212be2c2",
+  "date": "2026-10-13",
+  "counts": {
+    "blog": 12,
+    "research": 5,
+    "total": 17
+  },
+  "articles": [
+    {
+      "site": "InsideSalesAssistant",
+      "section": "Blog",
+      "title": "Recover the Speed-to-Lead Queue After an Outage",
+      "slug": "speed-to-lead-outage-recovery",
+      "sourcePath": "lib/october13-blog.ts",
+      "thumbnailPath": "public/thumbnails/october-13/speed-to-lead-outage-recovery.svg",
+      "publicationDate": "2026-10-13"
+    },
+    {
+      "site": "InsideSalesAssistant",
+      "section": "Blog",
+      "title": "Route Round-Robin Capacity Exceptions With Evidence",
+      "slug": "round-robin-capacity-exception",
+      "sourcePath": "lib/october13-blog.ts",
+      "thumbnailPath": "public/thumbnails/october-13/round-robin-capacity-exception.svg",
+      "publicationDate": "2026-10-13"
+    },
+    {
+      "site": "InsideSalesAssistant",
+      "section": "Blog",
+      "title": "Review Sales Reply Intent Without Guessing",
+      "slug": "reply-intent-coding-review",
+      "sourcePath": "lib/october13-blog.ts",
+      "thumbnailPath": "public/thumbnails/october-13/reply-intent-coding-review.svg",
+      "publicationDate": "2026-10-13"
+    },
+    {
+      "site": "InsideSalesAssistant",
+      "section": "Blog",
+      "title": "Control the Meeting No-Show Recovery Workflow",
+      "slug": "meeting-no-show-recovery-control",
+      "sourcePath": "lib/october13-blog.ts",
+      "thumbnailPath": "public/thumbnails/october-13/meeting-no-show-recovery-control.svg",
+      "publicationDate": "2026-10-13"
+    },
+    {
+      "site": "InsideSalesAssistant",
+      "section": "Blog",
+      "title": "Escalate Contact Identity Mismatches Before Outreach",
+      "slug": "contact-identity-mismatch-escalation",
+      "sourcePath": "lib/october13-blog.ts",
+      "thumbnailPath": "public/thumbnails/october-13/contact-identity-mismatch-escalation.svg",
+      "publicationDate": "2026-10-13"
+    },
+    {
+      "site": "InsideSalesAssistant",
+      "section": "Blog",
+      "title": "Prepare a Pricing Request Escalation Packet",
+      "slug": "pricing-request-escalation-packet",
+      "sourcePath": "lib/october13-blog.ts",
+      "thumbnailPath": "public/thumbnails/october-13/pricing-request-escalation-packet.svg",
+      "publicationDate": "2026-10-13"
+    },
+    {
+      "site": "InsideSalesAssistant",
+      "section": "Blog",
+      "title": "Maintain a Sales Sequence Pause Register",
+      "slug": "sales-sequence-pause-register",
+      "sourcePath": "lib/october13-blog.ts",
+      "thumbnailPath": "public/thumbnails/october-13/sales-sequence-pause-register.svg",
+      "publicationDate": "2026-10-13"
+    },
+    {
+      "site": "InsideSalesAssistant",
+      "section": "Blog",
+      "title": "Govern the Calendar Behind Inbound Response Targets",
+      "slug": "inbound-sla-calendar-governance",
+      "sourcePath": "lib/october13-blog.ts",
+      "thumbnailPath": "public/thumbnails/october-13/inbound-sla-calendar-governance.svg",
+      "publicationDate": "2026-10-13"
+    },
+    {
+      "site": "InsideSalesAssistant",
+      "section": "Blog",
+      "title": "Close Sales Handoffs After an Opt-Out Signal",
+      "slug": "opt-out-handoff-closure",
+      "sourcePath": "lib/october13-blog.ts",
+      "thumbnailPath": "public/thumbnails/october-13/opt-out-handoff-closure.svg",
+      "publicationDate": "2026-10-13"
+    },
+    {
+      "site": "InsideSalesAssistant",
+      "section": "Blog",
+      "title": "Keep a Provenance Ledger for Every Lead Source",
+      "slug": "lead-source-provenance-ledger",
+      "sourcePath": "lib/october13-blog.ts",
+      "thumbnailPath": "public/thumbnails/october-13/lead-source-provenance-ledger.svg",
+      "publicationDate": "2026-10-13"
+    },
+    {
+      "site": "InsideSalesAssistant",
+      "section": "Blog",
+      "title": "Use a Decision Log When Recycling Opportunities",
+      "slug": "opportunity-recycling-decision-log",
+      "sourcePath": "lib/october13-blog.ts",
+      "thumbnailPath": "public/thumbnails/october-13/opportunity-recycling-decision-log.svg",
+      "publicationDate": "2026-10-13"
+    },
+    {
+      "site": "InsideSalesAssistant",
+      "section": "Blog",
+      "title": "Define an Evidence Standard for Call Dispositions",
+      "slug": "call-disposition-evidence-standard",
+      "sourcePath": "lib/october13-blog.ts",
+      "thumbnailPath": "public/thumbnails/october-13/call-disposition-evidence-standard.svg",
+      "publicationDate": "2026-10-13"
+    },
+    {
+      "site": "InsideSalesAssistant",
+      "section": "Research",
+      "title": "Lead Assignment Acceptance Latency Study",
+      "slug": "lead-assignment-acceptance-latency-study",
+      "sourcePath": "lib/october13-research.ts",
+      "thumbnailPath": "public/thumbnails/october-13/lead-assignment-acceptance-latency-study.svg",
+      "publicationDate": "2026-10-13"
+    },
+    {
+      "site": "InsideSalesAssistant",
+      "section": "Research",
+      "title": "Reviewer Agreement in Sales Reply Classification",
+      "slug": "sales-reply-classification-agreement-study",
+      "sourcePath": "lib/october13-research.ts",
+      "thumbnailPath": "public/thumbnails/october-13/sales-reply-classification-agreement-study.svg",
+      "publicationDate": "2026-10-13"
+    },
+    {
+      "site": "InsideSalesAssistant",
+      "section": "Research",
+      "title": "Completeness of Inside Sales Meeting Outcome Records",
+      "slug": "meeting-outcome-record-completeness-study",
+      "sourcePath": "lib/october13-research.ts",
+      "thumbnailPath": "public/thumbnails/october-13/meeting-outcome-record-completeness-study.svg",
+      "publicationDate": "2026-10-13"
+    },
+    {
+      "site": "InsideSalesAssistant",
+      "section": "Research",
+      "title": "Opt-Out Signal Propagation Latency Study",
+      "slug": "opt-out-propagation-latency-study",
+      "sourcePath": "lib/october13-research.ts",
+      "thumbnailPath": "public/thumbnails/october-13/opt-out-propagation-latency-study.svg",
+      "publicationDate": "2026-10-13"
+    },
+    {
+      "site": "InsideSalesAssistant",
+      "section": "Research",
+      "title": "Evidence Coverage in Dormant Lead Reactivation Decisions",
+      "slug": "dormant-lead-reactivation-evidence-study",
+      "sourcePath": "lib/october13-research.ts",
+      "thumbnailPath": "public/thumbnails/october-13/dormant-lead-reactivation-evidence-study.svg",
+      "publicationDate": "2026-10-13"
+    }
+  ],
+  "systems": {
+    "blog": {
+      "registry": "lib/october13-blog.ts",
+      "index": "app/blog/page.tsx",
+      "route": "app/blog/[slug]/page.tsx"
+    },
+    "research": {
+      "registry": "lib/october13-research.ts",
+      "index": "app/research/page.tsx",
+      "route": "app/research/[slug]/page.tsx"
+    }
+  },
+  "sidebar": "components/October13Article.tsx",
+  "sitemap": "app/sitemap.ts"
+}
