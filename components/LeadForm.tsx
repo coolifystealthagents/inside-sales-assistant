@@ -1,7 +1,6 @@
 'use client';
 import { FormEvent, useState } from 'react';
 import { useRouter } from 'next/navigation';
-declare global { interface Window { acrTracker?: { trackLead: (payload: Record<string, FormDataEntryValue | string>) => void } } }
 const personalDomains=new Set(['gmail.com','yahoo.com','hotmail.com','outlook.com','icloud.com','aol.com','proton.me','protonmail.com']);
 export function LeadForm({source='contact-page'}:{source?:string}){
  const router=useRouter();const[busy,setBusy]=useState(false);const[error,setError]=useState('');const full=source.startsWith('contact-page');
