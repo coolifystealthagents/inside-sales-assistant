@@ -1,4 +1,21 @@
-export type Service = { slug: string; name: string; short: string; tasks: string[] };
+export type ServiceFaq = { q: string; a: string };
+export type Service = {
+  slug: string;
+  name: string;
+  short: string;
+  audience: string;
+  problem: string;
+  inputs: string[];
+  tasks: string[];
+  workflow: string[];
+  deliverables: string[];
+  boundaries: string[];
+  qualityControls: string[];
+  scenarios: { title: string; body: string }[];
+  faq: ServiceFaq[];
+  related: string[];
+  visual: { intake: string; process: string; output: string };
+};
 export type BlogPost = { slug: string; title: string; description: string; category: string; publishedAt: string; readTime: string; sections: { heading: string; paragraphs: string[] }[]; faq: { q: string; a: string }[]; internalService: string; internalSibling: string; source: { label: string; url: string } };
 export type ResearchPost = { slug: string; title: string; summary: string; cluster: string; publishedAt: string; finding: string; sources: { label: string; url: string }[] };
 export type SiteConfig = {

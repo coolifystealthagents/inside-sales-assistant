@@ -1,108 +1,113 @@
 import type { SiteConfig } from './types';
+
 export const site: SiteConfig = {
-  "name": "Inside Sales Assistant",
-  "domain": "insidesalesassistant.com",
-  "siteId": "inside-sales-assistant",
-  "niche": "inside sales teams",
-  "audience": "sales leaders and revenue teams",
-  "design": "signal",
-  "eyebrow": "Sales support with a visible pulse",
-  "hero": "Turn follow through into",
-  "heroAccent": "forward motion.",
-  "heroBody": "Specialist remote assistants keep prospect research, CRM records, meeting coordination, and approved follow up moving so sellers can stay focused on real conversations.",
-  "manifesto": "Every touchpoint should leave the pipeline clearer than it found it.",
-  "primary": "#ff755f",
-  "secondary": "#3e7296",
-  "accent": "#ffd3a6",
-  "canvas": "#f3f5f7",
-  "ink": "#071b31",
-  "displayFont": "Gill Sans",
-  "bodyFont": "Avenir Next",
-  "heroImage": "/hero.png",
-  "heroAlt": "Glass rings, blank contact cards, and a studio microphone connected by a coral signal line",
-  "services": [
+  name: 'Inside Sales Assistant',
+  domain: 'insidesalesassistant.com',
+  siteId: 'inside-sales-assistant',
+  niche: 'inside sales teams',
+  audience: 'sales leaders and revenue teams',
+  design: 'signal',
+  eyebrow: 'Sales support with a visible pulse',
+  hero: 'Turn follow through into',
+  heroAccent: 'forward motion.',
+  heroBody: 'Specialist remote assistants keep prospect research, CRM records, meeting coordination, and approved follow up moving so sellers can stay focused on real conversations.',
+  manifesto: 'Every touchpoint should leave the pipeline clearer than it found it.',
+  primary: '#ff755f',
+  secondary: '#3e7296',
+  accent: '#ffd3a6',
+  canvas: '#f3f5f7',
+  ink: '#071b31',
+  displayFont: 'Gill Sans',
+  bodyFont: 'Avenir Next',
+  heroImage: '/hero.png',
+  heroAlt: 'Glass rings, blank contact cards, and a studio microphone connected by a coral signal line',
+  services: [
     {
-      "slug": "prospect-research",
-      "name": "Prospect research support",
-      "short": "Prepare organized account context before sellers begin outreach.",
-      "tasks": [
-        "Research approved account fields",
-        "Prepare contact records",
-        "Document source links",
-        "Flag missing information"
-      ]
+      slug: 'prospect-research', name: 'Prospect research support', short: 'Prepare organized account context before sellers begin outreach.',
+      audience: 'Sales development teams that need consistent account preparation before an authorized seller chooses a contact strategy.',
+      problem: 'Research is often scattered across tabs and private notes. Sellers lose time checking the same facts, while managers cannot see which source supports a record.',
+      inputs: ['Approved account list and target profile', 'Required CRM fields and source rules', 'Territory and exclusion guidance', 'Named review owner and exception path'],
+      tasks: ['Research approved account fields', 'Prepare contact records', 'Document source links', 'Flag missing or conflicting information', 'Organize account context for seller review'],
+      workflow: ['Receive an approved research queue', 'Check permitted first party and public sources', 'Record evidence in the required format', 'Route conflicts and missing facts to the owner', 'Submit the completed record for review'],
+      deliverables: ['Source linked account brief', 'Completed approved CRM fields', 'Missing information queue', 'Exception log for owner review'],
+      boundaries: ['The assistant prepares evidence and does not decide who must be contacted.', 'The sales owner approves targeting, messaging, qualification, and outreach.', 'Privacy, consent, suppression, and territory exceptions go to authorized owners.'],
+      qualityControls: ['Required field checklist', 'Source URL and access date', 'Duplicate and conflict check', 'Sample review by the accountable owner'],
+      scenarios: [{ title: 'New territory preparation', body: 'A manager supplies an approved account list. The assistant prepares consistent briefs and isolates records with unclear ownership before sellers receive the queue.' }, { title: 'Incomplete account record', body: 'A required fact cannot be verified from an approved source. The assistant marks it as unresolved rather than guessing and routes it to the named reviewer.' }],
+      faq: [{ q: 'Can the assistant select target accounts?', a: 'The assistant can prepare evidence against written criteria. Final targeting and commercial judgment stay with the sales owner.' }, { q: 'Can research include personal contact data?', a: 'Only sources and fields approved by your organization should be used. Privacy, consent, and channel rules remain your responsibility.' }, { q: 'What is a useful first workflow?', a: 'Start with one approved account segment and a short required field checklist.' }],
+      related: ['crm-administration', 'sales-enablement'], visual: { intake: 'ACCOUNT LIST', process: 'SOURCE CHECK', output: 'RESEARCH BRIEF' }
     },
     {
-      "slug": "crm-administration",
-      "name": "CRM administration",
-      "short": "Keep ownership, activity, and next steps accurate.",
-      "tasks": [
-        "Update approved fields",
-        "Check duplicate records",
-        "Prepare hygiene queues",
-        "Flag stale opportunities"
-      ]
+      slug: 'crm-administration', name: 'CRM administration', short: 'Keep ownership, activity, and next steps accurate.',
+      audience: 'Revenue operations teams that need routine record maintenance without transferring commercial authority.',
+      problem: 'Incomplete fields, duplicate records, and stale ownership weaken every report and handoff. The work repeats, but the rules are rarely visible in one place.',
+      inputs: ['CRM field dictionary', 'Ownership and stage rules', 'Duplicate handling procedure', 'Approved update queue and reviewer'],
+      tasks: ['Update approved fields', 'Check duplicate records', 'Prepare hygiene queues', 'Flag stale opportunities', 'Document changes and unresolved exceptions'],
+      workflow: ['Receive a bounded record queue', 'Validate required fields against source evidence', 'Apply only authorized updates', 'Separate ambiguous records for review', 'Publish a completion and exception summary'],
+      deliverables: ['Updated authorized fields', 'Duplicate review queue', 'Stale record report', 'Change and exception log'],
+      boundaries: ['The assistant follows field rules and does not redefine lifecycle stages.', 'Opportunity ownership, close status, and forecast judgment stay with authorized leaders.', 'Deletion, merging, and access changes require the documented approval path.'],
+      qualityControls: ['Before and after change record', 'Required field validation', 'Duplicate confidence check', 'Periodic sample against source evidence'],
+      scenarios: [{ title: 'Weekly hygiene queue', body: 'The assistant checks a defined set of open records, completes approved fields, and sends disputed ownership records to revenue operations.' }, { title: 'Potential duplicate', body: 'Two records appear related but key identifiers conflict. The assistant preserves both and prepares the evidence for an authorized merge decision.' }],
+      faq: [{ q: 'Can an assistant merge CRM records?', a: 'Only when your written procedure explicitly authorizes it. Ambiguous matches should be routed for review.' }, { q: 'Who owns stage changes?', a: 'Your sales or revenue operations owner defines and approves commercial stage rules.' }, { q: 'How should changes be reviewed?', a: 'Keep a change log and inspect a focused sample against source records and field rules.' }],
+      related: ['pipeline-reporting', 'sales-follow-up'], visual: { intake: 'RECORD QUEUE', process: 'FIELD CONTROL', output: 'CLEAN CRM' }
     },
     {
-      "slug": "meeting-coordination",
-      "name": "Meeting coordination",
-      "short": "Handle scheduling details and preparation around sales calls.",
-      "tasks": [
-        "Coordinate calendars",
-        "Prepare meeting briefs",
-        "Send approved reminders",
-        "Record scheduling outcomes"
-      ]
+      slug: 'meeting-coordination', name: 'Meeting coordination', short: 'Handle scheduling details and preparation around sales calls.',
+      audience: 'Sales teams whose calendars, reminders, and meeting context consume seller attention or create avoidable handoff gaps.',
+      problem: 'A booked meeting can still fail operationally when participants, time zones, agenda, ownership, or required context are unclear.',
+      inputs: ['Approved scheduling rules', 'Calendar access boundaries', 'Meeting brief template', 'Reminder language and escalation rules'],
+      tasks: ['Coordinate calendars', 'Prepare meeting briefs', 'Send approved reminders', 'Record scheduling outcomes', 'Flag conflicts and missing context'],
+      workflow: ['Receive an approved meeting request', 'Confirm required participants and time constraints', 'Schedule within documented rules', 'Prepare and route the meeting brief', 'Record the outcome and any follow up owner'],
+      deliverables: ['Confirmed calendar event', 'Participant and agenda brief', 'Reminder status', 'Scheduling outcome record'],
+      boundaries: ['The assistant coordinates availability and does not promise commercial outcomes.', 'Sellers own agenda decisions, qualification, pricing, and customer commitments.', 'Sensitive conflicts and unusual attendee requests are escalated.'],
+      qualityControls: ['Time zone and participant check', 'Required agenda field check', 'Approved reminder template', 'Outcome recorded in the system of record'],
+      scenarios: [{ title: 'Multi participant demo', body: 'The assistant compares approved availability, confirms the required roles, and prepares a concise context brief before the seller joins.' }, { title: 'Calendar conflict', body: 'A requested time conflicts with a protected block. The assistant offers approved alternatives and asks the owner to resolve any exception.' }],
+      faq: [{ q: 'Can the assistant reschedule a customer meeting?', a: 'Yes, within approved scheduling and communication rules. Sensitive exceptions should go to the meeting owner.' }, { q: 'Who sets the agenda?', a: 'The accountable seller owns meeting goals and commercial content. The assistant can prepare the approved format.' }, { q: 'What should a meeting brief contain?', a: 'Use only the context your team needs, such as participants, source notes, agreed agenda, prior actions, and open questions.' }],
+      related: ['prospect-research', 'sales-follow-up'], visual: { intake: 'MEETING REQUEST', process: 'CALENDAR SYNC', output: 'READY BRIEF' }
     },
     {
-      "slug": "sales-follow-up",
-      "name": "Sales follow up support",
-      "short": "Keep approved next steps moving after each conversation.",
-      "tasks": [
-        "Prepare follow up drafts",
-        "Track promised materials",
-        "Record response status",
-        "Escalate stalled actions"
-      ]
+      slug: 'sales-follow-up', name: 'Sales follow up support', short: 'Keep approved next steps moving after each conversation.',
+      audience: 'Sellers and managers who need promised materials, approved messages, and response status to move through a visible queue.',
+      problem: 'Follow up breaks when commitments remain in notes or inboxes. The next owner and approval point become unclear, especially when an exception appears.',
+      inputs: ['Meeting outcome and approved next step', 'Message templates and channel rules', 'Material library', 'Due date, owner, and escalation threshold'],
+      tasks: ['Prepare follow up drafts', 'Track promised materials', 'Record response status', 'Escalate stalled actions', 'Maintain the next step queue'],
+      workflow: ['Capture the authorized next action', 'Prepare the message or material packet', 'Route content for approval where required', 'Record dispatch and response status', 'Escalate exceptions to the accountable seller'],
+      deliverables: ['Approval ready follow up draft', 'Commitment tracker', 'Response status record', 'Escalation queue'],
+      boundaries: ['The assistant uses approved language and does not invent promises or terms.', 'Sellers approve pricing, negotiation, qualification, and sensitive replies.', 'Consent, opt out, and channel exceptions are handled under your policy.'],
+      qualityControls: ['Commitment matched to meeting record', 'Template and recipient check', 'Approval captured before required messages', 'Closed loop status review'],
+      scenarios: [{ title: 'Promised material packet', body: 'The seller records the approved documents and due date. The assistant assembles the current versions, routes the draft, and records completion.' }, { title: 'Unexpected pricing reply', body: 'A prospect asks for a discount. The assistant does not answer the commercial question and immediately routes it to the authorized seller.' }],
+      faq: [{ q: 'Can an assistant send follow up messages?', a: 'Yes, when your organization has approved the content, recipient, channel, and consent process.' }, { q: 'Can the assistant answer objections?', a: 'The assistant can classify and route replies. Commercial judgment and unapproved responses stay with the seller.' }, { q: 'How is a stalled action handled?', a: 'Define a time threshold and named owner so the assistant can escalate without inventing a new commitment.' }],
+      related: ['meeting-coordination', 'sales-enablement'], visual: { intake: 'CALL OUTCOME', process: 'APPROVAL GATE', output: 'NEXT STEP' }
     },
     {
-      "slug": "pipeline-reporting",
-      "name": "Pipeline reporting support",
-      "short": "Prepare clean views that help managers inspect the work.",
-      "tasks": [
-        "Compile pipeline snapshots",
-        "Check required fields",
-        "Prepare review packets",
-        "Flag data gaps"
-      ]
+      slug: 'pipeline-reporting', name: 'Pipeline reporting support', short: 'Prepare clean views that help managers inspect the work.',
+      audience: 'Sales managers and revenue operations leaders who need review packets built from governed CRM fields.',
+      problem: 'A dashboard cannot repair unclear definitions or missing records. Managers need a prepared view that exposes gaps rather than hiding them.',
+      inputs: ['Approved report definition', 'Stage and ownership rules', 'Reporting period', 'Required fields and exception thresholds'],
+      tasks: ['Compile pipeline snapshots', 'Check required fields', 'Prepare review packets', 'Flag data gaps', 'Record definition and refresh date'],
+      workflow: ['Confirm the report definition and cutoff', 'Extract the authorized CRM view', 'Validate required fields and totals', 'Separate gaps and anomalies', 'Deliver the packet to the accountable manager'],
+      deliverables: ['Dated pipeline snapshot', 'Review ready manager packet', 'Missing field queue', 'Definition and exception notes'],
+      boundaries: ['The assistant prepares the view and does not change forecast judgment.', 'Managers own stage confidence, probability, coaching, and commercial decisions.', 'Anomalies are disclosed rather than silently corrected.'],
+      qualityControls: ['Definition and date stamp', 'Reconciliation to the system view', 'Missing value and owner check', 'Manager signoff on interpretation'],
+      scenarios: [{ title: 'Weekly manager review', body: 'The assistant refreshes the approved view, identifies records missing next actions, and prepares a packet without changing forecast categories.' }, { title: 'Unexpected total', body: 'A total differs from the prior report. The assistant records the filters and changed records, then asks the manager to interpret the result.' }],
+      faq: [{ q: 'Can an assistant own the forecast?', a: 'No. The assistant can prepare evidence and reports, while forecast judgment stays with the accountable sales leader.' }, { q: 'What makes a report reviewable?', a: 'Show the definition, cutoff time, source view, missing values, and unresolved exceptions.' }, { q: 'Should missing data be estimated?', a: 'No. Mark missing fields clearly and route them to the owner under your documented process.' }],
+      related: ['crm-administration', 'sales-follow-up'], visual: { intake: 'CRM VIEW', process: 'RECONCILE', output: 'REVIEW PACK' }
     },
     {
-      "slug": "sales-enablement",
-      "name": "Sales enablement support",
-      "short": "Organize the material sellers need at the right moment.",
-      "tasks": [
-        "Maintain content libraries",
-        "Prepare approved collateral",
-        "Track version status",
-        "Route update requests"
-      ]
+      slug: 'sales-enablement', name: 'Sales enablement support', short: 'Organize the material sellers need at the right moment.',
+      audience: 'Enablement and sales teams that need approved collateral, playbooks, and version status to remain easy to find.',
+      problem: 'Sellers lose trust in a library when ownership, version, and use guidance are unclear. Old material then travels into live conversations.',
+      inputs: ['Approved content inventory', 'Document owners and review dates', 'Naming and archive rules', 'Request and approval workflow'],
+      tasks: ['Maintain content libraries', 'Prepare approved collateral', 'Track version status', 'Route update requests', 'Record owners and review dates'],
+      workflow: ['Receive approved content or a request', 'Check owner, version, and audience metadata', 'Publish or package material under the rules', 'Route content questions to the owner', 'Archive superseded material after approval'],
+      deliverables: ['Governed content library', 'Current collateral packet', 'Version and owner register', 'Update request queue'],
+      boundaries: ['The assistant organizes approved material and does not create unsupported claims.', 'Content owners approve positioning, legal language, pricing, and customer promises.', 'Superseded or uncertain content is held for review.'],
+      qualityControls: ['Named owner and review date', 'Version and audience check', 'Link and access test', 'Approved archive record'],
+      scenarios: [{ title: 'Seller meeting packet', body: 'The assistant selects only current, approved assets for the stated audience and sends the packet to the seller for final review.' }, { title: 'Conflicting versions', body: 'Two files claim to be current. The assistant pauses distribution and gives the content owner a concise comparison.' }],
+      faq: [{ q: 'Can the assistant write sales claims?', a: 'The assistant can format approved language. Positioning, proof, legal language, and new claims require authorized review.' }, { q: 'How should old material be handled?', a: 'Use a documented archive path and preserve the owner, approval, and replacement record.' }, { q: 'What is a useful library standard?', a: 'Every asset should have a clear audience, owner, version, status, and review date.' }],
+      related: ['prospect-research', 'sales-follow-up'], visual: { intake: 'CONTENT REQUEST', process: 'VERSION CHECK', output: 'APPROVED KIT' }
     }
   ],
-  "categories": [
-    "Prospecting",
-    "CRM operations",
-    "Follow through",
-    "Role design"
-  ],
-  "principles": [
-    "Top 1 percent selectivity",
-    "Clear role boundaries",
-    "Reviewable workflows"
-  ],
-  "sources": [
-    {
-      "label": "Federal Trade Commission",
-      "url": "https://www.ftc.gov/business-guidance/resources/complying-telemarketing-sales-rule"
-    }
-  ]
+  categories: ['Prospecting', 'CRM operations', 'Follow through', 'Role design'],
+  principles: ['Selective matching', 'Clear role boundaries', 'Reviewable workflows'],
+  sources: [{ label: 'Federal Trade Commission', url: 'https://www.ftc.gov/business-guidance/resources/complying-telemarketing-sales-rule' }]
 };
