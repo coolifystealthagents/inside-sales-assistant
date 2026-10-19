@@ -12,7 +12,7 @@ export const site: SiteConfig = {
   heroAccent: 'forward motion.',
   heroBody: 'Specialist remote assistants keep prospect research, CRM records, meeting coordination, and approved follow up moving so sellers can stay focused on real conversations.',
   manifesto: 'Every touchpoint should leave the pipeline clearer than it found it.',
-  primary: '#ff755f',
+  primary: '#c24130',
   secondary: '#3e7296',
   accent: '#ffd3a6',
   canvas: '#f3f5f7',

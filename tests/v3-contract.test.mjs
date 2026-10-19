@@ -204,6 +204,12 @@ test('lead validation is server-owned and ignored honeypots cannot advance the f
   }
   assert.match(route, /ignored:\s*true/, 'honeypot acknowledgement must identify ignored submissions');
   assert.match(form, /result\.ignored/, 'client must suppress tracking and navigation for ignored submissions');
+  for (const guard of [/allowedOrigins\.has\(origin\)/, /multipart\/form-data;/, /MAX_BODY_BYTES/, /RATE_LIMIT/]) {
+    assert.match(route, guard, `lead route is missing anti-abuse guard ${guard}`);
+  }
+  assert.match(route, /await fetch\(TRACKING_API/, 'success must await durable server acceptance');
+  assert.match(route, /event_type:\s*'lead_acceptance'/, 'server acceptance must be independently recorded');
+  assert.match(route, /acceptanceId:\s*eventId/, 'accepted response must return its durable receipt');
 });
 
 
@@ -212,13 +218,16 @@ test('the form has one ACR lead-ingestion owner', () => {
   const form = read('components/LeadForm.tsx');
   assert.match(form, /window\.acrTracker\?\.trackLead/, 'accepted lead must use the standard ACR tracker');
   assert.doesNotMatch(route, /ACR_LEAD_ENDPOINT/, 'API validation route must not duplicate ACR lead ingestion');
+  assert.match(form, /const name=\[payload\.first_name,payload\.last_name\]/, 'trackLead must receive the required combined name');
+  assert.match(form, /acceptance_id:result\.acceptanceId/, 'client lead event must carry the server acceptance receipt');
 });
 
 
 test('tracking proxy validates first-party ACR batches without forwarding spoofable IP headers', () => {
   const route = read('app/ingest/track/route.ts');
   assert.match(route, /payload\.site_id\s*!==\s*SITE_ID/, 'proxy must enforce the configured site identity');
-  assert.match(route, /origin\.host\.toLowerCase\(\)\s*!==\s*requestHost/, 'proxy must reject cross-origin browser events');
+  assert.match(route, /allowedOrigins\.has\(origin\.origin\)/, 'proxy must use a fixed origin allowlist');
+  assert.doesNotMatch(route, /x-forwarded-host|requestHost/i, 'proxy must not derive trust from caller-controlled host headers');
   assert.doesNotMatch(route, /X-Forwarded-For|X-ACR-Client-IP|cf-connecting-ip|x-real-ip/i, 'proxy must not relay caller-controlled IP headers');
 });
 
@@ -271,4 +280,18 @@ test('favicon and universal security headers remain configured', () => {
   assert.match(config, /source:\s*['"]\/\(\.\*\)['"]\s*,\s*headers:\s*securityHeaders/, 'security headers must apply to every route');
   assert.match(config, /frame-src https:\/\/go\.oncehub\.com/);
   assert.match(config, /script-src[^'"]*['"]?[^;]*https:\/\/acrtracking\.stealthagents\.us/);
+  assert.doesNotMatch(config, /unsafe-eval/, 'production CSP must not allow unsafe-eval');
+});
+
+
+test('accessible color and motion controls meet the release contract', () => {
+  const site = loadSiteConfig();
+  const rail = read('components/TestimonialsRail.tsx');
+  const contactCss = read('app/contact-us/contact.css');
+  assert.equal(site.primary.toLowerCase(), '#c24130');
+  assert.doesNotMatch(contactCss, /#ff755f/i, 'legacy low-contrast coral must be removed');
+  assert.match(rail, /aria-pressed=\{userPaused\}/);
+  assert.match(rail, /Pause reviews/);
+  assert.match(rail, /Resume reviews/);
+  assert.doesNotMatch(rail, /testimonial-card[^>]*tabIndex=/, 'review cards must not add unnecessary tab stops');
 });

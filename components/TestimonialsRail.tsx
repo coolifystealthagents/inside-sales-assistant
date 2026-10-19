@@ -5,7 +5,9 @@ import provenance from '@/app/review-provenance.json';
 
 export function TestimonialsRail() {
   const railRef = useRef<HTMLDivElement>(null);
-  const [paused, setPaused] = useState(false);
+  const [userPaused, setUserPaused] = useState(false);
+  const [interactionPaused, setInteractionPaused] = useState(false);
+  const paused = userPaused || interactionPaused;
 
   useEffect(() => {
     const rail = railRef.current;
@@ -24,13 +26,16 @@ export function TestimonialsRail() {
     return () => { window.clearInterval(timer); window.clearTimeout(resetTimer); };
   }, [paused]);
 
-  return <section className="testimonials" aria-labelledby="reviews-title" onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)} onFocusCapture={() => setPaused(true)} onBlurCapture={event => { if (!event.currentTarget.contains(event.relatedTarget)) setPaused(false); }}>
+  return <section className="testimonials" aria-labelledby="reviews-title" onMouseEnter={() => setInteractionPaused(true)} onMouseLeave={() => setInteractionPaused(false)} onFocusCapture={() => setInteractionPaused(true)} onBlurCapture={event => { if (!event.currentTarget.contains(event.relatedTarget)) setInteractionPaused(false); }}>
     <div className="reviews-heading">
       <div><p className="eyebrow">Verified client perspective</p><h2 id="reviews-title">StealthAgents reviews</h2></div>
-      <a href={provenance.source} target="_blank" rel="noopener noreferrer">View official source</a>
+      <div className="reviews-controls">
+        <button className="reviews-pause" type="button" aria-pressed={userPaused} onClick={() => setUserPaused(value => !value)}>{userPaused ? 'Resume reviews' : 'Pause reviews'}</button>
+        <a href={provenance.source} target="_blank" rel="noopener noreferrer">View official source</a>
+      </div>
     </div>
     <div ref={railRef} className="testimonials-rail" aria-label="Ten verified reviews">
-      {provenance.records.map(review => <article className="testimonial-card" key={review.name} tabIndex={0}>
+      {provenance.records.map(review => <article className="testimonial-card" key={review.name}>
         <div className="review-stars" aria-label="5 out of 5 stars"><span aria-hidden="true">★★★★★</span></div>
         <h3>{review.headline}</h3><blockquote>{review.body}</blockquote>
         <p><strong>{review.name}</strong><span>{review.detail}</span></p>

@@ -4,17 +4,19 @@ const TRACKING_API = 'https://acrtracking.stealthagents.us/api/track';
 const SITE_ID = 'inside-sales-assistant';
 const MAX_BODY_BYTES = 256_000;
 const MAX_EVENTS_PER_BATCH = 100;
+const allowedOrigins = new Set([
+  'https://insidesalesassistant.com',
+  'https://www.insidesalesassistant.com',
+  'http://127.0.0.1:4341',
+  'http://localhost:4341',
+]);
 
 export const runtime = 'nodejs';
 
 export async function POST(request: NextRequest) {
   try {
-    const requestHost = (request.headers.get('x-forwarded-host') || request.headers.get('host') || '')
-      .split(',')[0]
-      .trim()
-      .toLowerCase();
     const originHeader = request.headers.get('origin');
-    if (!originHeader || !requestHost) {
+    if (!originHeader) {
       return Response.json({ status: 'error', detail: 'Origin required' }, { status: 403 });
     }
 
@@ -24,7 +26,7 @@ export async function POST(request: NextRequest) {
     } catch {
       return Response.json({ status: 'error', detail: 'Invalid origin' }, { status: 403 });
     }
-    if (origin.host.toLowerCase() !== requestHost) {
+    if (!allowedOrigins.has(origin.origin)) {
       return Response.json({ status: 'error', detail: 'Origin not allowed' }, { status: 403 });
     }
 
