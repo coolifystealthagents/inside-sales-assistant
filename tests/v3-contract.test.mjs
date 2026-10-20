@@ -295,3 +295,15 @@ test('accessible color and motion controls meet the release contract', () => {
   assert.match(rail, /Resume reviews/);
   assert.doesNotMatch(rail, /testimonial-card[^>]*tabIndex=/, 'review cards must not add unnecessary tab stops');
 });
+
+
+test('production hosts canonicalize to the fixed HTTPS apex without affecting previews', () => {
+  const proxy = read('proxy.ts');
+  assert.match(proxy, /https:\/\/insidesalesassistant\.com/);
+  assert.match(proxy, /cf-visitor/i, 'original visitor scheme must prefer Cloudflare metadata');
+  assert.match(proxy, /x-forwarded-proto/i, 'forwarded protocol must be the bounded fallback');
+  assert.match(proxy, /www\.insidesalesassistant\.com/);
+  assert.match(proxy, /request\.nextUrl\.pathname/);
+  assert.match(proxy, /request\.nextUrl\.search/);
+  assert.doesNotMatch(proxy, /new URL\([^,]+,\s*request\.url\)/, 'redirect destination must not inherit an untrusted host');
+});
