@@ -1,7 +1,9 @@
 import { site } from './site';
 import type { BlogPost, ResearchPost } from './types';
+import { october22BlogBatch, october22ResearchBatch } from './october22Batch';
 
 export const blogPosts: BlogPost[] = [
+  ...october22BlogBatch,
   {
     "slug": "sales-operations-specialist-vs-inside-sales-va",
     "title": "Sales operations specialist vs inside sales VA",
@@ -469,6 +471,7 @@ export const blogPosts: BlogPost[] = [
   }
 ];
 export const researchPosts: ResearchPost[] = [
+  ...october22ResearchBatch,
   {
     "slug": "prospect-research-workflow-boundary-review-1",
     "title": "Prospect research support: workflow boundary review",
