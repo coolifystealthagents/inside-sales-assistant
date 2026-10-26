@@ -469,7 +469,7 @@ export const blogPosts: BlogPost[] = [
       "url": "https://www.ftc.gov/business-guidance/resources/complying-telemarketing-sales-rule"
     }
   }
-];
+].sort((a,b)=>String(b.publishedAt).localeCompare(String(a.publishedAt)));
 export const researchPosts: ResearchPost[] = [
   ...october22ResearchBatch,
   {
@@ -912,7 +912,7 @@ export const researchPosts: ResearchPost[] = [
       }
     ]
   }
-];
+].sort((a,b)=>String(b.publishedAt).localeCompare(String(a.publishedAt)));
 
 export const nav = [
   { href: '/', label: 'Home' },
