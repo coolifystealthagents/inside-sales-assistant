@@ -1836,6 +1836,882 @@ export const october22BlogBatch: readonly BlogPost[] = [
       "label": "Federal Trade Commission, CAN-SPAM compliance guide",
       "url": "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business"
     }
+  },
+  {
+    "slug": "insidesalesassistant-intake-request-triage-2",
+    "title": "Intake Request Triage for Inside Sales Teams",
+    "description": "A practical Inside Sales workflow for intake request triage for inside sales teams, with evidence, ownership, exceptions, and review.",
+    "category": "Inside Sales Operations",
+    "publishedAt": "2026-10-26",
+    "readTime": "9 min read",
+    "thumbnail": "/article-thumbnails/october-22/insidesalesassistant-intake-request-triage-2.svg",
+    "sections": [
+      {
+        "heading": "Define the outcome for Intake Request Triage",
+        "paragraphs": [
+          "Intake Request Triage gives Inside Sales teams a bounded way to coordinate intake request triage. The operating risk is that a request can be marked complete without the source, owner, or a usable next action. A useful record keeps the request, source, owner, due time, exception state, and completion evidence together.",
+          "Name the event that creates a record, the source system, the minimum evidence, the accountable owner, and the clock start before the queue opens. Administrative preparation stays separate from the decision reserved to the accountable owner."
+        ]
+      },
+      {
+        "heading": "Map the inputs and the record",
+        "paragraphs": [
+          "Capture request, source, owner, due time, status, exception reason, and completion evidence. Link each consequential value to its source and record when it was observed. Missing information must remain visible rather than being replaced by a plausible assumption.",
+          "Use a small set of named states such as received, incomplete, ready for review, exception, and closed. Every exception needs a reason code, the role that must resolve it, and a dated next action."
+        ]
+      },
+      {
+        "heading": "Separate preparation from judgment",
+        "paragraphs": [
+          "The support role may collect, label, route, and draft within approved language. It may not invent a rationale, infer an approval, or make a commitment that belongs to an authorized owner.",
+          "Use proceed, pause for review, and escalate now as operational states. Preserve the original question when the answer depends on a professional or commercial decision."
+        ]
+      },
+      {
+        "heading": "Run the daily queue",
+        "paragraphs": [
+          "Sort open items for intake request triage by client impact, external deadline, dependency, and age. Update status only from a verifiable event, not from a conversation or an assumption.",
+          "Before handoff, give every open item a named owner, a dated next action, and a link to the evidence. A shared inbox may receive work, but it cannot own an outcome."
+        ]
+      },
+      {
+        "heading": "Escalate with a bounded packet",
+        "paragraphs": [
+          "An escalation should include the record link, verified facts, the unresolved decision, the deadline, actions already taken, and the safest permitted next step. Use distinct reason codes for missing source, conflicting source, wrong record, expired evidence, unavailable approver, and system outage.",
+          "Do not convert silence into approval. Keep the work paused when the next action depends on authority or evidence that has not arrived."
+        ]
+      },
+      {
+        "heading": "Close, review, and improve",
+        "paragraphs": [
+          "Close only when the completion event, communication, and evidence are present. Sample new, closed, and reopened records and compare the final state with the source. When the same exception recurs, change the intake field, evidence rule, ownership map, or approval gate.",
+          "Test the revision on a bounded sample and keep the prior version for audit. Review quality with denominators and inspect routine, adverse, and unresolved records."
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "q": "Who owns decisions in intake request triage?",
+        "a": "The accountable Inside Sales owner retains the professional or commercial decision; support prepares and routes the record."
+      },
+      {
+        "q": "What proves the workflow is complete?",
+        "a": "The completion event, communication, source evidence, named owner, and closure state must all be present."
+      },
+      {
+        "q": "What happens when evidence conflicts?",
+        "a": "Preserve both values, pause the dependent action, and route a concise comparison to the authorized owner."
+      }
+    ],
+    "internalService": "/services",
+    "internalSibling": "/blog/call-list-hygiene",
+    "source": {
+      "label": "Federal Trade Commission, CAN-SPAM compliance guide",
+      "url": "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business"
+    }
+  },
+  {
+    "slug": "insidesalesassistant-evidence-capture-standard-2",
+    "title": "Evidence Capture Standard for Inside Sales Teams",
+    "description": "A practical Inside Sales workflow for evidence capture standard for inside sales teams, with evidence, ownership, exceptions, and review.",
+    "category": "Inside Sales Operations",
+    "publishedAt": "2026-10-26",
+    "readTime": "9 min read",
+    "thumbnail": "/article-thumbnails/october-22/insidesalesassistant-evidence-capture-standard-2.svg",
+    "sections": [
+      {
+        "heading": "Define the outcome for Evidence Capture Standard",
+        "paragraphs": [
+          "Evidence Capture Standard gives Inside Sales teams a bounded way to coordinate evidence capture. The operating risk is that a later summary can replace the original evidence and hide what was actually known. A useful record keeps the request, source, owner, due time, exception state, and completion evidence together.",
+          "Name the event that creates a record, the source system, the minimum evidence, the accountable owner, and the clock start before the queue opens. Staff may preserve and label evidence but may not invent a rationale or approval."
+        ]
+      },
+      {
+        "heading": "Map the inputs and the record",
+        "paragraphs": [
+          "Capture request key, source artifact, received time, patient or client reference, owner, decision boundary, and correction history. Link each consequential value to its source and record when it was observed. Missing information must remain visible rather than being replaced by a plausible assumption.",
+          "Use a small set of named states such as received, incomplete, ready for review, exception, and closed. Every exception needs a reason code, the role that must resolve it, and a dated next action."
+        ]
+      },
+      {
+        "heading": "Separate preparation from judgment",
+        "paragraphs": [
+          "The support role may collect, label, route, and draft within approved language. It may not invent a rationale, infer an approval, or make a commitment that belongs to an authorized owner.",
+          "Use proceed, pause for review, and escalate now as operational states. Preserve the original question when the answer depends on a professional or commercial decision."
+        ]
+      },
+      {
+        "heading": "Run the daily queue",
+        "paragraphs": [
+          "Sort open items for evidence capture by client impact, external deadline, dependency, and age. Update status only from a verifiable event, not from a conversation or an assumption.",
+          "Before handoff, give every open item a named owner, a dated next action, and a link to the evidence. A shared inbox may receive work, but it cannot own an outcome."
+        ]
+      },
+      {
+        "heading": "Escalate with a bounded packet",
+        "paragraphs": [
+          "An escalation should include the record link, verified facts, the unresolved decision, the deadline, actions already taken, and the safest permitted next step. Use distinct reason codes for missing source, conflicting source, wrong record, expired evidence, unavailable approver, and system outage.",
+          "Do not convert silence into approval. Keep the work paused when the next action depends on authority or evidence that has not arrived."
+        ]
+      },
+      {
+        "heading": "Close, review, and improve",
+        "paragraphs": [
+          "Close only when the completion event, communication, and evidence are present. Trace a sample from the original message to the recorded outcome. When the same exception recurs, change the intake field, evidence rule, ownership map, or approval gate.",
+          "Test the revision on a bounded sample and keep the prior version for audit. Review quality with denominators and inspect routine, adverse, and unresolved records."
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "q": "Who owns decisions in evidence capture?",
+        "a": "The accountable Inside Sales owner retains the professional or commercial decision; support prepares and routes the record."
+      },
+      {
+        "q": "What proves the workflow is complete?",
+        "a": "The completion event, communication, source evidence, named owner, and closure state must all be present."
+      },
+      {
+        "q": "What happens when evidence conflicts?",
+        "a": "Preserve both values, pause the dependent action, and route a concise comparison to the authorized owner."
+      }
+    ],
+    "internalService": "/services",
+    "internalSibling": "/blog/call-list-hygiene",
+    "source": {
+      "label": "Federal Trade Commission, CAN-SPAM compliance guide",
+      "url": "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business"
+    }
+  },
+  {
+    "slug": "insidesalesassistant-owner-handoff-map-2",
+    "title": "Owner Handoff Map for Inside Sales Teams",
+    "description": "A practical Inside Sales workflow for owner handoff map for inside sales teams, with evidence, ownership, exceptions, and review.",
+    "category": "Inside Sales Operations",
+    "publishedAt": "2026-10-26",
+    "readTime": "9 min read",
+    "thumbnail": "/article-thumbnails/october-22/insidesalesassistant-owner-handoff-map-2.svg",
+    "sections": [
+      {
+        "heading": "Define the outcome for Owner Handoff Map",
+        "paragraphs": [
+          "Owner Handoff Map gives Inside Sales teams a bounded way to coordinate owner handoffs. The operating risk is that two people can each believe the other owns the next step. A useful record keeps the request, source, owner, due time, exception state, and completion evidence together.",
+          "Name the event that creates a record, the source system, the minimum evidence, the accountable owner, and the clock start before the queue opens. A handoff transfers ownership only when the receiving role acknowledges it."
+        ]
+      },
+      {
+        "heading": "Map the inputs and the record",
+        "paragraphs": [
+          "Capture record, current owner, receiving owner, handoff reason, acknowledgement, due time, and open question. Link each consequential value to its source and record when it was observed. Missing information must remain visible rather than being replaced by a plausible assumption.",
+          "Use a small set of named states such as received, incomplete, ready for review, exception, and closed. Every exception needs a reason code, the role that must resolve it, and a dated next action."
+        ]
+      },
+      {
+        "heading": "Separate preparation from judgment",
+        "paragraphs": [
+          "The support role may collect, label, route, and draft within approved language. It may not invent a rationale, infer an approval, or make a commitment that belongs to an authorized owner.",
+          "Use proceed, pause for review, and escalate now as operational states. Preserve the original question when the answer depends on a professional or commercial decision."
+        ]
+      },
+      {
+        "heading": "Run the daily queue",
+        "paragraphs": [
+          "Sort open items for owner handoffs by client impact, external deadline, dependency, and age. Update status only from a verifiable event, not from a conversation or an assumption.",
+          "Before handoff, give every open item a named owner, a dated next action, and a link to the evidence. A shared inbox may receive work, but it cannot own an outcome."
+        ]
+      },
+      {
+        "heading": "Escalate with a bounded packet",
+        "paragraphs": [
+          "An escalation should include the record link, verified facts, the unresolved decision, the deadline, actions already taken, and the safest permitted next step. Use distinct reason codes for missing source, conflicting source, wrong record, expired evidence, unavailable approver, and system outage.",
+          "Do not convert silence into approval. Keep the work paused when the next action depends on authority or evidence that has not arrived."
+        ]
+      },
+      {
+        "heading": "Close, review, and improve",
+        "paragraphs": [
+          "Close only when the completion event, communication, and evidence are present. Inspect handoffs that crossed shifts, teams, or systems. When the same exception recurs, change the intake field, evidence rule, ownership map, or approval gate.",
+          "Test the revision on a bounded sample and keep the prior version for audit. Review quality with denominators and inspect routine, adverse, and unresolved records."
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "q": "Who owns decisions in owner handoffs?",
+        "a": "The accountable Inside Sales owner retains the professional or commercial decision; support prepares and routes the record."
+      },
+      {
+        "q": "What proves the workflow is complete?",
+        "a": "The completion event, communication, source evidence, named owner, and closure state must all be present."
+      },
+      {
+        "q": "What happens when evidence conflicts?",
+        "a": "Preserve both values, pause the dependent action, and route a concise comparison to the authorized owner."
+      }
+    ],
+    "internalService": "/services",
+    "internalSibling": "/blog/call-list-hygiene",
+    "source": {
+      "label": "Federal Trade Commission, CAN-SPAM compliance guide",
+      "url": "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business"
+    }
+  },
+  {
+    "slug": "insidesalesassistant-queue-aging-review-2",
+    "title": "Queue Aging Review for Inside Sales Teams",
+    "description": "A practical Inside Sales workflow for queue aging review for inside sales teams, with evidence, ownership, exceptions, and review.",
+    "category": "Inside Sales Operations",
+    "publishedAt": "2026-10-26",
+    "readTime": "9 min read",
+    "thumbnail": "/article-thumbnails/october-22/insidesalesassistant-queue-aging-review-2.svg",
+    "sections": [
+      {
+        "heading": "Define the outcome for Queue Aging Review",
+        "paragraphs": [
+          "Queue Aging Review gives Inside Sales teams a bounded way to coordinate queue aging. The operating risk is that an old item can disappear into an average while a patient or client waits. A useful record keeps the request, source, owner, due time, exception state, and completion evidence together.",
+          "Name the event that creates a record, the source system, the minimum evidence, the accountable owner, and the clock start before the queue opens. Age is an administrative signal and does not determine clinical or commercial priority."
+        ]
+      },
+      {
+        "heading": "Map the inputs and the record",
+        "paragraphs": [
+          "Capture arrival time, priority basis, owner, dependency, last action, age band, and next review time. Link each consequential value to its source and record when it was observed. Missing information must remain visible rather than being replaced by a plausible assumption.",
+          "Use a small set of named states such as received, incomplete, ready for review, exception, and closed. Every exception needs a reason code, the role that must resolve it, and a dated next action."
+        ]
+      },
+      {
+        "heading": "Separate preparation from judgment",
+        "paragraphs": [
+          "The support role may collect, label, route, and draft within approved language. It may not invent a rationale, infer an approval, or make a commitment that belongs to an authorized owner.",
+          "Use proceed, pause for review, and escalate now as operational states. Preserve the original question when the answer depends on a professional or commercial decision."
+        ]
+      },
+      {
+        "heading": "Run the daily queue",
+        "paragraphs": [
+          "Sort open items for queue aging by client impact, external deadline, dependency, and age. Update status only from a verifiable event, not from a conversation or an assumption.",
+          "Before handoff, give every open item a named owner, a dated next action, and a link to the evidence. A shared inbox may receive work, but it cannot own an outcome."
+        ]
+      },
+      {
+        "heading": "Escalate with a bounded packet",
+        "paragraphs": [
+          "An escalation should include the record link, verified facts, the unresolved decision, the deadline, actions already taken, and the safest permitted next step. Use distinct reason codes for missing source, conflicting source, wrong record, expired evidence, unavailable approver, and system outage.",
+          "Do not convert silence into approval. Keep the work paused when the next action depends on authority or evidence that has not arrived."
+        ]
+      },
+      {
+        "heading": "Close, review, and improve",
+        "paragraphs": [
+          "Close only when the completion event, communication, and evidence are present. Review the oldest open items and the reasons they remain open. When the same exception recurs, change the intake field, evidence rule, ownership map, or approval gate.",
+          "Test the revision on a bounded sample and keep the prior version for audit. Review quality with denominators and inspect routine, adverse, and unresolved records."
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "q": "Who owns decisions in queue aging?",
+        "a": "The accountable Inside Sales owner retains the professional or commercial decision; support prepares and routes the record."
+      },
+      {
+        "q": "What proves the workflow is complete?",
+        "a": "The completion event, communication, source evidence, named owner, and closure state must all be present."
+      },
+      {
+        "q": "What happens when evidence conflicts?",
+        "a": "Preserve both values, pause the dependent action, and route a concise comparison to the authorized owner."
+      }
+    ],
+    "internalService": "/services",
+    "internalSibling": "/blog/call-list-hygiene",
+    "source": {
+      "label": "Federal Trade Commission, CAN-SPAM compliance guide",
+      "url": "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business"
+    }
+  },
+  {
+    "slug": "insidesalesassistant-exception-escalation-path-2",
+    "title": "Exception Escalation Path for Inside Sales Teams",
+    "description": "A practical Inside Sales workflow for exception escalation path for inside sales teams, with evidence, ownership, exceptions, and review.",
+    "category": "Inside Sales Operations",
+    "publishedAt": "2026-10-26",
+    "readTime": "9 min read",
+    "thumbnail": "/article-thumbnails/october-22/insidesalesassistant-exception-escalation-path-2.svg",
+    "sections": [
+      {
+        "heading": "Define the outcome for Exception Escalation Path",
+        "paragraphs": [
+          "Exception Escalation Path gives Inside Sales teams a bounded way to coordinate exception escalation. The operating risk is that an unanswered escalation can be mistaken for approval. A useful record keeps the request, source, owner, due time, exception state, and completion evidence together.",
+          "Name the event that creates a record, the source system, the minimum evidence, the accountable owner, and the clock start before the queue opens. The escalation asks for a decision; it does not make the decision."
+        ]
+      },
+      {
+        "heading": "Map the inputs and the record",
+        "paragraphs": [
+          "Capture exception type, affected record, evidence conflict, action already taken, safe next step, owner, and deadline. Link each consequential value to its source and record when it was observed. Missing information must remain visible rather than being replaced by a plausible assumption.",
+          "Use a small set of named states such as received, incomplete, ready for review, exception, and closed. Every exception needs a reason code, the role that must resolve it, and a dated next action."
+        ]
+      },
+      {
+        "heading": "Separate preparation from judgment",
+        "paragraphs": [
+          "The support role may collect, label, route, and draft within approved language. It may not invent a rationale, infer an approval, or make a commitment that belongs to an authorized owner.",
+          "Use proceed, pause for review, and escalate now as operational states. Preserve the original question when the answer depends on a professional or commercial decision."
+        ]
+      },
+      {
+        "heading": "Run the daily queue",
+        "paragraphs": [
+          "Sort open items for exception escalation by client impact, external deadline, dependency, and age. Update status only from a verifiable event, not from a conversation or an assumption.",
+          "Before handoff, give every open item a named owner, a dated next action, and a link to the evidence. A shared inbox may receive work, but it cannot own an outcome."
+        ]
+      },
+      {
+        "heading": "Escalate with a bounded packet",
+        "paragraphs": [
+          "An escalation should include the record link, verified facts, the unresolved decision, the deadline, actions already taken, and the safest permitted next step. Use distinct reason codes for missing source, conflicting source, wrong record, expired evidence, unavailable approver, and system outage.",
+          "Do not convert silence into approval. Keep the work paused when the next action depends on authority or evidence that has not arrived."
+        ]
+      },
+      {
+        "heading": "Close, review, and improve",
+        "paragraphs": [
+          "Close only when the completion event, communication, and evidence are present. Sample exceptions by reason and check whether the right owner responded. When the same exception recurs, change the intake field, evidence rule, ownership map, or approval gate.",
+          "Test the revision on a bounded sample and keep the prior version for audit. Review quality with denominators and inspect routine, adverse, and unresolved records."
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "q": "Who owns decisions in exception escalation?",
+        "a": "The accountable Inside Sales owner retains the professional or commercial decision; support prepares and routes the record."
+      },
+      {
+        "q": "What proves the workflow is complete?",
+        "a": "The completion event, communication, source evidence, named owner, and closure state must all be present."
+      },
+      {
+        "q": "What happens when evidence conflicts?",
+        "a": "Preserve both values, pause the dependent action, and route a concise comparison to the authorized owner."
+      }
+    ],
+    "internalService": "/services",
+    "internalSibling": "/blog/call-list-hygiene",
+    "source": {
+      "label": "Federal Trade Commission, CAN-SPAM compliance guide",
+      "url": "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business"
+    }
+  },
+  {
+    "slug": "insidesalesassistant-access-permission-review-2",
+    "title": "Access Permission Review for Inside Sales Teams",
+    "description": "A practical Inside Sales workflow for access permission review for inside sales teams, with evidence, ownership, exceptions, and review.",
+    "category": "Inside Sales Operations",
+    "publishedAt": "2026-10-26",
+    "readTime": "9 min read",
+    "thumbnail": "/article-thumbnails/october-22/insidesalesassistant-access-permission-review-2.svg",
+    "sections": [
+      {
+        "heading": "Define the outcome for Access Permission Review",
+        "paragraphs": [
+          "Access Permission Review gives Inside Sales teams a bounded way to coordinate access and permissions. The operating risk is that temporary or inherited access can outlive the task that justified it. A useful record keeps the request, source, owner, due time, exception state, and completion evidence together.",
+          "Name the event that creates a record, the source system, the minimum evidence, the accountable owner, and the clock start before the queue opens. Access to a system is not authorization to make every decision available in it."
+        ]
+      },
+      {
+        "heading": "Map the inputs and the record",
+        "paragraphs": [
+          "Capture role, system, permitted action, approval source, last review, temporary access, and removal evidence. Link each consequential value to its source and record when it was observed. Missing information must remain visible rather than being replaced by a plausible assumption.",
+          "Use a small set of named states such as received, incomplete, ready for review, exception, and closed. Every exception needs a reason code, the role that must resolve it, and a dated next action."
+        ]
+      },
+      {
+        "heading": "Separate preparation from judgment",
+        "paragraphs": [
+          "The support role may collect, label, route, and draft within approved language. It may not invent a rationale, infer an approval, or make a commitment that belongs to an authorized owner.",
+          "Use proceed, pause for review, and escalate now as operational states. Preserve the original question when the answer depends on a professional or commercial decision."
+        ]
+      },
+      {
+        "heading": "Run the daily queue",
+        "paragraphs": [
+          "Sort open items for access and permissions by client impact, external deadline, dependency, and age. Update status only from a verifiable event, not from a conversation or an assumption.",
+          "Before handoff, give every open item a named owner, a dated next action, and a link to the evidence. A shared inbox may receive work, but it cannot own an outcome."
+        ]
+      },
+      {
+        "heading": "Escalate with a bounded packet",
+        "paragraphs": [
+          "An escalation should include the record link, verified facts, the unresolved decision, the deadline, actions already taken, and the safest permitted next step. Use distinct reason codes for missing source, conflicting source, wrong record, expired evidence, unavailable approver, and system outage.",
+          "Do not convert silence into approval. Keep the work paused when the next action depends on authority or evidence that has not arrived."
+        ]
+      },
+      {
+        "heading": "Close, review, and improve",
+        "paragraphs": [
+          "Close only when the completion event, communication, and evidence are present. Compare the current roster with approved roles and remove unexplained access. When the same exception recurs, change the intake field, evidence rule, ownership map, or approval gate.",
+          "Test the revision on a bounded sample and keep the prior version for audit. Review quality with denominators and inspect routine, adverse, and unresolved records."
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "q": "Who owns decisions in access and permissions?",
+        "a": "The accountable Inside Sales owner retains the professional or commercial decision; support prepares and routes the record."
+      },
+      {
+        "q": "What proves the workflow is complete?",
+        "a": "The completion event, communication, source evidence, named owner, and closure state must all be present."
+      },
+      {
+        "q": "What happens when evidence conflicts?",
+        "a": "Preserve both values, pause the dependent action, and route a concise comparison to the authorized owner."
+      }
+    ],
+    "internalService": "/services",
+    "internalSibling": "/blog/call-list-hygiene",
+    "source": {
+      "label": "Federal Trade Commission, CAN-SPAM compliance guide",
+      "url": "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business"
+    }
+  },
+  {
+    "slug": "insidesalesassistant-documentation-version-control-2",
+    "title": "Documentation Version Control for Inside Sales Teams",
+    "description": "A practical Inside Sales workflow for documentation version control for inside sales teams, with evidence, ownership, exceptions, and review.",
+    "category": "Inside Sales Operations",
+    "publishedAt": "2026-10-26",
+    "readTime": "9 min read",
+    "thumbnail": "/article-thumbnails/october-22/insidesalesassistant-documentation-version-control-2.svg",
+    "sections": [
+      {
+        "heading": "Define the outcome for Documentation Version Control",
+        "paragraphs": [
+          "Documentation Version Control gives Inside Sales teams a bounded way to coordinate documentation version control. The operating risk is that an older script or form can remain in use after the approved version changes. A useful record keeps the request, source, owner, due time, exception state, and completion evidence together.",
+          "Name the event that creates a record, the source system, the minimum evidence, the accountable owner, and the clock start before the queue opens. Staff follow the approved version and route proposed changes to its owner."
+        ]
+      },
+      {
+        "heading": "Map the inputs and the record",
+        "paragraphs": [
+          "Capture document name, version, owner, effective date, approval, location, and superseded copy. Link each consequential value to its source and record when it was observed. Missing information must remain visible rather than being replaced by a plausible assumption.",
+          "Use a small set of named states such as received, incomplete, ready for review, exception, and closed. Every exception needs a reason code, the role that must resolve it, and a dated next action."
+        ]
+      },
+      {
+        "heading": "Separate preparation from judgment",
+        "paragraphs": [
+          "The support role may collect, label, route, and draft within approved language. It may not invent a rationale, infer an approval, or make a commitment that belongs to an authorized owner.",
+          "Use proceed, pause for review, and escalate now as operational states. Preserve the original question when the answer depends on a professional or commercial decision."
+        ]
+      },
+      {
+        "heading": "Run the daily queue",
+        "paragraphs": [
+          "Sort open items for documentation version control by client impact, external deadline, dependency, and age. Update status only from a verifiable event, not from a conversation or an assumption.",
+          "Before handoff, give every open item a named owner, a dated next action, and a link to the evidence. A shared inbox may receive work, but it cannot own an outcome."
+        ]
+      },
+      {
+        "heading": "Escalate with a bounded packet",
+        "paragraphs": [
+          "An escalation should include the record link, verified facts, the unresolved decision, the deadline, actions already taken, and the safest permitted next step. Use distinct reason codes for missing source, conflicting source, wrong record, expired evidence, unavailable approver, and system outage.",
+          "Do not convert silence into approval. Keep the work paused when the next action depends on authority or evidence that has not arrived."
+        ]
+      },
+      {
+        "heading": "Close, review, and improve",
+        "paragraphs": [
+          "Close only when the completion event, communication, and evidence are present. Match live documents to the current approved version. When the same exception recurs, change the intake field, evidence rule, ownership map, or approval gate.",
+          "Test the revision on a bounded sample and keep the prior version for audit. Review quality with denominators and inspect routine, adverse, and unresolved records."
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "q": "Who owns decisions in documentation version control?",
+        "a": "The accountable Inside Sales owner retains the professional or commercial decision; support prepares and routes the record."
+      },
+      {
+        "q": "What proves the workflow is complete?",
+        "a": "The completion event, communication, source evidence, named owner, and closure state must all be present."
+      },
+      {
+        "q": "What happens when evidence conflicts?",
+        "a": "Preserve both values, pause the dependent action, and route a concise comparison to the authorized owner."
+      }
+    ],
+    "internalService": "/services",
+    "internalSibling": "/blog/call-list-hygiene",
+    "source": {
+      "label": "Federal Trade Commission, CAN-SPAM compliance guide",
+      "url": "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business"
+    }
+  },
+  {
+    "slug": "insidesalesassistant-vendor-coordination-ledger-2",
+    "title": "Vendor Coordination Ledger for Inside Sales Teams",
+    "description": "A practical Inside Sales workflow for vendor coordination ledger for inside sales teams, with evidence, ownership, exceptions, and review.",
+    "category": "Inside Sales Operations",
+    "publishedAt": "2026-10-26",
+    "readTime": "9 min read",
+    "thumbnail": "/article-thumbnails/october-22/insidesalesassistant-vendor-coordination-ledger-2.svg",
+    "sections": [
+      {
+        "heading": "Define the outcome for Vendor Coordination Ledger",
+        "paragraphs": [
+          "Vendor Coordination Ledger gives Inside Sales teams a bounded way to coordinate vendor coordination. The operating risk is that a vendor promise can be treated as a completed service. A useful record keeps the request, source, owner, due time, exception state, and completion evidence together.",
+          "Name the event that creates a record, the source system, the minimum evidence, the accountable owner, and the clock start before the queue opens. The vendor supplies a service; the accountable owner accepts the result."
+        ]
+      },
+      {
+        "heading": "Map the inputs and the record",
+        "paragraphs": [
+          "Capture vendor, service, request, commitment, contact, due date, evidence, exception, and closure. Link each consequential value to its source and record when it was observed. Missing information must remain visible rather than being replaced by a plausible assumption.",
+          "Use a small set of named states such as received, incomplete, ready for review, exception, and closed. Every exception needs a reason code, the role that must resolve it, and a dated next action."
+        ]
+      },
+      {
+        "heading": "Separate preparation from judgment",
+        "paragraphs": [
+          "The support role may collect, label, route, and draft within approved language. It may not invent a rationale, infer an approval, or make a commitment that belongs to an authorized owner.",
+          "Use proceed, pause for review, and escalate now as operational states. Preserve the original question when the answer depends on a professional or commercial decision."
+        ]
+      },
+      {
+        "heading": "Run the daily queue",
+        "paragraphs": [
+          "Sort open items for vendor coordination by client impact, external deadline, dependency, and age. Update status only from a verifiable event, not from a conversation or an assumption.",
+          "Before handoff, give every open item a named owner, a dated next action, and a link to the evidence. A shared inbox may receive work, but it cannot own an outcome."
+        ]
+      },
+      {
+        "heading": "Escalate with a bounded packet",
+        "paragraphs": [
+          "An escalation should include the record link, verified facts, the unresolved decision, the deadline, actions already taken, and the safest permitted next step. Use distinct reason codes for missing source, conflicting source, wrong record, expired evidence, unavailable approver, and system outage.",
+          "Do not convert silence into approval. Keep the work paused when the next action depends on authority or evidence that has not arrived."
+        ]
+      },
+      {
+        "heading": "Close, review, and improve",
+        "paragraphs": [
+          "Close only when the completion event, communication, and evidence are present. Compare vendor confirmations with the evidence held by the business. When the same exception recurs, change the intake field, evidence rule, ownership map, or approval gate.",
+          "Test the revision on a bounded sample and keep the prior version for audit. Review quality with denominators and inspect routine, adverse, and unresolved records."
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "q": "Who owns decisions in vendor coordination?",
+        "a": "The accountable Inside Sales owner retains the professional or commercial decision; support prepares and routes the record."
+      },
+      {
+        "q": "What proves the workflow is complete?",
+        "a": "The completion event, communication, source evidence, named owner, and closure state must all be present."
+      },
+      {
+        "q": "What happens when evidence conflicts?",
+        "a": "Preserve both values, pause the dependent action, and route a concise comparison to the authorized owner."
+      }
+    ],
+    "internalService": "/services",
+    "internalSibling": "/blog/call-list-hygiene",
+    "source": {
+      "label": "Federal Trade Commission, CAN-SPAM compliance guide",
+      "url": "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business"
+    }
+  },
+  {
+    "slug": "insidesalesassistant-reporting-cadence-review-2",
+    "title": "Reporting Cadence Review for Inside Sales Teams",
+    "description": "A practical Inside Sales workflow for reporting cadence review for inside sales teams, with evidence, ownership, exceptions, and review.",
+    "category": "Inside Sales Operations",
+    "publishedAt": "2026-10-26",
+    "readTime": "9 min read",
+    "thumbnail": "/article-thumbnails/october-22/insidesalesassistant-reporting-cadence-review-2.svg",
+    "sections": [
+      {
+        "heading": "Define the outcome for Reporting Cadence Review",
+        "paragraphs": [
+          "Reporting Cadence Review gives Inside Sales teams a bounded way to coordinate reporting cadence. The operating risk is that a recurring report can become a ritual that no one uses to change a decision. A useful record keeps the request, source, owner, due time, exception state, and completion evidence together.",
+          "Name the event that creates a record, the source system, the minimum evidence, the accountable owner, and the clock start before the queue opens. The report informs an owner; it does not replace judgment."
+        ]
+      },
+      {
+        "heading": "Map the inputs and the record",
+        "paragraphs": [
+          "Capture metric, definition, source, owner, review date, denominator, exclusion, and action. Link each consequential value to its source and record when it was observed. Missing information must remain visible rather than being replaced by a plausible assumption.",
+          "Use a small set of named states such as received, incomplete, ready for review, exception, and closed. Every exception needs a reason code, the role that must resolve it, and a dated next action."
+        ]
+      },
+      {
+        "heading": "Separate preparation from judgment",
+        "paragraphs": [
+          "The support role may collect, label, route, and draft within approved language. It may not invent a rationale, infer an approval, or make a commitment that belongs to an authorized owner.",
+          "Use proceed, pause for review, and escalate now as operational states. Preserve the original question when the answer depends on a professional or commercial decision."
+        ]
+      },
+      {
+        "heading": "Run the daily queue",
+        "paragraphs": [
+          "Sort open items for reporting cadence by client impact, external deadline, dependency, and age. Update status only from a verifiable event, not from a conversation or an assumption.",
+          "Before handoff, give every open item a named owner, a dated next action, and a link to the evidence. A shared inbox may receive work, but it cannot own an outcome."
+        ]
+      },
+      {
+        "heading": "Escalate with a bounded packet",
+        "paragraphs": [
+          "An escalation should include the record link, verified facts, the unresolved decision, the deadline, actions already taken, and the safest permitted next step. Use distinct reason codes for missing source, conflicting source, wrong record, expired evidence, unavailable approver, and system outage.",
+          "Do not convert silence into approval. Keep the work paused when the next action depends on authority or evidence that has not arrived."
+        ]
+      },
+      {
+        "heading": "Close, review, and improve",
+        "paragraphs": [
+          "Close only when the completion event, communication, and evidence are present. Trace one metric from source to decision and remove unused fields. When the same exception recurs, change the intake field, evidence rule, ownership map, or approval gate.",
+          "Test the revision on a bounded sample and keep the prior version for audit. Review quality with denominators and inspect routine, adverse, and unresolved records."
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "q": "Who owns decisions in reporting cadence?",
+        "a": "The accountable Inside Sales owner retains the professional or commercial decision; support prepares and routes the record."
+      },
+      {
+        "q": "What proves the workflow is complete?",
+        "a": "The completion event, communication, source evidence, named owner, and closure state must all be present."
+      },
+      {
+        "q": "What happens when evidence conflicts?",
+        "a": "Preserve both values, pause the dependent action, and route a concise comparison to the authorized owner."
+      }
+    ],
+    "internalService": "/services",
+    "internalSibling": "/blog/call-list-hygiene",
+    "source": {
+      "label": "Federal Trade Commission, CAN-SPAM compliance guide",
+      "url": "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business"
+    }
+  },
+  {
+    "slug": "insidesalesassistant-client-onboarding-brief-2",
+    "title": "Client Onboarding Brief for Inside Sales Teams",
+    "description": "A practical Inside Sales workflow for client onboarding brief for inside sales teams, with evidence, ownership, exceptions, and review.",
+    "category": "Inside Sales Operations",
+    "publishedAt": "2026-10-26",
+    "readTime": "9 min read",
+    "thumbnail": "/article-thumbnails/october-22/insidesalesassistant-client-onboarding-brief-2.svg",
+    "sections": [
+      {
+        "heading": "Define the outcome for Client Onboarding Brief",
+        "paragraphs": [
+          "Client Onboarding Brief gives Inside Sales teams a bounded way to coordinate client onboarding. The operating risk is that a new client can begin work before ownership, access, and boundaries are confirmed. A useful record keeps the request, source, owner, due time, exception state, and completion evidence together.",
+          "Name the event that creates a record, the source system, the minimum evidence, the accountable owner, and the clock start before the queue opens. Onboarding prepares the relationship; authorized leaders approve scope and exceptions."
+        ]
+      },
+      {
+        "heading": "Map the inputs and the record",
+        "paragraphs": [
+          "Capture client, service scope, hours, contacts, escalation path, systems, permissions, and first review. Link each consequential value to its source and record when it was observed. Missing information must remain visible rather than being replaced by a plausible assumption.",
+          "Use a small set of named states such as received, incomplete, ready for review, exception, and closed. Every exception needs a reason code, the role that must resolve it, and a dated next action."
+        ]
+      },
+      {
+        "heading": "Separate preparation from judgment",
+        "paragraphs": [
+          "The support role may collect, label, route, and draft within approved language. It may not invent a rationale, infer an approval, or make a commitment that belongs to an authorized owner.",
+          "Use proceed, pause for review, and escalate now as operational states. Preserve the original question when the answer depends on a professional or commercial decision."
+        ]
+      },
+      {
+        "heading": "Run the daily queue",
+        "paragraphs": [
+          "Sort open items for client onboarding by client impact, external deadline, dependency, and age. Update status only from a verifiable event, not from a conversation or an assumption.",
+          "Before handoff, give every open item a named owner, a dated next action, and a link to the evidence. A shared inbox may receive work, but it cannot own an outcome."
+        ]
+      },
+      {
+        "heading": "Escalate with a bounded packet",
+        "paragraphs": [
+          "An escalation should include the record link, verified facts, the unresolved decision, the deadline, actions already taken, and the safest permitted next step. Use distinct reason codes for missing source, conflicting source, wrong record, expired evidence, unavailable approver, and system outage.",
+          "Do not convert silence into approval. Keep the work paused when the next action depends on authority or evidence that has not arrived."
+        ]
+      },
+      {
+        "heading": "Close, review, and improve",
+        "paragraphs": [
+          "Close only when the completion event, communication, and evidence are present. Compare the first week of work with the signed onboarding record. When the same exception recurs, change the intake field, evidence rule, ownership map, or approval gate.",
+          "Test the revision on a bounded sample and keep the prior version for audit. Review quality with denominators and inspect routine, adverse, and unresolved records."
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "q": "Who owns decisions in client onboarding?",
+        "a": "The accountable Inside Sales owner retains the professional or commercial decision; support prepares and routes the record."
+      },
+      {
+        "q": "What proves the workflow is complete?",
+        "a": "The completion event, communication, source evidence, named owner, and closure state must all be present."
+      },
+      {
+        "q": "What happens when evidence conflicts?",
+        "a": "Preserve both values, pause the dependent action, and route a concise comparison to the authorized owner."
+      }
+    ],
+    "internalService": "/services",
+    "internalSibling": "/blog/call-list-hygiene",
+    "source": {
+      "label": "Federal Trade Commission, CAN-SPAM compliance guide",
+      "url": "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business"
+    }
+  },
+  {
+    "slug": "insidesalesassistant-quality-sample-review-2",
+    "title": "Quality Sample Review for Inside Sales Teams",
+    "description": "A practical Inside Sales workflow for quality sample review for inside sales teams, with evidence, ownership, exceptions, and review.",
+    "category": "Inside Sales Operations",
+    "publishedAt": "2026-10-26",
+    "readTime": "9 min read",
+    "thumbnail": "/article-thumbnails/october-22/insidesalesassistant-quality-sample-review-2.svg",
+    "sections": [
+      {
+        "heading": "Define the outcome for Quality Sample Review",
+        "paragraphs": [
+          "Quality Sample Review gives Inside Sales teams a bounded way to coordinate quality sampling. The operating risk is that a convenient sample can make a queue look better than it is. A useful record keeps the request, source, owner, due time, exception state, and completion evidence together.",
+          "Name the event that creates a record, the source system, the minimum evidence, the accountable owner, and the clock start before the queue opens. Reviewers classify against written criteria and escalate professional questions."
+        ]
+      },
+      {
+        "heading": "Map the inputs and the record",
+        "paragraphs": [
+          "Capture sample frame, record, reviewer, criteria, result, correction, and retest date. Link each consequential value to its source and record when it was observed. Missing information must remain visible rather than being replaced by a plausible assumption.",
+          "Use a small set of named states such as received, incomplete, ready for review, exception, and closed. Every exception needs a reason code, the role that must resolve it, and a dated next action."
+        ]
+      },
+      {
+        "heading": "Separate preparation from judgment",
+        "paragraphs": [
+          "The support role may collect, label, route, and draft within approved language. It may not invent a rationale, infer an approval, or make a commitment that belongs to an authorized owner.",
+          "Use proceed, pause for review, and escalate now as operational states. Preserve the original question when the answer depends on a professional or commercial decision."
+        ]
+      },
+      {
+        "heading": "Run the daily queue",
+        "paragraphs": [
+          "Sort open items for quality sampling by client impact, external deadline, dependency, and age. Update status only from a verifiable event, not from a conversation or an assumption.",
+          "Before handoff, give every open item a named owner, a dated next action, and a link to the evidence. A shared inbox may receive work, but it cannot own an outcome."
+        ]
+      },
+      {
+        "heading": "Escalate with a bounded packet",
+        "paragraphs": [
+          "An escalation should include the record link, verified facts, the unresolved decision, the deadline, actions already taken, and the safest permitted next step. Use distinct reason codes for missing source, conflicting source, wrong record, expired evidence, unavailable approver, and system outage.",
+          "Do not convert silence into approval. Keep the work paused when the next action depends on authority or evidence that has not arrived."
+        ]
+      },
+      {
+        "heading": "Close, review, and improve",
+        "paragraphs": [
+          "Close only when the completion event, communication, and evidence are present. Include routine, difficult, reopened, and unresolved records. When the same exception recurs, change the intake field, evidence rule, ownership map, or approval gate.",
+          "Test the revision on a bounded sample and keep the prior version for audit. Review quality with denominators and inspect routine, adverse, and unresolved records."
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "q": "Who owns decisions in quality sampling?",
+        "a": "The accountable Inside Sales owner retains the professional or commercial decision; support prepares and routes the record."
+      },
+      {
+        "q": "What proves the workflow is complete?",
+        "a": "The completion event, communication, source evidence, named owner, and closure state must all be present."
+      },
+      {
+        "q": "What happens when evidence conflicts?",
+        "a": "Preserve both values, pause the dependent action, and route a concise comparison to the authorized owner."
+      }
+    ],
+    "internalService": "/services",
+    "internalSibling": "/blog/call-list-hygiene",
+    "source": {
+      "label": "Federal Trade Commission, CAN-SPAM compliance guide",
+      "url": "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business"
+    }
+  },
+  {
+    "slug": "insidesalesassistant-closeout-audit-2",
+    "title": "Closeout Audit for Inside Sales Teams",
+    "description": "A practical Inside Sales workflow for closeout audit for inside sales teams, with evidence, ownership, exceptions, and review.",
+    "category": "Inside Sales Operations",
+    "publishedAt": "2026-10-26",
+    "readTime": "9 min read",
+    "thumbnail": "/article-thumbnails/october-22/insidesalesassistant-closeout-audit-2.svg",
+    "sections": [
+      {
+        "heading": "Define the outcome for Closeout Audit",
+        "paragraphs": [
+          "Closeout Audit gives Inside Sales teams a bounded way to coordinate closeout audits. The operating risk is that a closed status can be recorded before the evidence or communication is complete. A useful record keeps the request, source, owner, due time, exception state, and completion evidence together.",
+          "Name the event that creates a record, the source system, the minimum evidence, the accountable owner, and the clock start before the queue opens. Closure confirms the administrative record; it does not certify a professional outcome."
+        ]
+      },
+      {
+        "heading": "Map the inputs and the record",
+        "paragraphs": [
+          "Capture record, required evidence, final owner, completion event, communication, exception, and audit date. Link each consequential value to its source and record when it was observed. Missing information must remain visible rather than being replaced by a plausible assumption.",
+          "Use a small set of named states such as received, incomplete, ready for review, exception, and closed. Every exception needs a reason code, the role that must resolve it, and a dated next action."
+        ]
+      },
+      {
+        "heading": "Separate preparation from judgment",
+        "paragraphs": [
+          "The support role may collect, label, route, and draft within approved language. It may not invent a rationale, infer an approval, or make a commitment that belongs to an authorized owner.",
+          "Use proceed, pause for review, and escalate now as operational states. Preserve the original question when the answer depends on a professional or commercial decision."
+        ]
+      },
+      {
+        "heading": "Run the daily queue",
+        "paragraphs": [
+          "Sort open items for closeout audits by client impact, external deadline, dependency, and age. Update status only from a verifiable event, not from a conversation or an assumption.",
+          "Before handoff, give every open item a named owner, a dated next action, and a link to the evidence. A shared inbox may receive work, but it cannot own an outcome."
+        ]
+      },
+      {
+        "heading": "Escalate with a bounded packet",
+        "paragraphs": [
+          "An escalation should include the record link, verified facts, the unresolved decision, the deadline, actions already taken, and the safest permitted next step. Use distinct reason codes for missing source, conflicting source, wrong record, expired evidence, unavailable approver, and system outage.",
+          "Do not convert silence into approval. Keep the work paused when the next action depends on authority or evidence that has not arrived."
+        ]
+      },
+      {
+        "heading": "Close, review, and improve",
+        "paragraphs": [
+          "Close only when the completion event, communication, and evidence are present. Sample closed records and verify the completion event and source. When the same exception recurs, change the intake field, evidence rule, ownership map, or approval gate.",
+          "Test the revision on a bounded sample and keep the prior version for audit. Review quality with denominators and inspect routine, adverse, and unresolved records."
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "q": "Who owns decisions in closeout audits?",
+        "a": "The accountable Inside Sales owner retains the professional or commercial decision; support prepares and routes the record."
+      },
+      {
+        "q": "What proves the workflow is complete?",
+        "a": "The completion event, communication, source evidence, named owner, and closure state must all be present."
+      },
+      {
+        "q": "What happens when evidence conflicts?",
+        "a": "Preserve both values, pause the dependent action, and route a concise comparison to the authorized owner."
+      }
+    ],
+    "internalService": "/services",
+    "internalSibling": "/blog/call-list-hygiene",
+    "source": {
+      "label": "Federal Trade Commission, CAN-SPAM compliance guide",
+      "url": "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business"
+    }
   }
 ];
 
@@ -2522,6 +3398,381 @@ export const october22ResearchBatch: readonly ResearchPost[] = [
     "cluster": "Inside Sales Research",
     "publishedAt": "2026-10-25",
     "thumbnail": "/article-thumbnails/october-22/insidesalesassistant-access-recertification-study.svg",
+    "finding": "The reviewable signal is the source, owner, timestamp, exception, and completion evidence for whether current access matches the approved role and whether removals are evidenced.",
+    "sections": [
+      {
+        "heading": "Research question and scope",
+        "paragraphs": [
+          "This protocol examines whether current access matches the approved role and whether removals are evidenced across role-based access records for the service in Inside Sales operations. It evaluates the administrative record, not the quality of a professional judgment or the truth of an underlying claim.",
+          "Leadership may use the result to improve forms, ownership, system configuration, reviewer coverage, or escalation rules. It should not rank people, clients, patients, or teams."
+        ]
+      },
+      {
+        "heading": "Population and evidence",
+        "paragraphs": [
+          "Define role-based access records for the service from a fixed export. Record the query time, systems, date boundaries, statuses, exclusions, deduplication rule, and resulting count.",
+          "A record belongs because it meets the written rule, not because it appears easy or unusual. Preserve excluded counts by reason so the denominator can be challenged."
+        ]
+      },
+      {
+        "heading": "Measurement method",
+        "paragraphs": [
+          "Capture the fields used for role match, excess access, temporary access age, removal evidence, and reviewer sign-off. Define allowed values, source system, timestamp rule, and treatment of missing, unknown, and not applicable.",
+          "Retain a restricted crosswalk to source identifiers. When sources conflict, keep both values and create a conflict flag rather than selecting the cleaner result."
+        ]
+      },
+      {
+        "heading": "Sampling and reviewer agreement",
+        "paragraphs": [
+          "Draw a stratified sample across age, state, owner group, channel, exception type, and final disposition. Include completed and unresolved work. Record the random seed and every replacement.",
+          "Train two reviewers on a calibration set, preserve first-pass ratings, and adjudicate disagreements. Escalate professional questions rather than answering them to complete a classification."
+        ]
+      },
+      {
+        "heading": "Analysis and limitations",
+        "paragraphs": [
+          "Report counts, rates, medians, aging bands, denominators, and missingness for role match, excess access, temporary access age, removal evidence, and reviewer sign-off. Inspect case narratives behind important differences before assigning a cause.",
+          "The study cannot determine legal sufficiency or whether a specific access decision was appropriate. System migrations, policy changes, staffing shifts, missing off-system contacts, and reviewer error may influence findings."
+        ]
+      },
+      {
+        "heading": "Privacy, reporting, and replication",
+        "paragraphs": [
+          "Use the minimum information needed for role-based access records for the service, limit access, log exports, and apply retention rules. Do not turn population patterns into assumptions about an individual.",
+          "Retain the query, exclusion log, sample seed, codebook, reviewer notes, classifications, adjudications, and calculations so a qualified reviewer can rebuild the sample and results."
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "label": "Federal Trade Commission, CAN-SPAM compliance guide",
+        "url": "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business"
+      },
+      {
+        "label": "Federal Communications Commission, telemarketing rules",
+        "url": "https://www.fcc.gov/general/telemarketing-and-robocalls"
+      },
+      {
+        "label": "U.S. Small Business Administration, sales",
+        "url": "https://www.sba.gov/business-guide/grow-your-business"
+      },
+      {
+        "label": "U.S. Bureau of Labor Statistics",
+        "url": "https://www.bls.gov/"
+      },
+      {
+        "label": "Federal Trade Commission, advertising basics",
+        "url": "https://www.ftc.gov/business-guidance/advertising-marketing"
+      }
+    ]
+  },
+  {
+    "slug": "insidesalesassistant-intake-completeness-study-2",
+    "title": "Inside Sales Intake Completeness Study",
+    "summary": "A reproducible review of which required fields and source artifacts are present at the point of assignment in Inside Sales operations.",
+    "cluster": "Inside Sales Research",
+    "publishedAt": "2026-10-26",
+    "thumbnail": "/article-thumbnails/october-22/insidesalesassistant-intake-completeness-study-2.svg",
+    "finding": "The reviewable signal is the source, owner, timestamp, exception, and completion evidence for which required fields and source artifacts are present at the point of assignment.",
+    "sections": [
+      {
+        "heading": "Research question and scope",
+        "paragraphs": [
+          "This protocol examines which required fields and source artifacts are present at the point of assignment across intake records for the defined service in Inside Sales operations. It evaluates the administrative record, not the quality of a professional judgment or the truth of an underlying claim.",
+          "Leadership may use the result to improve forms, ownership, system configuration, reviewer coverage, or escalation rules. It should not rank people, clients, patients, or teams."
+        ]
+      },
+      {
+        "heading": "Population and evidence",
+        "paragraphs": [
+          "Define intake records for the defined service from a fixed export. Record the query time, systems, date boundaries, statuses, exclusions, deduplication rule, and resulting count.",
+          "A record belongs because it meets the written rule, not because it appears easy or unusual. Preserve excluded counts by reason so the denominator can be challenged."
+        ]
+      },
+      {
+        "heading": "Measurement method",
+        "paragraphs": [
+          "Capture the fields used for field completeness, missing evidence, owner assignment, exception state, and correction time. Define allowed values, source system, timestamp rule, and treatment of missing, unknown, and not applicable.",
+          "Retain a restricted crosswalk to source identifiers. When sources conflict, keep both values and create a conflict flag rather than selecting the cleaner result."
+        ]
+      },
+      {
+        "heading": "Sampling and reviewer agreement",
+        "paragraphs": [
+          "Draw a stratified sample across age, state, owner group, channel, exception type, and final disposition. Include completed and unresolved work. Record the random seed and every replacement.",
+          "Train two reviewers on a calibration set, preserve first-pass ratings, and adjudicate disagreements. Escalate professional questions rather than answering them to complete a classification."
+        ]
+      },
+      {
+        "heading": "Analysis and limitations",
+        "paragraphs": [
+          "Report counts, rates, medians, aging bands, denominators, and missingness for field completeness, missing evidence, owner assignment, exception state, and correction time. Inspect case narratives behind important differences before assigning a cause.",
+          "The study cannot determine service quality, legal compliance, or the correctness of a professional decision. System migrations, policy changes, staffing shifts, missing off-system contacts, and reviewer error may influence findings."
+        ]
+      },
+      {
+        "heading": "Privacy, reporting, and replication",
+        "paragraphs": [
+          "Use the minimum information needed for intake records for the defined service, limit access, log exports, and apply retention rules. Do not turn population patterns into assumptions about an individual.",
+          "Retain the query, exclusion log, sample seed, codebook, reviewer notes, classifications, adjudications, and calculations so a qualified reviewer can rebuild the sample and results."
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "label": "Federal Trade Commission, CAN-SPAM compliance guide",
+        "url": "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business"
+      },
+      {
+        "label": "Federal Communications Commission, telemarketing rules",
+        "url": "https://www.fcc.gov/general/telemarketing-and-robocalls"
+      },
+      {
+        "label": "U.S. Small Business Administration, sales",
+        "url": "https://www.sba.gov/business-guide/grow-your-business"
+      },
+      {
+        "label": "U.S. Bureau of Labor Statistics",
+        "url": "https://www.bls.gov/"
+      },
+      {
+        "label": "Federal Trade Commission, advertising basics",
+        "url": "https://www.ftc.gov/business-guidance/advertising-marketing"
+      }
+    ]
+  },
+  {
+    "slug": "insidesalesassistant-handoff-latency-study-2",
+    "title": "Inside Sales Handoff Latency Study",
+    "summary": "A reproducible review of how long each handoff takes and where acknowledgement or context is lost in Inside Sales operations.",
+    "cluster": "Inside Sales Research",
+    "publishedAt": "2026-10-26",
+    "thumbnail": "/article-thumbnails/october-22/insidesalesassistant-handoff-latency-study-2.svg",
+    "finding": "The reviewable signal is the source, owner, timestamp, exception, and completion evidence for how long each handoff takes and where acknowledgement or context is lost.",
+    "sections": [
+      {
+        "heading": "Research question and scope",
+        "paragraphs": [
+          "This protocol examines how long each handoff takes and where acknowledgement or context is lost across records that move between two named owners in Inside Sales operations. It evaluates the administrative record, not the quality of a professional judgment or the truth of an underlying claim.",
+          "Leadership may use the result to improve forms, ownership, system configuration, reviewer coverage, or escalation rules. It should not rank people, clients, patients, or teams."
+        ]
+      },
+      {
+        "heading": "Population and evidence",
+        "paragraphs": [
+          "Define records that move between two named owners from a fixed export. Record the query time, systems, date boundaries, statuses, exclusions, deduplication rule, and resulting count.",
+          "A record belongs because it meets the written rule, not because it appears easy or unusual. Preserve excluded counts by reason so the denominator can be challenged."
+        ]
+      },
+      {
+        "heading": "Measurement method",
+        "paragraphs": [
+          "Capture the fields used for handoff time, acknowledgement, missing context, rework, and unresolved records. Define allowed values, source system, timestamp rule, and treatment of missing, unknown, and not applicable.",
+          "Retain a restricted crosswalk to source identifiers. When sources conflict, keep both values and create a conflict flag rather than selecting the cleaner result."
+        ]
+      },
+      {
+        "heading": "Sampling and reviewer agreement",
+        "paragraphs": [
+          "Draw a stratified sample across age, state, owner group, channel, exception type, and final disposition. Include completed and unresolved work. Record the random seed and every replacement.",
+          "Train two reviewers on a calibration set, preserve first-pass ratings, and adjudicate disagreements. Escalate professional questions rather than answering them to complete a classification."
+        ]
+      },
+      {
+        "heading": "Analysis and limitations",
+        "paragraphs": [
+          "Report counts, rates, medians, aging bands, denominators, and missingness for handoff time, acknowledgement, missing context, rework, and unresolved records. Inspect case narratives behind important differences before assigning a cause.",
+          "The study cannot establish causation or whether a shorter handoff produced a better outcome. System migrations, policy changes, staffing shifts, missing off-system contacts, and reviewer error may influence findings."
+        ]
+      },
+      {
+        "heading": "Privacy, reporting, and replication",
+        "paragraphs": [
+          "Use the minimum information needed for records that move between two named owners, limit access, log exports, and apply retention rules. Do not turn population patterns into assumptions about an individual.",
+          "Retain the query, exclusion log, sample seed, codebook, reviewer notes, classifications, adjudications, and calculations so a qualified reviewer can rebuild the sample and results."
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "label": "Federal Trade Commission, CAN-SPAM compliance guide",
+        "url": "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business"
+      },
+      {
+        "label": "Federal Communications Commission, telemarketing rules",
+        "url": "https://www.fcc.gov/general/telemarketing-and-robocalls"
+      },
+      {
+        "label": "U.S. Small Business Administration, sales",
+        "url": "https://www.sba.gov/business-guide/grow-your-business"
+      },
+      {
+        "label": "U.S. Bureau of Labor Statistics",
+        "url": "https://www.bls.gov/"
+      },
+      {
+        "label": "Federal Trade Commission, advertising basics",
+        "url": "https://www.ftc.gov/business-guidance/advertising-marketing"
+      }
+    ]
+  },
+  {
+    "slug": "insidesalesassistant-exception-pattern-audit-2",
+    "title": "Inside Sales Exception Pattern Audit",
+    "summary": "A reproducible review of which exception reasons recur and whether they receive a consistent owner and disposition in Inside Sales operations.",
+    "cluster": "Inside Sales Research",
+    "publishedAt": "2026-10-26",
+    "thumbnail": "/article-thumbnails/october-22/insidesalesassistant-exception-pattern-audit-2.svg",
+    "finding": "The reviewable signal is the source, owner, timestamp, exception, and completion evidence for which exception reasons recur and whether they receive a consistent owner and disposition.",
+    "sections": [
+      {
+        "heading": "Research question and scope",
+        "paragraphs": [
+          "This protocol examines which exception reasons recur and whether they receive a consistent owner and disposition across exception records from the review window in Inside Sales operations. It evaluates the administrative record, not the quality of a professional judgment or the truth of an underlying claim.",
+          "Leadership may use the result to improve forms, ownership, system configuration, reviewer coverage, or escalation rules. It should not rank people, clients, patients, or teams."
+        ]
+      },
+      {
+        "heading": "Population and evidence",
+        "paragraphs": [
+          "Define exception records from the review window from a fixed export. Record the query time, systems, date boundaries, statuses, exclusions, deduplication rule, and resulting count.",
+          "A record belongs because it meets the written rule, not because it appears easy or unusual. Preserve excluded counts by reason so the denominator can be challenged."
+        ]
+      },
+      {
+        "heading": "Measurement method",
+        "paragraphs": [
+          "Capture the fields used for reason mix, repeat rate, age, owner, resolution, and reopened exceptions. Define allowed values, source system, timestamp rule, and treatment of missing, unknown, and not applicable.",
+          "Retain a restricted crosswalk to source identifiers. When sources conflict, keep both values and create a conflict flag rather than selecting the cleaner result."
+        ]
+      },
+      {
+        "heading": "Sampling and reviewer agreement",
+        "paragraphs": [
+          "Draw a stratified sample across age, state, owner group, channel, exception type, and final disposition. Include completed and unresolved work. Record the random seed and every replacement.",
+          "Train two reviewers on a calibration set, preserve first-pass ratings, and adjudicate disagreements. Escalate professional questions rather than answering them to complete a classification."
+        ]
+      },
+      {
+        "heading": "Analysis and limitations",
+        "paragraphs": [
+          "Report counts, rates, medians, aging bands, denominators, and missingness for reason mix, repeat rate, age, owner, resolution, and reopened exceptions. Inspect case narratives behind important differences before assigning a cause.",
+          "The audit describes documented exceptions and cannot infer undocumented causes. System migrations, policy changes, staffing shifts, missing off-system contacts, and reviewer error may influence findings."
+        ]
+      },
+      {
+        "heading": "Privacy, reporting, and replication",
+        "paragraphs": [
+          "Use the minimum information needed for exception records from the review window, limit access, log exports, and apply retention rules. Do not turn population patterns into assumptions about an individual.",
+          "Retain the query, exclusion log, sample seed, codebook, reviewer notes, classifications, adjudications, and calculations so a qualified reviewer can rebuild the sample and results."
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "label": "Federal Trade Commission, CAN-SPAM compliance guide",
+        "url": "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business"
+      },
+      {
+        "label": "Federal Communications Commission, telemarketing rules",
+        "url": "https://www.fcc.gov/general/telemarketing-and-robocalls"
+      },
+      {
+        "label": "U.S. Small Business Administration, sales",
+        "url": "https://www.sba.gov/business-guide/grow-your-business"
+      },
+      {
+        "label": "U.S. Bureau of Labor Statistics",
+        "url": "https://www.bls.gov/"
+      },
+      {
+        "label": "Federal Trade Commission, advertising basics",
+        "url": "https://www.ftc.gov/business-guidance/advertising-marketing"
+      }
+    ]
+  },
+  {
+    "slug": "insidesalesassistant-evidence-reliability-study-2",
+    "title": "Inside Sales Evidence Reliability Study",
+    "summary": "A reproducible review of whether the source is reconstructable and consistent with the recorded final state in Inside Sales operations.",
+    "cluster": "Inside Sales Research",
+    "publishedAt": "2026-10-26",
+    "thumbnail": "/article-thumbnails/october-22/insidesalesassistant-evidence-reliability-study-2.svg",
+    "finding": "The reviewable signal is the source, owner, timestamp, exception, and completion evidence for whether the source is reconstructable and consistent with the recorded final state.",
+    "sections": [
+      {
+        "heading": "Research question and scope",
+        "paragraphs": [
+          "This protocol examines whether the source is reconstructable and consistent with the recorded final state across records with a source artifact and a later outcome in Inside Sales operations. It evaluates the administrative record, not the quality of a professional judgment or the truth of an underlying claim.",
+          "Leadership may use the result to improve forms, ownership, system configuration, reviewer coverage, or escalation rules. It should not rank people, clients, patients, or teams."
+        ]
+      },
+      {
+        "heading": "Population and evidence",
+        "paragraphs": [
+          "Define records with a source artifact and a later outcome from a fixed export. Record the query time, systems, date boundaries, statuses, exclusions, deduplication rule, and resulting count.",
+          "A record belongs because it meets the written rule, not because it appears easy or unusual. Preserve excluded counts by reason so the denominator can be challenged."
+        ]
+      },
+      {
+        "heading": "Measurement method",
+        "paragraphs": [
+          "Capture the fields used for source presence, match, missing state, correction, reviewer agreement, and time. Define allowed values, source system, timestamp rule, and treatment of missing, unknown, and not applicable.",
+          "Retain a restricted crosswalk to source identifiers. When sources conflict, keep both values and create a conflict flag rather than selecting the cleaner result."
+        ]
+      },
+      {
+        "heading": "Sampling and reviewer agreement",
+        "paragraphs": [
+          "Draw a stratified sample across age, state, owner group, channel, exception type, and final disposition. Include completed and unresolved work. Record the random seed and every replacement.",
+          "Train two reviewers on a calibration set, preserve first-pass ratings, and adjudicate disagreements. Escalate professional questions rather than answering them to complete a classification."
+        ]
+      },
+      {
+        "heading": "Analysis and limitations",
+        "paragraphs": [
+          "Report counts, rates, medians, aging bands, denominators, and missingness for source presence, match, missing state, correction, reviewer agreement, and time. Inspect case narratives behind important differences before assigning a cause.",
+          "The study cannot prove that the source is truthful or that the final decision was correct. System migrations, policy changes, staffing shifts, missing off-system contacts, and reviewer error may influence findings."
+        ]
+      },
+      {
+        "heading": "Privacy, reporting, and replication",
+        "paragraphs": [
+          "Use the minimum information needed for records with a source artifact and a later outcome, limit access, log exports, and apply retention rules. Do not turn population patterns into assumptions about an individual.",
+          "Retain the query, exclusion log, sample seed, codebook, reviewer notes, classifications, adjudications, and calculations so a qualified reviewer can rebuild the sample and results."
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "label": "Federal Trade Commission, CAN-SPAM compliance guide",
+        "url": "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business"
+      },
+      {
+        "label": "Federal Communications Commission, telemarketing rules",
+        "url": "https://www.fcc.gov/general/telemarketing-and-robocalls"
+      },
+      {
+        "label": "U.S. Small Business Administration, sales",
+        "url": "https://www.sba.gov/business-guide/grow-your-business"
+      },
+      {
+        "label": "U.S. Bureau of Labor Statistics",
+        "url": "https://www.bls.gov/"
+      },
+      {
+        "label": "Federal Trade Commission, advertising basics",
+        "url": "https://www.ftc.gov/business-guidance/advertising-marketing"
+      }
+    ]
+  },
+  {
+    "slug": "insidesalesassistant-access-recertification-study-2",
+    "title": "Inside Sales Access Recertification Study",
+    "summary": "A reproducible review of whether current access matches the approved role and whether removals are evidenced in Inside Sales operations.",
+    "cluster": "Inside Sales Research",
+    "publishedAt": "2026-10-26",
+    "thumbnail": "/article-thumbnails/october-22/insidesalesassistant-access-recertification-study-2.svg",
     "finding": "The reviewable signal is the source, owner, timestamp, exception, and completion evidence for whether current access matches the approved role and whether removals are evidenced.",
     "sections": [
       {
