@@ -1,8 +1,10 @@
 import { site } from './site';
 import type { BlogPost, ResearchPost } from './types';
 import { october22BlogBatch, october22ResearchBatch } from './october22Batch';
+import { october27BlogBatch, october27ResearchBatch } from './october27Batch';
 
 export const blogPosts: BlogPost[] = [
+  ...october27BlogBatch,
   ...october22BlogBatch,
   {
     "slug": "sales-operations-specialist-vs-inside-sales-va",
@@ -471,6 +473,7 @@ export const blogPosts: BlogPost[] = [
   }
 ].sort((a,b)=>String(b.publishedAt).localeCompare(String(a.publishedAt)));
 export const researchPosts: ResearchPost[] = [
+  ...october27ResearchBatch,
   ...october22ResearchBatch,
   {
     "slug": "prospect-research-workflow-boundary-review-1",
