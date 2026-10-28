@@ -5,6 +5,7 @@ import { october12Blog } from '@/lib/october12-blog';
 import { october13Blog } from '@/lib/october13-blog';
 import { october22BlogBatch } from '@/lib/october22Batch';
 import { october27BlogBatch } from '@/lib/october27Batch';
+import { october28BlogBatch } from '@/lib/october28Batch';
 import { TopicVisual } from '@/components/TopicVisual';
 
 export const metadata: Metadata = { title: 'Blog', description: 'Practical guides for designing, delegating, and reviewing specialist remote support.', alternates: { canonical: '/blog' } };

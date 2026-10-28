@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation';
 import { blogPosts,blogBySlug } from '@/lib/content';
 import { october22BlogBatch } from '@/lib/october22Batch';
 import { october27BlogBatch } from '@/lib/october27Batch';
+import { october28BlogBatch } from '@/lib/october28Batch';
 import TocSync from '@/components/TocSync';
 const fmt=(v:string)=>new Intl.DateTimeFormat('en-US',{month:'long',day:'numeric',year:'numeric',timeZone:'UTC'}).format(new Date(`${v.slice(0,10)}T00:00:00Z`));
 const sid=(v:string)=>v.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,'');
