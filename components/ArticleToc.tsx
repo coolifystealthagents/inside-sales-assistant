@@ -11,7 +11,8 @@ export function ArticleToc({ headings }: { headings: ArticleHeading[] }) {
   const tree = buildTocTree(headings);
 
   return (
-    <div className="article-toc">
+    <div className="article-toc-region">
+      <div className="article-toc">
       <button
         type="button"
         className="article-toc__toggle"
@@ -52,6 +53,7 @@ export function ArticleToc({ headings }: { headings: ArticleHeading[] }) {
           ))}
         </ol>
       </nav>
+      </div>
     </div>
   );
 }
