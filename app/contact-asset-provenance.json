@@ -1,0 +1,15 @@
+{
+  "teamPhoto": {
+    "source": "https://stealthagents.com/team-bacolod.jpg",
+    "width": 953,
+    "height": 540,
+    "sha256": "e80f0e94a80f5ddceba7fbcf723774689e47089bce7981c9f2bdb4205ea52767"
+  },
+  "logo": {
+    "source": "https://stealthagents.com/stealth-agents-logo-black.png",
+    "width": 149,
+    "height": 50,
+    "sha256": "bc5b225c1bf37d71ab282bc6d59b519e717263a8ecddd2423225a56d47416e45"
+  },
+  "evidence": "The checksum-pinned first-party photograph visibly shows the Stealth Agents-shirted group in front of CITY OF BACOLOD and BACOLOD signage. Both sources are hosted on the official StealthAgents-owned domain."
+}

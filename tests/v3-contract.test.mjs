@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import { createHash } from 'node:crypto';
 import { existsSync, readdirSync, readFileSync, statSync } from 'node:fs';
 import { join, relative, resolve } from 'node:path';
 import test from 'node:test';
@@ -77,6 +78,46 @@ test('subsidiary and parent branding appear in both header and footer', () => {
   assert.equal(occurrences(chrome, /src="\/logo\.svg"/g).length, 2, 'subsidiary /logo.svg must appear in header and footer');
   assert.equal(occurrences(chrome, /src="\/images\/stealth-agents-logo-black\.png"/g).length, 2, 'parent logo must appear in header and footer');
   assert.equal(occurrences(chrome, />Powered by StealthAgents</g).length, 2, 'the exact parent attribution must appear in header and footer');
+  const css = read('app/globals.css');
+  assert.match(css, /\.powered-footer\s*\{[^{}]*max-width\s*:\s*100%[^{}]*\}/, 'footer attribution must fit the available column');
+  assert.doesNotMatch(css, /\.powered-footer\s*\{[^{}]*width\s*:\s*max-content\b[^{}]*\}/, 'footer attribution must not force minimum-width clipping');
+});
+
+
+test('contact page uses the checksum-pinned official Bacolod team assets without cropping', () => {
+  const provenance = JSON.parse(read('app/contact-asset-provenance.json'));
+  assert.deepEqual(provenance.teamPhoto, {
+    source: 'https://stealthagents.com/team-bacolod.jpg',
+    width: 953,
+    height: 540,
+    sha256: 'e80f0e94a80f5ddceba7fbcf723774689e47089bce7981c9f2bdb4205ea52767',
+  });
+  assert.deepEqual(provenance.logo, {
+    source: 'https://stealthagents.com/stealth-agents-logo-black.png',
+    width: 149,
+    height: 50,
+    sha256: 'bc5b225c1bf37d71ab282bc6d59b519e717263a8ecddd2423225a56d47416e45',
+  });
+
+  for (const [path, expected] of [
+    ['public/images/team-bacolod.jpg', provenance.teamPhoto.sha256],
+    ['public/images/stealth-agents-logo-black.png', provenance.logo.sha256],
+  ]) {
+    assert.ok(existsSync(join(root, path)), `${path} is missing`);
+    const checksum = createHash('sha256').update(readFileSync(join(root, path))).digest('hex');
+    assert.equal(checksum, expected, `${path} does not match its approved source bytes`);
+  }
+
+  const page = read('app/contact-us/page.tsx');
+  const css = read('app/contact-us/contact.css');
+  assert.match(page, /<\/section>\s*<section className="official-team"/, 'team proof must immediately follow the complete first fold');
+  assert.match(page, /src="\/images\/team-bacolod\.jpg"[^>]*width=\{953\}[^>]*height=\{540\}/);
+  assert.match(page, /alt="Stealth Agents team gathered in front of City of Bacolod signage"/);
+  assert.doesNotMatch(page, /src="\/images\/team-bacolod\.jpg"[^>]*\bfill\b/);
+  assert.match(page, /className="official-team-plate"[\s\S]*src="\/images\/stealth-agents-logo-black\.png"[\s\S]*Official team, Bacolod/);
+  assert.match(css, /\.official-team-photo img\s*\{[^{}]*object-fit\s*:\s*contain\b[^{}]*\}/);
+  assert.doesNotMatch(css, /\.official-team-photo img\s*\{[^{}]*object-fit\s*:\s*cover\b[^{}]*\}/);
+  assert.match(css, /@media\s*\(max-width:700px\)[\s\S]*\.official-team-plate\s*\{[^{}]*max-width\s*:\s*100%/);
 });
 
 
