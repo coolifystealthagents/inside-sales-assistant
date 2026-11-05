@@ -70,3 +70,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,s
 .article-toc__title{display:none}
 .prose :is(h2[id],h3[id]){scroll-margin-top:116px}
 }
+.article-card img{height:auto;aspect-ratio:16/9;object-fit:cover;width:100%;display:block}
+.article-grid .article-card h2{font-size:24px;line-height:1.22;letter-spacing:-.01em}
+.content-card img{height:auto;aspect-ratio:16/9;object-fit:cover;width:100%;display:block}
+.content-card h2{font-size:24px;line-height:1.22;letter-spacing:-.01em}
