@@ -748,6 +748,6 @@ export const november09ResearchPosts: readonly ResearchPost[] = [
       }
     ],
     "internalService": "/services/prospect-research",
-    "internalSibling": "/blog/audit-outbound-sequences-for-reply-quality"
+    "internalSibling": "/blog/audit-outbound-sequences-for-reply-quality-not-volume"
   }
 ];

@@ -437,13 +437,13 @@ export const november09BlogPosts: readonly BlogPost[] = [
     }
   },
   {
-    "slug": "audit-outbound-sequences-for-reply-quality",
+    "slug": "audit-outbound-sequences-for-reply-quality-not-volume",
     "title": "Audit outbound sequences for reply quality, not volume",
     "description": "A method for reading outbound replies closely enough to tell interest from irritation and to fix the sequence step that caused it.",
     "category": "Outbound",
     "publishedAt": "2026-11-09",
     "readTime": "8 min read",
-    "thumbnail": "/thumbnails/november-09/audit-outbound-sequences-for-reply-quality.webp",
+    "thumbnail": "/thumbnails/november-09/audit-outbound-sequences-for-reply-quality-not-volume.webp",
     "sections": [
       {
         "heading": "Why reply quality needs its own audit",
