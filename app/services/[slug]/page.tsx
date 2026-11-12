@@ -2,8 +2,9 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { site } from '@/lib/site';
+import { serviceImagery } from '@/lib/site-imagery';
 import { serviceBySlug } from '@/lib/content';
-import { TopicVisual } from '@/components/TopicVisual';
+import { ContextImage } from '@/components/ContextImage';
 import { ArrowIcon } from '@/components/Icons';
 
 export function generateStaticParams() { return site.services.map(({ slug }) => ({ slug })); }
@@ -21,13 +22,14 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
   const { slug } = await params;
   const service = serviceBySlug(slug);
   if (!service) notFound();
+  const image = serviceImagery[service.slug];
   const related = service.related.map(item => serviceBySlug(item)).filter(Boolean);
   return <main className="ob-service-detail">
-    <header className="page-hero split-hero"><div><p className="eyebrow">Specialist inside sales role</p><h1>{service.name}</h1><p>{service.short}</p><Link id={`cta-services-${service.slug}-bookcall`} className="button primary" href="/contact-us">Discuss this role <ArrowIcon /></Link></div><TopicVisual title={service.name} seed={service.slug} {...service.visual} /></header>
+    <header className="page-hero split-hero"><div><p className="eyebrow">Specialist inside sales role</p><h1>{service.name}</h1><p>{service.short}</p><Link id={`cta-services-${service.slug}-bookcall`} className="button primary" href="/contact-us">Discuss this role <ArrowIcon /></Link></div><ContextImage image={image} className="page-hero-image" priority /></header>
     <section className="section service-intro"><div><p className="eyebrow">Audience and problem</p><h2>Where this role creates useful capacity.</h2></div><div><p><strong>Built for:</strong> {service.audience}</p><p>{service.problem}</p></div></section>
     <div className="content-wrap service-prose">
       <div className="service-two-col"><ListBlock title="Inputs required" items={service.inputs} /><ListBlock title="Scope and tasks" items={service.tasks} /></div>
-      <section><p className="eyebrow">Working sequence</p><h2>A workflow the owner can inspect.</h2><ol className="workflow-list">{service.workflow.map(step => <li key={step}>{step}</li>)}</ol></section>
+      <section><p className="eyebrow">Working sequence</p><h2>A workflow the owner can inspect.</h2><p className="process-note">This sequence describes the operating handoff; it is not a performance chart or measured result.</p><ol className="workflow-list">{service.workflow.map(step => <li key={step}>{step}</li>)}</ol></section>
       <div className="service-two-col"><ListBlock title="Deliverables" items={service.deliverables} /><ListBlock title="Owner decision boundaries" items={service.boundaries} /></div>
       <ListBlock title="Quality controls" items={service.qualityControls} />
       <section><p className="eyebrow">Realistic operating examples</p><h2>How the boundary works in practice.</h2><div className="scenario-grid">{service.scenarios.map(scenario => <article key={scenario.title}><h3>{scenario.title}</h3><p>{scenario.body}</p></article>)}</div></section>

@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: { default: `${site.name} | Specialist remote staff`, template: `%s | ${site.name}` },
   description: site.heroBody,
   icons: { icon: '/logo.svg', shortcut: '/logo.svg', apple: '/logo.svg' },
-  openGraph: { type: 'website', siteName: site.name, images: ['/hero.png'] }
+  openGraph: { type: 'website', siteName: site.name, images: ['/images/inside-sales/remote-meeting.webp'] }
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

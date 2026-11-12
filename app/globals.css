@@ -76,3 +76,69 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,s
 .article-grid .article-card h2{font-size:24px;line-height:1.22;letter-spacing:-.01em}
 .content-card img{height:auto;aspect-ratio:16/9;object-fit:cover;width:100%;display:block}
 .content-card h2{font-size:24px;line-height:1.22;letter-spacing:-.01em}
+
+/* Inside-sales imagery and route-depth review */
+.context-image{position:relative;min-width:0;margin:0;overflow:hidden;border:1px solid var(--line);background:var(--ink);box-shadow:12px 12px 0 var(--accent)}
+.context-image img{display:block;width:100%;height:100%;aspect-ratio:3/2;object-fit:cover;transition:transform .55s ease}
+.context-image:hover img{transform:scale(1.018)}
+.page-hero-image{width:100%;max-width:680px;justify-self:end}
+.page-hero-image img{max-height:520px}
+.service-card-image{display:block;width:calc(100% + 4rem);max-width:none;aspect-ratio:16/10;object-fit:cover;margin:-2rem -2rem 1.6rem;border-bottom:1px solid var(--line);transition:transform .45s ease}
+.service-card:hover .service-card-image{transform:scale(1.012)}
+.service-card{min-height:0;overflow:hidden}
+.service-card p{margin-bottom:1.4rem}
+
+.home .hero{grid-template-columns:minmax(0,1.03fr) minmax(0,.97fr);min-height:calc(100svh - 78px);padding:clamp(1.5rem,3.4vh,2.75rem) clamp(1.25rem,4vw,4.5rem);gap:clamp(1.5rem,3.5vw,4rem);align-items:center}
+.design-signal .hero-copy{order:1}
+.design-signal .hero-visual{order:2;min-height:min(58svh,560px);height:min(58svh,560px);border-radius:2px;box-shadow:12px 12px 0 var(--accent)}
+.design-signal .hero-visual img{object-position:center center}
+.home .hero h1{font-size:clamp(3.3rem,5.45vw,5.9rem);line-height:.95;max-width:770px}
+.home .hero-body{margin:1rem 0 0;font-size:clamp(1rem,1.2vw,1.18rem);line-height:1.55}
+.home .hero-actions{margin:1.25rem 0;gap:1rem}
+.home .principles{gap:.55rem 1rem;line-height:1.35}
+
+.process-panel{align-self:stretch;display:flex;flex-direction:column;justify-content:center;padding:clamp(1.5rem,4vw,3.5rem);background:var(--ink);color:white;border-left:10px solid var(--primary)}
+.process-caption{margin:0 0 1.5rem;color:var(--accent);font-size:.76rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+.process-diagram{list-style:none;margin:0;padding:0;border-top:1px solid #ffffff45}
+.process-diagram li{display:grid;grid-template-columns:6rem 1fr;gap:1rem;padding:1.25rem 0;border-bottom:1px solid #ffffff45;position:relative}
+.process-diagram li:not(:last-child):after{content:'↓';position:absolute;right:.2rem;bottom:-.8rem;z-index:1;width:1.5rem;height:1.5rem;display:grid;place-items:center;background:var(--accent);color:var(--ink);font-weight:900}
+.process-diagram span{color:var(--accent);font-size:.75rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+.process-diagram strong{font-family:var(--display),Georgia,serif;font-size:clamp(1.15rem,2vw,1.65rem);line-height:1.15}
+
+.services-page .section,.ob-service-detail .section{padding-top:clamp(4rem,7vw,6.5rem);padding-bottom:clamp(4rem,7vw,6.5rem)}
+.service-prose{gap:clamp(3.5rem,6vw,6rem);padding-top:clamp(3.5rem,6vw,5.5rem);padding-bottom:clamp(4rem,7vw,7rem)}
+.service-prose>section{max-width:1200px}
+.process-note{max-width:760px;margin:.8rem 0 0;color:var(--muted);font-size:.92rem}
+.workflow-list li{min-height:180px;padding-top:4rem;line-height:1.5}
+.related-grid a{min-height:220px}
+.team-band img{max-height:620px;min-height:440px}
+
+@media(max-width:900px){
+  .page-hero-image{justify-self:start;max-width:none}
+  .home .hero{grid-template-columns:1fr;min-height:auto;padding-top:2.2rem;padding-bottom:3.5rem}
+  .design-signal .hero-copy{order:1}
+  .design-signal .hero-visual{order:2;width:100%;height:auto;min-height:clamp(360px,62vw,520px)}
+  .service-card-image{aspect-ratio:16/9}
+  .process-panel{min-height:420px}
+  .article-layout--toc>.article-toc-region{display:contents}
+  .article-layout--toc>.article-toc-region>.article-toc{grid-column:1;grid-row:1;position:static}
+  .article-layout--toc>.article-main{grid-column:1;grid-row:2}
+  .article-layout--toc>.article-main>.sidebar-cta{margin-top:2.5rem}
+}
+
+@media(max-width:600px){
+  .home .hero{padding:1.75rem 5vw 3rem;gap:2rem}
+  .home .hero h1{font-size:clamp(2.75rem,13vw,3.7rem)}
+  .home .hero-actions{align-items:stretch;gap:.8rem;margin:1rem 0}
+  .home .hero-actions .button{width:100%}
+  .design-signal .hero-visual{min-height:300px;height:44svh;max-height:390px;box-shadow:7px 7px 0 var(--accent)}
+  .context-image{box-shadow:7px 7px 0 var(--accent)}
+  .page-hero-image img{aspect-ratio:4/3;max-height:none}
+  .service-card-image{width:calc(100% + 2.7rem);margin:-1.35rem -1.35rem 1.35rem}
+  .process-panel{min-height:0;padding:2rem 1.35rem}
+  .process-diagram li{grid-template-columns:4.8rem 1fr}
+  .workflow-list li{min-height:112px}
+  .team-band img{min-height:300px;max-height:390px}
+}
+
+@media(prefers-reduced-motion:reduce){.context-image img,.service-card-image{transition:none}.context-image:hover img,.service-card:hover .service-card-image{transform:none}}

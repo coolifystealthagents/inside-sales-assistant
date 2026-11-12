@@ -7,10 +7,12 @@ import { october22BlogBatch } from '@/lib/october22Batch';
 import { october27BlogBatch } from '@/lib/october27Batch';
 import { october28BlogBatch } from '@/lib/october28Batch';
 import { TopicVisual } from '@/components/TopicVisual';
+import { ContextImage } from '@/components/ContextImage';
+import { imagery } from '@/lib/site-imagery';
 
 export const metadata: Metadata = { title: 'Blog', description: 'Practical guides for designing, delegating, and reviewing specialist remote support.', alternates: { canonical: '/blog' } };
 export default function BlogPage() {
-  return <main><header className="page-hero split-hero"><div><p className="eyebrow">Practical field notes</p><h1>Clearer roles. Better handoffs.</h1><p>Guides for leaders who want to delegate recurring sales work without losing visibility or control.</p></div><TopicVisual title="Sales operations field notes" intake="LIVE QUEUE" process="OWNER REVIEW" output="FIELD NOTE" /></header><section className="content-wrap"><div className="principles"><span className="pill">All articles ({new Set([...blogPosts,...october12Blog,...october13Blog].map(p=>p.slug)).size})</span></div><div className="article-grid editorial-index">
+  return <main><header className="page-hero split-hero"><div><p className="eyebrow">Practical field notes</p><h1>Clearer roles. Better handoffs.</h1><p>Guides for leaders who want to delegate recurring sales work without losing visibility or control.</p></div><ContextImage image={imagery.blog} className="page-hero-image" priority /></header><section className="content-wrap"><div className="principles"><span className="pill">All articles ({new Set([...blogPosts,...october12Blog,...october13Blog].map(p=>p.slug)).size})</span></div><div className="article-grid editorial-index">
     {[...blogPosts].sort((a,b)=>String(b.publishedAt).localeCompare(String(a.publishedAt))).map(post => <Link className="article-card" href={`/blog/${post.slug}`} key={post.slug}>
       {post.thumbnail ? <img src={post.thumbnail} width="1200" height="630" alt="" /> : <TopicVisual compact title={post.title} seed={post.slug} intake={post.category.toUpperCase()} process="WORKFLOW" output="GUIDE" />}
       <span className="pill">{post.category}</span>
