@@ -6,23 +6,23 @@ export type SiteImage = {
 
 export const imagery = {
   home: {
-    src: '/images/inside-sales/remote-meeting.webp',
-    alt: 'Remote sales colleagues reviewing a working document during a video call',
+    src: '/optimization/home.webp',
+    alt: 'Headset professional working at a laptop',
     position: 'center center'
   },
   services: {
-    src: '/images/inside-sales/team-crm-review.webp',
+    src: '/optimization/services.webp',
     alt: 'Sales operations colleagues reviewing a laptop and working notes together',
     position: 'center center'
   },
   blog: {
-    src: '/images/inside-sales/follow-up-call.webp',
-    alt: 'Inside sales professional handling a follow-up call beside a laptop',
+    src: '/optimization/blog.webp',
+    alt: 'Colleagues reviewing documents together at an office desk',
     position: '58% center'
   },
   research: {
-    src: '/images/inside-sales/pipeline-review.webp',
-    alt: 'Sales operations specialist reviewing pipeline records across printed reports and a laptop',
+    src: '/optimization/research.webp',
+    alt: 'Overhead view of colleagues reviewing printed reports',
     position: 'center 38%'
   },
   managedSupport: {

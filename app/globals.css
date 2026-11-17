@@ -142,3 +142,15 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,s
 }
 
 @media(prefers-reduced-motion:reduce){.context-image img,.service-card-image{transition:none}.context-image:hover img,.service-card:hover .service-card-image{transform:none}}
+
+/* Shared page safeguards within the existing visual system. */
+html{scroll-padding-top:110px}
+main,section,article,aside,figure{min-width:0}
+img{max-width:100%}
+button,a,input,select,textarea{touch-action:manipulation}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid currentColor;outline-offset:5px}
+footer nav a{display:inline-block;padding-block:5px}
+@media(max-width:600px){h1{overflow-wrap:normal;word-break:normal}p,li{overflow-wrap:break-word}table{max-width:100%}section{scroll-margin-top:100px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+
+.hero-label{color:#0c1d30;background:#f6f3ed}.hero-label span{color:#0c1d30}

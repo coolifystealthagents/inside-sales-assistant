@@ -19,8 +19,8 @@ export const site: SiteConfig = {
   ink: '#071b31',
   displayFont: 'Gill Sans',
   bodyFont: 'Avenir Next',
-  heroImage: '/images/inside-sales/remote-meeting.webp',
-  heroAlt: 'Remote sales colleagues reviewing a working document during a video call',
+  heroImage: '/optimization/home.webp',
+  heroAlt: 'Headset professional working at a laptop',
   services: [
     {
       slug: 'prospect-research', name: 'Prospect research support', short: 'Prepare organized account context before sellers begin outreach.',

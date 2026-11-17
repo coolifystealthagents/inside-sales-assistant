@@ -1,0 +1,26 @@
+[
+  {
+    "file": "/optimization/home.webp",
+    "source": "https://www.pexels.com/photo/7709145/",
+    "license": "https://www.pexels.com/license/",
+    "photograph": true
+  },
+  {
+    "file": "/optimization/blog.webp",
+    "source": "https://www.pexels.com/photo/7518956/",
+    "license": "https://www.pexels.com/license/",
+    "photograph": true
+  },
+  {
+    "file": "/optimization/research.webp",
+    "source": "https://www.pexels.com/photo/9489398/",
+    "license": "https://www.pexels.com/license/",
+    "photograph": true
+  },
+  {
+    "file": "/optimization/services.webp",
+    "source": "https://www.pexels.com/photo/7693733/",
+    "license": "https://www.pexels.com/license/",
+    "photograph": true
+  }
+]
