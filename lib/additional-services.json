@@ -1,0 +1,154 @@
+[
+  {
+    "slug": "inbound-lead-routing",
+    "name": "Inbound lead routing",
+    "short": "Organize incoming inquiries and route them using your approved territory and ownership rules.",
+    "audience": "Sales and revenue operations teams with an approved process and a named commercial owner.",
+    "problem": "New inquiries arrive in shared inboxes, forms, and CRM queues. Missing ownership or inconsistent records can delay the first authorized response.",
+    "inputs": [
+      "Approved workflow and required fields",
+      "Source system and access rules",
+      "Named owner and escalation path",
+      "Current templates and permitted messages"
+    ],
+    "tasks": [
+      "Check incoming records for required fields",
+      "Record the original source and received time",
+      "Apply written territory and ownership rules",
+      "Check the approved duplicate and suppression process",
+      "Route ambiguous records to revenue operations"
+    ],
+    "workflow": [
+      "Receive the approved queue",
+      "Check source records and required fields",
+      "Prepare the defined handoff",
+      "Route ambiguities before taking further action",
+      "Record completion and next ownership"
+    ],
+    "deliverables": [
+      "Dated intake register",
+      "Assigned inquiry queue",
+      "Missing-field and ownership exceptions",
+      "Handoff summary"
+    ],
+    "boundaries": [
+      "The assistant does not decide qualification, prices, discounts, contracts, or commercial promises.",
+      "Your sales team owns channel consent, targeting, and final approval."
+    ],
+    "qualityControls": [
+      "Source and version check",
+      "Recipient and owner confirmation",
+      "Visible approval record",
+      "Sample review of completed work"
+    ],
+    "scenarios": [
+      {
+        "title": "A common handoff",
+        "body": "An inquiry names two office locations. The assistant preserves both, records the uncertainty, and asks the territory owner to assign it instead of guessing."
+      },
+      {
+        "title": "Starting with a controlled queue",
+        "body": "Choose one inbox or proposal type, agree a review checklist, and inspect the first week of records before expanding the role."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Can the assistant make sales decisions?",
+        "a": "No. The assistant prepares records and follows approved routing. Qualification, negotiation, pricing, and commitments stay with authorized sellers."
+      },
+      {
+        "q": "How are unclear requests handled?",
+        "a": "The original request is preserved and sent to a named owner. Ambiguous records remain pending rather than being silently completed."
+      },
+      {
+        "q": "What should we provide before starting?",
+        "a": "Provide current templates, required fields, source systems, access limits, and a reviewer who can resolve exceptions."
+      }
+    ],
+    "related": [
+      "crm-administration",
+      "sales-follow-up"
+    ],
+    "visual": {
+      "intake": "APPROVED REQUEST",
+      "process": "PREPARE AND ROUTE",
+      "output": "REVIEWABLE HANDOFF"
+    }
+  },
+  {
+    "slug": "sales-proposal-administration",
+    "name": "Sales proposal administration",
+    "short": "Prepare approved proposal materials and keep versions, review requests, and next steps organized.",
+    "audience": "Sales and revenue operations teams with an approved process and a named commercial owner.",
+    "problem": "Proposal files, approved pricing sheets, and customer requests can diverge across inboxes. Sellers need one current package and a clear review owner.",
+    "inputs": [
+      "Approved workflow and required fields",
+      "Source system and access rules",
+      "Named owner and escalation path",
+      "Current templates and permitted messages"
+    ],
+    "tasks": [
+      "Collect the seller-approved scope and source materials",
+      "Assemble the current template and attachments",
+      "Check names, dates, versions, and required sections",
+      "Route commercial content to the authorized reviewer",
+      "Log the approved dispatch and follow-up owner"
+    ],
+    "workflow": [
+      "Receive the approved queue",
+      "Check source records and required fields",
+      "Prepare the defined handoff",
+      "Route ambiguities before taking further action",
+      "Record completion and next ownership"
+    ],
+    "deliverables": [
+      "Version-controlled proposal packet",
+      "Review checklist",
+      "Approval and dispatch record",
+      "Open clarification list"
+    ],
+    "boundaries": [
+      "The assistant does not decide qualification, prices, discounts, contracts, or commercial promises.",
+      "Your sales team owns channel consent, targeting, and final approval."
+    ],
+    "qualityControls": [
+      "Source and version check",
+      "Recipient and owner confirmation",
+      "Visible approval record",
+      "Sample review of completed work"
+    ],
+    "scenarios": [
+      {
+        "title": "A common handoff",
+        "body": "A prospect requests a discount after receiving the proposal. The assistant logs the request and routes it to the seller without editing prices or making a promise."
+      },
+      {
+        "title": "Starting with a controlled queue",
+        "body": "Choose one inbox or proposal type, agree a review checklist, and inspect the first week of records before expanding the role."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Can the assistant make sales decisions?",
+        "a": "No. The assistant prepares records and follows approved routing. Qualification, negotiation, pricing, and commitments stay with authorized sellers."
+      },
+      {
+        "q": "How are unclear requests handled?",
+        "a": "The original request is preserved and sent to a named owner. Ambiguous records remain pending rather than being silently completed."
+      },
+      {
+        "q": "What should we provide before starting?",
+        "a": "Provide current templates, required fields, source systems, access limits, and a reviewer who can resolve exceptions."
+      }
+    ],
+    "related": [
+      "crm-administration",
+      "sales-follow-up"
+    ],
+    "visual": {
+      "intake": "APPROVED REQUEST",
+      "process": "PREPARE AND ROUTE",
+      "output": "REVIEWABLE HANDOFF"
+    }
+  }
+]

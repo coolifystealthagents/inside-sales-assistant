@@ -35,7 +35,7 @@ export function Header() {
     <header className={`site-header${scrolled ? ' is-scrolled' : ''}`}>
       <Link className="brand" href="/" aria-label={`${site.name} home`} onClick={() => setOpen(false)}>
         <Image src="/logo.svg" alt="" width={42} height={42} priority />
-        <span>{site.name}</span>
+        <span>{site.name}<small className="standard-brand-credit">Powered by Stealth Agents</small></span>
       </Link>
       <button ref={toggleRef} className="nav-toggle" type="button" aria-expanded={open} aria-controls="primary-navigation" onClick={() => setOpen(value => !value)}>
         <span className="nav-toggle-label">Menu</span><span aria-hidden="true" className="nav-toggle-mark">{open ? '×' : '+'}</span>
@@ -43,8 +43,6 @@ export function Header() {
       <nav id="primary-navigation" className={open ? 'is-open' : ''} aria-label="Primary navigation">
         {nav.map(item => <Link key={item.href} href={item.href} onClick={() => setOpen(false)}>{item.label}</Link>)}
       </nav>
-      <div className="powered powered-header"><Image src="/images/stealth-agents-logo-black.png" alt="StealthAgents" width={104} height={25} /><span>Powered by StealthAgents</span></div>
-      <Link id="cta-global-header-bookcall" className="button compact header-cta" href="/contact-us">Start a brief <ArrowIcon /></Link>
     </header>
   </>;
 }

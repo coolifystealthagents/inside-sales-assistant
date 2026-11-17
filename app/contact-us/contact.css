@@ -18,3 +18,41 @@
 @media(max-width:700px){.contact-first-fold{padding:2rem 5vw 3.5rem}.contact-intro h1{font-size:clamp(2.55rem,12vw,3.5rem)}.contact-form-card{padding:1.1rem;box-shadow:7px 7px 0 var(--ink)}.contact-form-card .lead-form{grid-template-columns:1fr}.contact-form-card .lead-form label,.contact-form-card .lead-form .form-wide,.contact-form-card .lead-form .form-help,.contact-form-card .lead-form .form-error,.contact-form-card .lead-form .button{grid-column:1}.contact-form-card .lead-form input,.contact-form-card .lead-form select,.contact-form-card .lead-form textarea{min-height:43px;font-size:16px}.reviews-heading{align-items:flex-start}.official-team-photo{min-height:0;padding:1rem}.official-team-copy{padding:3.5rem 5vw}.official-team-plate{max-width:100%;gap:.65rem;margin-bottom:1.5rem;padding:.6rem}.official-team-plate img{width:94px}.official-team-plate span{font-size:.62rem;letter-spacing:.1em}.contact-section{padding:4rem 0}.step-grid,.prep-grid,.path-grid{grid-template-columns:1fr}.path-grid a{min-height:0}.boundaries .narrow{width:90vw}.testimonial-card{flex-basis:84vw}}
 @media(prefers-reduced-motion:reduce){.testimonials-rail{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));overflow:visible}.testimonial-card{width:auto;min-width:0}.path-grid a{transition:none}}
 @media(max-width:700px) and (prefers-reduced-motion:reduce){.testimonials-rail{grid-template-columns:1fr}}
+
+/* November standards correction */
+
+.contact-form-card .lead-form {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 14px;margin-top:12px}
+.contact-form-card .lead-form label {display:flex;flex-direction:column;gap:3px;margin:0;font-size:12px;line-height:1.35;letter-spacing:0}
+.contact-form-card .lead-form label.form-wide {grid-column:auto}
+.contact-form-card .lead-form label:has(textarea),.contact-form-card .lead-form .form-help,.contact-form-card .lead-form button,.contact-form-card .lead-form .form-error {grid-column:1/-1}
+.contact-form-card .lead-form input,.contact-form-card .lead-form select {height:36px;min-height:36px;padding:6px 9px;font-size:14px;width:100%;min-width:0}
+.contact-form-card .lead-form textarea {height:56px;min-height:56px;padding:8px;font-size:14px}
+.contact-form-card .lead-form .form-help {margin:0;font-size:11px;line-height:1.3}
+.contact-form-card .lead-form button {min-height:42px;margin-top:2px}
+.contact-form-card {position:relative;top:auto;padding:20px;min-width:0}
+.contact-form-card h2 {font-size:30px;line-height:1.1;margin:4px 0 8px}
+.contact-form-card>p {font-size:13px;line-height:1.4;margin:6px 0}
+@media(max-width:700px){.contact-form-card .lead-form {grid-template-columns:1fr}.contact-form-card .lead-form label.form-wide{grid-column:1/-1}.contact-form-card .lead-form input,.contact-form-card .lead-form select{height:44px;font-size:16px}.contact-form-card .lead-form textarea{height:88px;font-size:16px}}
+
+
+/* November standards correction */
+
+.contact-first-fold{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);padding-top:28px;padding-bottom:36px;gap:40px}
+.contact-intro{grid-column:1;grid-row:1}.contact-form-card{grid-column:2;grid-row:1}
+.contact-intro h1{font-size:clamp(36px,3.2vw,48px);line-height:1.08}.contact-lede{font-size:16px;line-height:1.5}.contact-scope{margin:12px 0;font-size:11px}
+.testimonials{margin-top:18px;padding-top:12px}.testimonial-card{min-height:170px}
+@media(max-width:1000px){.contact-first-fold{grid-template-columns:1fr}.contact-intro,.contact-form-card{grid-column:1;grid-row:auto}.contact-form-card{order:0}.contact-intro{order:0}}
+
+
+.contact-form-card .lead-form>label,.contact-form-card .lead-form>label:nth-of-type(4){display:block;grid-column:auto;line-height:1.35}
+.contact-form-card .lead-form label>span{display:inline}
+.contact-form-card .lead-form label>input,.contact-form-card .lead-form label>select,.contact-form-card .lead-form label>textarea{display:block;margin-top:3px}
+.contact-form-card .lead-form .standard-phone-pair{display:grid;grid-template-columns:96px minmax(0,1fr);gap:8px;min-width:0}
+.contact-form-card .lead-form .standard-phone-pair>label{display:block;grid-column:auto}
+.contact-form-card .lead-form>label:has(textarea),.contact-form-card .lead-form>label:has([name=referral_source]){grid-column:1/-1}
+.contact-form-card>p.form-step{display:none}
+@media(max-width:700px){.contact-form-card .lead-form>label,.contact-form-card .lead-form>label:nth-of-type(4),.contact-form-card .lead-form>.standard-phone-pair{grid-column:1/-1}}
+
+.contact-form-card .lead-form label>textarea{width:100%;max-width:100%}
+
+.contact-page .contact-form-card form.lead-form>label:has(textarea){grid-column:1/-1}

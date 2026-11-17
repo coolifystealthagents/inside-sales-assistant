@@ -1,3 +1,4 @@
+import additionalServices from './additional-services.json';
 import type { SiteConfig } from './types';
 
 export const site: SiteConfig = {
@@ -111,3 +112,5 @@ export const site: SiteConfig = {
   principles: ['Selective matching', 'Clear role boundaries', 'Reviewable workflows'],
   sources: [{ label: 'Federal Trade Commission', url: 'https://www.ftc.gov/business-guidance/resources/complying-telemarketing-sales-rule' }]
 };
+
+site.services.push(...additionalServices);

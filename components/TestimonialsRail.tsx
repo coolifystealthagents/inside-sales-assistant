@@ -5,9 +5,8 @@ import provenance from '@/app/review-provenance.json';
 
 export function TestimonialsRail() {
   const railRef = useRef<HTMLDivElement>(null);
-  const [userPaused, setUserPaused] = useState(false);
   const [interactionPaused, setInteractionPaused] = useState(false);
-  const paused = userPaused || interactionPaused;
+  const paused = interactionPaused;
 
   useEffect(() => {
     const rail = railRef.current;
@@ -30,7 +29,6 @@ export function TestimonialsRail() {
     <div className="reviews-heading">
       <div><p className="eyebrow">Verified client perspective</p><h2 id="reviews-title">StealthAgents reviews</h2></div>
       <div className="reviews-controls">
-        <button className="reviews-pause" type="button" aria-pressed={userPaused} onClick={() => setUserPaused(value => !value)}>{userPaused ? 'Resume reviews' : 'Pause reviews'}</button>
         <a href={provenance.source} target="_blank" rel="noopener noreferrer">View official source</a>
       </div>
     </div>

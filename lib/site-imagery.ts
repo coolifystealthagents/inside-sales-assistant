@@ -64,3 +64,5 @@ export const serviceImagery: Record<string, SiteImage> = {
     position: 'center center'
   }
 };
+
+Object.assign(serviceImagery, {"inbound-lead-routing": {"src": "/optimization/inbound-lead-routing.webp", "alt": "Support staff processing incoming work at office computers"}, "sales-proposal-administration": {"src": "/optimization/sales-proposal-administration.webp", "alt": "Business colleagues reviewing documents in folders"}});
