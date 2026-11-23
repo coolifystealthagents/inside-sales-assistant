@@ -54,7 +54,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,s
 .prose :is(h2[id],h3[id]){scroll-margin-top:112px}
 
 @media(min-width:901px){
-.article-layout--toc>.article-toc-region{grid-column:2;grid-row:1;align-self:stretch;min-width:0}
+.article-layout--toc>.article-toc-region{grid-column:2;grid-row:1;align-self:start;min-width:0;position:sticky;top:112px}
 .article-layout--toc>.article-toc-region>.article-toc{position:sticky;top:112px}
 }
 
