@@ -47,9 +47,9 @@ test('every blog family moves its existing CTA after the article in one main-col
   assert.match(page, /id="cta-blog-sidebar-schedulecall"[\s\S]*?href="\/contact-us"/);
 });
 
-test('desktop gives the sole TOC rail the complete article-column boundary', () => {
+test('desktop keeps the TOC rail sticky beside the article body', () => {
   assert.match(css, /\.article-layout--toc>\.article-main\{[^}]*grid-column:1;[^}]*grid-row:1;[^}]*min-width:0/);
-  assert.match(css, /\.article-layout--toc>\.article-toc-region\{[^}]*grid-column:2;[^}]*grid-row:1;[^}]*align-self:stretch/);
+  assert.match(css, /\.article-layout--toc>\.article-toc-region\{[^}]*grid-column:2;[^}]*grid-row:1;[^}]*align-self:start;[^}]*position:sticky;[^}]*top:112px/);
   assert.match(css, /\.article-layout--toc>\.article-toc-region>\.article-toc\{[^}]*position:sticky;[^}]*top:112px/);
   assert.doesNotMatch(css, /(?:^|\n)\.article-toc-region>\.article-toc\{/);
   assert.match(css, /\.article-layout--toc>\.article-main>\.sidebar-cta\{[^}]*position:static;[^}]*margin-top:2\.5rem;[^}]*border-radius:0/);
