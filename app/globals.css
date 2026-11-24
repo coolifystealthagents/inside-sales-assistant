@@ -164,3 +164,10 @@ header .brand>span{min-width:0}header nav{margin-left:auto}
 
 
 .workflow-steps,.method ol{list-style:none;padding-left:0}.workflow-steps>li:before{content:none}
+/* Article headers use a quieter editorial scale than marketing page heroes. */
+.page-hero:has(+ .content-wrap.article-layout){padding:clamp(3.25rem,5.5vw,5.25rem) clamp(1.25rem,6vw,6rem) clamp(2.5rem,4vw,3.75rem)}
+.page-hero:has(+ .content-wrap.article-layout) h1{max-width:980px;font-size:clamp(2.75rem,5.15vw,4.25rem);line-height:1.04;letter-spacing:-.03em}
+.page-hero:has(+ .content-wrap.article-layout)>p:not(.eyebrow),.page-hero:has(+ .content-wrap.article-layout)>div>p:not(.eyebrow){max-width:800px;font-size:clamp(1.05rem,1.4vw,1.2rem);line-height:1.55}
+.page-hero:has(+ .content-wrap.article-layout) .meta{max-width:980px;color:var(--muted);font-size:.82rem}
+.page-hero:has(+ .content-wrap.article-layout) .article-thumbnail{max-width:960px;margin-top:1.5rem;border:0;border-radius:0}
+@media(max-width:600px){.page-hero:has(+ .content-wrap.article-layout){padding:3.2rem 5vw 2rem}.page-hero:has(+ .content-wrap.article-layout) h1{font-size:clamp(2.35rem,10vw,3.15rem);line-height:1.05}.page-hero:has(+ .content-wrap.article-layout) .article-thumbnail{margin-top:1.25rem}}

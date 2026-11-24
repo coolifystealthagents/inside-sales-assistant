@@ -23,12 +23,13 @@ function occurrences(text, pattern) {
 }
 
 function loadSiteConfig() {
-  // site.ts is deliberately data-only. Evaluating just its object literal lets these
-  // tests inspect the contract without booting Next or coupling to generated output.
+  // Keep the site object data-only; service extensions are published as JSON.
   const source = read('lib/site.ts');
-  const match = source.match(/export const site\s*:\s*SiteConfig\s*=\s*({[\s\S]*});\s*$/);
-  assert.ok(match, 'lib/site.ts must continue to export a data-only SiteConfig object');
-  return Function(`"use strict"; return (${match[1]});`)();
+  const match = source.match(/export const site\s*:\s*SiteConfig\s*=\s*({[\s\S]*});\s*site\.services\.push\(\.\.\.additionalServices\);/);
+  assert.ok(match, 'lib/site.ts must continue to expose a data-only site object and JSON service extension');
+  const config = Function(`"use strict"; return (${match[1]});`)();
+  config.services.push(...JSON.parse(read('lib/additional-services.json')));
+  return config;
 }
 
 const applicationFiles = [...filesUnder('app'), ...filesUnder('components'), ...filesUnder('lib')];
@@ -73,11 +74,12 @@ test('header is sticky and its mobile navigation is an accessible toggle menu', 
 });
 
 
-test('subsidiary and parent branding appear in both header and footer', () => {
+test('subsidiary and parent branding remain visible in shared chrome', () => {
   const chrome = read('components/SiteChrome.tsx');
   assert.equal(occurrences(chrome, /src="\/logo\.svg"/g).length, 2, 'subsidiary /logo.svg must appear in header and footer');
-  assert.equal(occurrences(chrome, /src="\/images\/stealth-agents-logo-black\.png"/g).length, 2, 'parent logo must appear in header and footer');
-  assert.equal(occurrences(chrome, />Powered by StealthAgents</g).length, 2, 'the exact parent attribution must appear in header and footer');
+  assert.equal(occurrences(chrome, /src="\/images\/stealth-agents-logo-black\.png"/g).length, 1, 'parent logo must remain in the footer');
+  assert.match(chrome, /className="standard-brand-credit">Powered by Stealth Agents<\/small>/, 'header must keep the parent-brand attribution');
+  assert.match(chrome, /className="powered powered-footer"[\s\S]*<span>Powered by StealthAgents<\/span>/, 'footer must retain the parent logo and attribution');
   const css = read('app/globals.css');
   assert.match(css, /\.powered-footer\s*\{[^{}]*max-width\s*:\s*100%[^{}]*\}/, 'footer attribution must fit the available column');
   assert.doesNotMatch(css, /\.powered-footer\s*\{[^{}]*width\s*:\s*max-content\b[^{}]*\}/, 'footer attribution must not force minimum-width clipping');
@@ -210,12 +212,13 @@ test('ten reviews have first-party provenance and are rendered from that source'
 });
 
 
-test('exactly six deep services retain every structured section', () => {
+test('all eight services retain every structured section', () => {
   const site = loadSiteConfig();
-  assert.equal(site.services.length, 6);
+  assert.equal(site.services.length, 8);
   assert.deepEqual(site.services.map(({ slug }) => slug), [
     'prospect-research', 'crm-administration', 'meeting-coordination',
     'sales-follow-up', 'pipeline-reporting', 'sales-enablement',
+    'inbound-lead-routing', 'sales-proposal-administration',
   ]);
 
   const arraySections = ['inputs', 'tasks', 'workflow', 'deliverables', 'boundaries', 'qualityControls', 'scenarios', 'faq', 'related'];
@@ -257,10 +260,17 @@ test('lead validation is server-owned and ignored honeypots cannot advance the f
 test('the form has one ACR lead-ingestion owner', () => {
   const route = read('app/api/submit-lead/route.ts');
   const form = read('components/LeadForm.tsx');
+  assert.match(form, /data-acr-lead-mode=['"]manual['"]/, 'native-submit auto tracking must be suppressed for this validated form');
   assert.match(form, /window\.acrTracker\?\.trackLead/, 'accepted lead must use the standard ACR tracker');
   assert.doesNotMatch(route, /ACR_LEAD_ENDPOINT/, 'API validation route must not duplicate ACR lead ingestion');
   assert.match(form, /const name=\[payload\.first_name,payload\.last_name\]/, 'trackLead must receive the required combined name');
   assert.match(form, /acceptance_id:result\.acceptanceId/, 'client lead event must carry the server acceptance receipt');
+  assert.equal(occurrences(form, /window\.acrTracker\?\.trackLead/g).length, 1, 'accepted lead must be submitted to the browser tracker once');
+  const tracking = form.indexOf('window.acrTracker?.trackLead');
+  const rejection = form.indexOf('if(!response.ok||!result.ok)');
+  const ignored = form.indexOf('if(result.ignored)');
+  const redirect = form.indexOf("router.push('/thank-you')");
+  assert.ok(tracking > rejection && tracking > ignored && tracking < redirect, 'tracking must happen only after accepted, non-honeypot success and before navigation');
 });
 
 
@@ -331,9 +341,10 @@ test('accessible color and motion controls meet the release contract', () => {
   const contactCss = read('app/contact-us/contact.css');
   assert.equal(site.primary.toLowerCase(), '#c24130');
   assert.doesNotMatch(contactCss, /#ff755f/i, 'legacy low-contrast coral must be removed');
-  assert.match(rail, /aria-pressed=\{userPaused\}/);
-  assert.match(rail, /Pause reviews/);
-  assert.match(rail, /Resume reviews/);
+  assert.match(rail, /prefers-reduced-motion: reduce/);
+  assert.match(rail, /onMouseEnter=\{\(\) => setInteractionPaused\(true\)\}/);
+  assert.match(rail, /onFocusCapture=\{\(\) => setInteractionPaused\(true\)\}/);
+  assert.match(rail, /onBlurCapture=/);
   assert.doesNotMatch(rail, /testimonial-card[^>]*tabIndex=/, 'review cards must not add unnecessary tab stops');
 });
 
