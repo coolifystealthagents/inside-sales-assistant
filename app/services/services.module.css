@@ -1,0 +1,580 @@
+.page {
+  color: var(--ink);
+}
+
+.shell {
+  width: min(1440px, 100%);
+  margin-inline: auto;
+  padding-inline: clamp(1.25rem, 6vw, 6rem);
+}
+
+.eyebrow {
+  margin: 0 0 1rem;
+}
+
+.hero {
+  padding-block: clamp(2rem, 4vw, 3.5rem) clamp(3rem, 5vw, 4.5rem);
+  border-bottom: 1px solid var(--line);
+  background: var(--canvas);
+}
+
+.heroGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(2rem, 5vw, 5rem);
+}
+
+.heroCopy {
+  max-width: 680px;
+}
+
+.heroTitle {
+  max-width: 14ch;
+  font-size: clamp(3rem, 4.7vw, 4.25rem);
+  line-height: 1.04;
+  letter-spacing: -.035em;
+}
+
+.heroDescription {
+  max-width: 650px;
+  margin: 1.15rem 0 0;
+  color: var(--muted);
+  font-size: clamp(1.05rem, 1.35vw, 1.2rem);
+  line-height: 1.6;
+}
+
+.heroActions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem 1.35rem;
+  margin: 1.65rem 0 0;
+}
+
+.primaryLink,
+.secondaryLink {
+  display: inline-flex;
+  min-height: 46px;
+  align-items: center;
+  justify-content: center;
+  gap: .55rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.primaryLink {
+  padding: .75rem 1.15rem;
+  border: 1px solid var(--ink);
+  background: var(--ink);
+  color: white;
+  box-shadow: 4px 4px 0 color-mix(in srgb, var(--ink) 24%, transparent);
+}
+
+.primaryLink:hover {
+  border-color: var(--primary);
+  background: var(--primary);
+}
+
+.secondaryLink {
+  width: fit-content;
+  border-bottom: 2px solid var(--primary);
+  color: var(--ink);
+}
+
+.heroNote {
+  margin: 1rem 0 0;
+  color: var(--muted);
+  font-size: .82rem;
+  line-height: 1.5;
+}
+
+.heroImageFrame {
+  position: relative;
+  width: 100%;
+  max-width: 660px;
+  justify-self: end;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  margin: 0;
+  border: 1px solid var(--line);
+  background: var(--ink);
+  box-shadow: 10px 10px 0 var(--accent);
+}
+
+.heroImageFrame img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.rolesSection,
+.boundarySection,
+.workflowSection,
+.faqSection {
+  padding-block: clamp(3.5rem, 6vw, 5.5rem);
+}
+
+.rolesSection {
+  background: var(--panel);
+}
+
+.sectionHeading {
+  max-width: 880px;
+  margin: 0 0 2rem;
+}
+
+.sectionHeading h2,
+.workflowIntro h2,
+.managedCopy h2 {
+  font-size: clamp(2.2rem, 4.1vw, 3.6rem);
+  line-height: 1.06;
+}
+
+.sectionHeading > p:not(.eyebrow),
+.workflowIntro > p:not(.eyebrow),
+.managedCopy > p:not(.eyebrow) {
+  max-width: 720px;
+  margin: .85rem 0 0;
+  color: var(--muted);
+  font-size: 1.02rem;
+  line-height: 1.6;
+}
+
+.roleGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 1rem;
+}
+
+.roleCard {
+  display: flex;
+  min-width: 0;
+  min-height: 100%;
+  flex-direction: column;
+  padding: 1.15rem;
+  border: 1px solid var(--line);
+  background: white;
+  color: var(--ink);
+  text-decoration: none;
+  transition: transform .2s, border-color .2s, box-shadow .2s;
+}
+
+.roleCard:hover {
+  transform: translateY(-3px);
+  border-color: var(--primary);
+  box-shadow: 5px 5px 0 var(--accent);
+}
+
+.roleCard:focus-visible {
+  outline: 3px solid var(--primary);
+  outline-offset: 3px;
+}
+
+.roleImageFrame {
+  display: block;
+  width: min(100%, 18rem);
+  max-height: 12rem;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  margin: 0 0 1.05rem;
+  border: 1px solid var(--line);
+  background: var(--panel);
+}
+
+.roleImage {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.roleCard h3 {
+  margin: 0;
+  font-size: clamp(1.15rem, 1.35vw, 1.42rem);
+  line-height: 1.18;
+  letter-spacing: -.025em;
+}
+
+.roleCard > p {
+  margin: .65rem 0 1.2rem;
+  color: var(--muted);
+  font-size: .9rem;
+  line-height: 1.55;
+}
+
+.roleLink {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  gap: .45rem;
+  margin-top: auto;
+  color: var(--ink);
+  font-size: .84rem;
+  font-weight: 800;
+  text-decoration: underline;
+  text-decoration-color: var(--primary);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+
+.roleLink svg,
+.primaryLink svg,
+.secondaryLink svg {
+  flex: 0 0 auto;
+}
+
+.boundarySection {
+  background: white;
+}
+
+.boundaryGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.taskCard,
+.decisionCard {
+  min-width: 0;
+  padding: clamp(1.4rem, 3vw, 2.35rem);
+  border: 1px solid var(--line);
+}
+
+.taskCard {
+  border-top: 5px solid var(--primary);
+  background: var(--canvas);
+}
+
+.decisionCard {
+  border-top: 5px solid var(--accent);
+  background: var(--ink);
+  color: white;
+}
+
+.cardEyebrow {
+  margin: 0 0 .8rem;
+  color: var(--primary);
+  font-size: .72rem;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.decisionCard .cardEyebrow {
+  color: var(--accent);
+}
+
+.taskCard h3,
+.decisionCard h3 {
+  max-width: 560px;
+  font-size: clamp(1.45rem, 2.2vw, 2rem);
+  line-height: 1.15;
+}
+
+.taskCard ul,
+.decisionCard ul {
+  display: grid;
+  gap: .85rem;
+  margin: 1.35rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.taskCard li,
+.decisionCard li {
+  padding-top: .8rem;
+  border-top: 1px solid var(--line);
+  font-size: .92rem;
+  line-height: 1.55;
+}
+
+.taskCard li strong {
+  color: var(--ink);
+}
+
+.decisionCard li {
+  border-color: color-mix(in srgb, white 25%, transparent);
+}
+
+.decisionNote {
+  margin: 1.25rem 0 0;
+  color: color-mix(in srgb, white 78%, transparent);
+  font-size: .86rem;
+  line-height: 1.55;
+}
+
+.workflowSection {
+  background: var(--panel);
+}
+
+.workflowIntro {
+  max-width: 900px;
+  margin-bottom: 2rem;
+}
+
+.workflowSteps {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin: 0;
+  padding: 0;
+  border: 1px solid var(--line);
+  background: white;
+  list-style: none;
+}
+
+.workflowSteps li {
+  min-width: 0;
+  padding: 1.3rem;
+  border-right: 1px solid var(--line);
+}
+
+.workflowSteps li:last-child {
+  border-right: 0;
+}
+
+.stepNumber {
+  display: block;
+  margin-bottom: 1.25rem;
+  color: var(--primary);
+  font-size: .74rem;
+  font-weight: 900;
+  letter-spacing: .12em;
+}
+
+.workflowSteps h3 {
+  font-size: clamp(1.15rem, 1.4vw, 1.4rem);
+  line-height: 1.18;
+}
+
+.workflowSteps p {
+  margin: .6rem 0 0;
+  color: var(--muted);
+  font-size: .88rem;
+  line-height: 1.55;
+}
+
+.managedSection {
+  padding-block: clamp(3.5rem, 6vw, 5.5rem);
+  background: var(--accent);
+}
+
+.managedGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, .9fr);
+  align-items: center;
+  gap: clamp(2rem, 5vw, 5rem);
+}
+
+.managedImageFrame {
+  width: 100%;
+  max-width: 640px;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  margin: 0;
+  border: 1px solid var(--line);
+  background: white;
+  box-shadow: 10px 10px 0 var(--ink);
+}
+
+.managedImageFrame img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.managedCopy {
+  max-width: 600px;
+}
+
+.managedCopy .secondaryLink {
+  margin-top: 1.5rem;
+}
+
+.faqSection {
+  background: var(--canvas);
+}
+
+.faqInner {
+  display: grid;
+  grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr);
+  gap: clamp(2rem, 6vw, 6rem);
+}
+
+.faqInner .sectionHeading {
+  margin: 0;
+}
+
+.faqList details {
+  padding: 1rem 2.75rem 1rem 0;
+  border-top: 1px solid var(--line);
+}
+
+.faqList details:last-child {
+  border-bottom: 1px solid var(--line);
+}
+
+.faqList summary {
+  position: relative;
+  cursor: pointer;
+  font-weight: 800;
+  line-height: 1.4;
+  list-style: none;
+}
+
+.faqList summary::-webkit-details-marker {
+  display: none;
+}
+
+.faqList summary::after {
+  position: absolute;
+  top: 50%;
+  right: -2rem;
+  transform: translateY(-50%);
+  color: var(--primary);
+  content: "+";
+  font-size: 1.35rem;
+}
+
+.faqList details[open] summary::after {
+  content: "−";
+}
+
+.faqList details p {
+  max-width: 720px;
+  margin: .8rem 0 0;
+  color: var(--muted);
+  font-size: .94rem;
+  line-height: 1.6;
+}
+
+.closingSection {
+  padding-block: 0 clamp(2rem, 5vw, 4rem);
+  background: var(--canvas);
+}
+
+.closingInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding-block: clamp(2rem, 4vw, 3.5rem);
+  background: var(--ink);
+  color: white;
+}
+
+.closingInner > div {
+  max-width: 850px;
+}
+
+.closingInner h2 {
+  max-width: 800px;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  line-height: 1.08;
+}
+
+.closingInner > div > p:not(.eyebrow) {
+  max-width: 680px;
+  margin: .8rem 0 0;
+  color: color-mix(in srgb, white 78%, transparent);
+}
+
+.closingInner .primaryLink {
+  flex: 0 0 auto;
+  border-color: var(--accent);
+  background: var(--accent);
+  color: var(--ink);
+}
+
+.page :is(a, summary):focus-visible {
+  outline: 3px solid var(--primary);
+  outline-offset: 3px;
+}
+
+@media (max-width: 1100px) {
+  .roleGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .workflowSteps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .workflowSteps li:nth-child(2) {
+    border-right: 0;
+  }
+
+  .workflowSteps li:nth-child(-n + 2) {
+    border-bottom: 1px solid var(--line);
+  }
+}
+
+@media (max-width: 900px) {
+  .heroGrid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2rem;
+  }
+
+  .heroCopy {
+    max-width: 780px;
+  }
+
+  .heroImageFrame {
+    max-width: 720px;
+    justify-self: start;
+  }
+
+  .managedGrid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .managedImageFrame {
+    max-width: 720px;
+  }
+
+  .faqInner {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero {
+    padding-top: 2rem;
+    padding-bottom: 2.75rem;
+  }
+
+  .heroTitle {
+    font-size: clamp(2.65rem, 10vw, 3.2rem);
+  }
+
+  .heroActions {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: .85rem;
+  }
+
+  .roleGrid,
+  .workflowSteps,
+  .boundaryGrid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .workflowSteps li,
+  .workflowSteps li:nth-child(2) {
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .workflowSteps li:last-child {
+    border-bottom: 0;
+  }
+
+  .closingInner {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

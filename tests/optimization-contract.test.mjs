@@ -55,28 +55,50 @@ test('every service keeps the structured operating depth while using a route-spe
   assert.match(serviceDetail, /not a performance chart or measured result/);
 });
 
-test('services index exposes the complete offering from its hero and keeps long titles readable', () => {
+test('services index keeps the hero CTA and shared role jump target', () => {
   const page = read('app/services/page.tsx');
-  const css = read('app/globals.css');
+  const css = read('app/services/services.module.css');
   assert.match(page, /href="#full-offering"/);
   assert.match(page, /id="full-offering"/);
   assert.match(page, /site\.services\.map\(service/);
-  assert.match(css, /\.services-page \.page-hero h1,.ob-service-detail \.page-hero h1\{[^}]*font-size:clamp\(3rem,4\.6vw,4\.5rem\)/);
+  assert.match(css, /\.heroTitle\s*\{[^}]*font-size:\s*clamp\(/);
+  assert.match(page, /className=\{styles\.primaryLink\} href="\/contact-us"/);
 });
 
-test('services index keeps its eight thumbnails compact without changing card copy or links', () => {
+test('services index builds a cohesive browse-to-decision-to-consultation page', () => {
+  const page = read('app/services/page.tsx');
+  const css = read('app/services/services.module.css');
+  for (const section of ['heroGrid', 'roleGrid', 'boundaryGrid', 'workflowSteps', 'managedGrid', 'faqInner', 'closingInner']) {
+    assert.match(page, new RegExp(`styles\\.${section}`), `services index is missing ${section}`);
+  }
+  assert.match(page, /const assistantTasks = \[/);
+  assert.match(page, /CRM cleanup/);
+  assert.match(page, /Meeting coordination/);
+  assert.match(page, /Follow-up tracking/);
+  assert.match(page, /const salesDecisions = \[/);
+  assert.match(page, /const workflowSteps: \[string, string\]\[\] = \[/);
+  assert.match(page, /href="\/contact-us">Plan a consultation/);
+  assert.match(css, /\.shell\s*\{[^}]*width:\s*min\(1440px,\s*100%\)[^}]*padding-inline:\s*clamp\(/);
+  assert.match(css, /\.roleGrid\s*\{[^}]*grid-template-columns:\s*repeat\(4,\s*minmax\(0,\s*1fr\)\)/);
+  assert.match(css, /@media \(max-width: 1100px\)[\s\S]*\.roleGrid\s*\{[\s\S]*grid-template-columns:\s*repeat\(2,\s*minmax\(0,\s*1fr\)\)/);
+  assert.match(css, /@media \(max-width: 600px\)[\s\S]*\.roleGrid,[\s\S]*grid-template-columns:\s*minmax\(0,\s*1fr\)/);
+});
+
+test('services index keeps eight responsive image crops and detail routes untouched', () => {
   const page = read('app/services/page.tsx');
   const detail = read('app/services/[slug]/page.tsx');
-  const css = read('app/globals.css');
-  assert.match(page, /<div className="service-card-image-frame"><Image className="service-card-image"/);
+  const css = read('app/services/services.module.css');
+  assert.match(page, /className=\{styles\.roleImageFrame\}/);
+  assert.match(page, /className=\{styles\.roleImage\}/);
   assert.match(page, /site\.services\.map\(service/);
   assert.match(page, /href=\{`\/services\/\$\{service\.slug\}`\}/);
-  assert.match(page, /<h3>\{service\.name\}<\/h3><p>\{service\.short\}<\/p><span className="text-link">Inspect role scope/);
-  assert.match(page, /const cardPosition = service\.slug === 'inbound-lead-routing' \? 'center 72%' : image\.position \?\? 'center center'/);
-  assert.match(css, /\.service-card-image-frame\{[^}]*width:min\(100%,15rem\)[^}]*max-height:10rem[^}]*aspect-ratio:3\/2/);
-  assert.match(css, /\.service-card-image\{[^}]*width:100%;height:100%[^}]*object-fit:cover/);
-  assert.doesNotMatch(css, /\.service-card-image\{[^}]*margin:-/);
-  assert.doesNotMatch(detail, /service-card-image(?:-frame)?/);
+  assert.match(page, /<h3>\{service\.name\}<\/h3>/);
+  assert.match(page, /<p>\{service\.short\}<\/p>/);
+  assert.match(page, /Explore the role/);
+  assert.match(page, /service\.slug === 'inbound-lead-routing' \? 'center 72%'/);
+  assert.match(css, /\.roleImageFrame\s*\{[^}]*width:\s*min\(100%,\s*18rem\)[^}]*aspect-ratio:\s*3 \/ 2/);
+  assert.match(css, /\.roleImage\s*\{[^}]*width:\s*100%[^}]*height:\s*100%[^}]*object-fit:\s*cover/);
+  assert.doesNotMatch(detail, /styles\.roleImage|service-card-image/);
 });
 
 test('homepage first fold keeps the primary CTA before imagery with natural responsive sizing', () => {
