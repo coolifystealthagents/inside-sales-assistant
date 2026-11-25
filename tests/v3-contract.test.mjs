@@ -289,6 +289,17 @@ test('direct-access funnel pages avoid unverified success claims', () => {
 });
 
 
+test('sitemap covers current service and article families with fresh static timestamps', () => {
+  const sitemap = read('app/sitemap.ts');
+  assert.match(sitemap, /const generatedAt = new Date\(\)/, 'static route timestamps should reflect the current build');
+  assert.match(sitemap, /site\.services\.map\(service/);
+  for (const family of ['october12Blog', 'october13Blog', 'blogPosts', 'october12Research', 'october13Research', 'researchPosts']) {
+    assert.match(sitemap, new RegExp(`\.\.\.${family}`), `sitemap must include ${family}`);
+  }
+  assert.doesNotMatch(sitemap, /new Date\(['"]2026-10-13['"]\)/, 'static route lastModified must not remain frozen to the old release date');
+});
+
+
 test('indexable routes declare canonicals while conversion-completion routes are noindex', () => {
   const staticCanonicals = new Map([
     ['app/page.tsx', '/'],
