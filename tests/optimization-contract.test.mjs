@@ -55,6 +55,15 @@ test('every service keeps the structured operating depth while using a route-spe
   assert.match(serviceDetail, /not a performance chart or measured result/);
 });
 
+test('services index exposes the complete offering from its hero and keeps long titles readable', () => {
+  const page = read('app/services/page.tsx');
+  const css = read('app/globals.css');
+  assert.match(page, /href="#full-offering"/);
+  assert.match(page, /id="full-offering"/);
+  assert.match(page, /site\.services\.map\(service/);
+  assert.match(css, /\.services-page \.page-hero h1,.ob-service-detail \.page-hero h1\{[^}]*font-size:clamp\(3rem,4\.6vw,4\.5rem\)/);
+});
+
 test('homepage first fold keeps the primary CTA before imagery with responsive viewport sizing', () => {
   const marketing = read('components/Marketing.tsx');
   const css = read('app/globals.css');
@@ -67,6 +76,43 @@ test('homepage first fold keeps the primary CTA before imagery with responsive v
   assert.match(css, /@media\(max-width:600px\)[\s\S]*\.home \.hero-actions \.button\{width:100%\}/);
   assert.match(marketing, /Operating sequence: qualitative, not measured performance/);
   assert.doesNotMatch(marketing, /className="method-art"/);
+});
+
+test('homepage adds reviewable operating depth without unsupported performance claims', () => {
+  const marketing = read('components/Marketing.tsx');
+  const site = read('lib/site.ts');
+  const cssForHome = read('app/globals.css');
+  const sources = JSON.parse(read('public/optimization/sources.json'));
+  for (const section of ['home-audience', 'home-ledger', 'home-onboarding', 'home-fit', 'home-faq']) {
+    assert.match(marketing, new RegExp(`className="[^"]*${section}`), `homepage is missing ${section}`);
+  }
+  assert.match(marketing, /data-label="Preparation record"/);
+  assert.match(cssForHome, /\.home-ledger-table tbody td:before\{content:attr\(data-label\)/);
+  assert.match(site, /heroImage:\s*'\/optimization\/home\.webp'/);
+  assert.ok(sources.some((asset) => asset.file === '/optimization/home.webp' && asset.photograph === true && asset.license));
+  assert.ok(statSync(join(root, 'public/optimization/home.webp')).size > 50_000);
+  assert.match(marketing, /Operating sequence: qualitative, not measured performance/);
+});
+
+test('blog and research indexes include every published family and expose working search and topic filters', () => {
+  const blog = read('app/blog/page.tsx');
+  const research = read('app/research/page.tsx');
+  const filters = read('components/ResourceFilters.tsx');
+  for (const [source, archiveName, collectionName] of [[blog, 'archivedBlogPosts', 'blogPosts'], [research, 'archivedResearchPosts', 'researchPosts']]) {
+    assert.match(source, new RegExp(`const ${archiveName}`));
+    assert.match(source, /october12(?:Blog|Research)\.map/);
+    assert.match(source, /october13(?:Blog|Research)\.map/);
+    assert.ok(source.includes(`...${archiveName}`));
+    assert.ok(source.includes(`...${collectionName}`));
+    assert.match(source, /data-resource-card/);
+    assert.match(source, /data-topic=/);
+    assert.match(source, /data-search=/);
+  }
+  assert.match(filters, /role="search"/);
+  assert.match(filters, /type="search"/);
+  assert.match(filters, /<select/);
+  assert.match(filters, /filterResources\(targetId, query, topic\)/);
+  assert.match(filters, /aria-live="polite"/);
 });
 
 test('blog and research detail headers use a restrained responsive editorial scale', () => {

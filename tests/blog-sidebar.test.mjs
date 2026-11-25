@@ -57,7 +57,10 @@ test('desktop keeps the TOC rail sticky beside the article body', () => {
 });
 
 test('mobile keeps the collapsible TOC before the main column and CTA after the article', () => {
-  const mobile = css.slice(css.lastIndexOf('@media(max-width:900px){'));
+  const mobileStart = css.indexOf('@media(max-width:900px){\n.article-layout--toc{display:block}');
+  assert.notEqual(mobileStart, -1, 'the mobile article layout rules must remain present');
+  const mobileEnd = css.indexOf('\n}', mobileStart);
+  const mobile = css.slice(mobileStart, mobileEnd + 2);
   assert.match(mobile, /\.article-layout--toc>\.article-toc-region\{display:contents\}/);
   assert.match(mobile, /\.article-layout--toc>\.article-toc-region>\.article-toc\{[^}]*grid-column:1;[^}]*grid-row:1;[^}]*position:static/);
   assert.match(mobile, /\.article-layout--toc>\.article-main\{[^}]*grid-column:1;[^}]*grid-row:2/);

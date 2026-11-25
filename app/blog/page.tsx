@@ -3,17 +3,29 @@ import Link from 'next/link';
 import { blogPosts } from '@/lib/content';
 import { october12Blog } from '@/lib/october12-blog';
 import { october13Blog } from '@/lib/october13-blog';
-import { october22BlogBatch } from '@/lib/october22Batch';
-import { october27BlogBatch } from '@/lib/october27Batch';
-import { october28BlogBatch } from '@/lib/october28Batch';
 import { TopicVisual } from '@/components/TopicVisual';
 import { ContextImage } from '@/components/ContextImage';
 import { imagery } from '@/lib/site-imagery';
+import { ResourceFilters } from '@/components/ResourceFilters';
 
 export const metadata: Metadata = { title: 'Blog', description: 'Practical guides for designing, delegating, and reviewing specialist remote support.', alternates: { canonical: '/blog' } };
+
+type BlogIndexPost = { slug: string; title: string; category: string; description: string; publishedAt: string; readTime: string; thumbnail?: string };
+const archivedBlogPosts: BlogIndexPost[] = [
+  ...october12Blog.map(post => ({ slug: post.slug, title: post.title, category: post.category, description: `${post.focus} organized as a reviewable workflow with explicit evidence and authority.`, publishedAt: post.publishedAt, readTime: '7 min read', thumbnail: post.thumbnail })),
+  ...october13Blog.map(post => ({ slug: post.slug, title: post.title, category: post.category, description: `${post.focus} organized as a reviewable workflow with explicit evidence and authority.`, publishedAt: post.publishedAt, readTime: post.readTime, thumbnail: post.thumbnail })),
+];
+const bySlug = new Map<string, BlogIndexPost>();
+for (const post of [...archivedBlogPosts, ...blogPosts]) bySlug.set(post.slug, post);
+const indexPosts = [...bySlug.values()]
+  .sort((a, b) => String(b.publishedAt).localeCompare(String(a.publishedAt)));
+const topics = [...new Set(indexPosts.map(post => post.category))].sort((a, b) => a.localeCompare(b));
+
 export default function BlogPage() {
-  return <main><header className="page-hero split-hero"><div><p className="eyebrow">Practical field notes</p><h1>Clearer roles. Better handoffs.</h1><p>Guides for leaders who want to delegate recurring sales work without losing visibility or control.</p></div><ContextImage image={imagery.blog} className="page-hero-image" priority /></header><section className="content-wrap"><div className="principles"><span className="pill">All articles ({new Set([...blogPosts,...october12Blog,...october13Blog].map(p=>p.slug)).size})</span></div><div className="article-grid editorial-index">
-    {[...blogPosts].sort((a,b)=>String(b.publishedAt).localeCompare(String(a.publishedAt))).map(post => <Link className="article-card" href={`/blog/${post.slug}`} key={post.slug}>
+  return <main><header className="page-hero split-hero"><div><p className="eyebrow">Practical field notes</p><h1>Clearer roles. Better handoffs.</h1><p>Guides for leaders who want to delegate recurring sales work without losing visibility or control.</p></div><ContextImage image={imagery.blog} className="page-hero-image" priority /></header><section className="content-wrap">
+    <ResourceFilters targetId="blog-resource-list" resourceNoun="blog articles" topics={topics} total={indexPosts.length} />
+    <div className="article-grid editorial-index" id="blog-resource-list">
+    {indexPosts.map(post => <Link className="article-card" href={`/blog/${post.slug}`} key={post.slug} data-resource-card data-topic={post.category} data-search={`${post.title} ${post.description} ${post.category}`}>
       {post.thumbnail ? <img src={post.thumbnail} width="1200" height="630" alt="" /> : <TopicVisual compact title={post.title} seed={post.slug} intake={post.category.toUpperCase()} process="WORKFLOW" output="GUIDE" />}
       <span className="pill">{post.category}</span>
       <h2>{post.title}</h2>
