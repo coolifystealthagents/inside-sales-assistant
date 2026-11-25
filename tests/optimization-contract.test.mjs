@@ -64,6 +64,21 @@ test('services index exposes the complete offering from its hero and keeps long 
   assert.match(css, /\.services-page \.page-hero h1,.ob-service-detail \.page-hero h1\{[^}]*font-size:clamp\(3rem,4\.6vw,4\.5rem\)/);
 });
 
+test('services index keeps its eight thumbnails compact without changing card copy or links', () => {
+  const page = read('app/services/page.tsx');
+  const detail = read('app/services/[slug]/page.tsx');
+  const css = read('app/globals.css');
+  assert.match(page, /<div className="service-card-image-frame"><Image className="service-card-image"/);
+  assert.match(page, /site\.services\.map\(service/);
+  assert.match(page, /href=\{`\/services\/\$\{service\.slug\}`\}/);
+  assert.match(page, /<h3>\{service\.name\}<\/h3><p>\{service\.short\}<\/p><span className="text-link">Inspect role scope/);
+  assert.match(page, /const cardPosition = service\.slug === 'inbound-lead-routing' \? 'center 72%' : image\.position \?\? 'center center'/);
+  assert.match(css, /\.service-card-image-frame\{[^}]*width:min\(100%,15rem\)[^}]*max-height:10rem[^}]*aspect-ratio:3\/2/);
+  assert.match(css, /\.service-card-image\{[^}]*width:100%;height:100%[^}]*object-fit:cover/);
+  assert.doesNotMatch(css, /\.service-card-image\{[^}]*margin:-/);
+  assert.doesNotMatch(detail, /service-card-image(?:-frame)?/);
+});
+
 test('homepage first fold keeps the primary CTA before imagery with natural responsive sizing', () => {
   const marketing = read('components/Marketing.tsx');
   const css = read('app/globals.css');
