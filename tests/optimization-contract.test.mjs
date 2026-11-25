@@ -64,7 +64,7 @@ test('services index exposes the complete offering from its hero and keeps long 
   assert.match(css, /\.services-page \.page-hero h1,.ob-service-detail \.page-hero h1\{[^}]*font-size:clamp\(3rem,4\.6vw,4\.5rem\)/);
 });
 
-test('homepage first fold keeps the primary CTA before imagery with responsive viewport sizing', () => {
+test('homepage first fold keeps the primary CTA before imagery with natural responsive sizing', () => {
   const marketing = read('components/Marketing.tsx');
   const css = read('app/globals.css');
   const heroStart = marketing.indexOf('<section className="hero"');
@@ -72,10 +72,22 @@ test('homepage first fold keeps the primary CTA before imagery with responsive v
   const visual = marketing.indexOf('className="hero-visual"', heroStart);
 
   assert.ok(heroStart >= 0 && cta > heroStart && visual > cta, 'CTA must precede the visual in source and focus order');
-  assert.match(css, /\.home \.hero\{[^}]*min-height:calc\(100svh - 78px\)/);
+  assert.match(css, /\.home \.hero\{[^}]*min-height:0;height:auto/);
+  assert.doesNotMatch(css, /\.home \.hero\{[^}]*min-height:calc\(100(?:s|l)?vh/);
   assert.match(css, /@media\(max-width:600px\)[\s\S]*\.home \.hero-actions \.button\{width:100%\}/);
   assert.match(marketing, /Operating sequence: qualitative, not measured performance/);
   assert.doesNotMatch(marketing, /className="method-art"/);
+});
+
+test('homepage hero, workflow strip, and introduction stay centered without scaling the page', () => {
+  const css = read('app/globals.css');
+  const layout = read('app/layout.tsx');
+  assert.match(css, /\.home \.hero-copy\{[^}]*justify-self:center;text-align:left/);
+  assert.match(css, /\.design-signal \.hero-visual\{[^}]*aspect-ratio:3\/2/);
+  assert.match(css, /\.design-signal \.signal-strip\{[^}]*justify-items:center/);
+  assert.match(css, /\.home \.intro\{[^}]*justify-items:center[^}]*text-align:center/);
+  assert.doesNotMatch(css, /(?:^|[;{])\s*zoom\s*:/i, 'native browser zoom must not be overridden');
+  assert.doesNotMatch(layout, /maximum-scale|user-scalable\s*=\s*["']?no/i, 'the viewport must remain user-zoomable');
 });
 
 test('homepage adds reviewable operating depth without unsupported performance claims', () => {
@@ -92,6 +104,34 @@ test('homepage adds reviewable operating depth without unsupported performance c
   assert.ok(sources.some((asset) => asset.file === '/optimization/home.webp' && asset.photograph === true && asset.license));
   assert.ok(statSync(join(root, 'public/optimization/home.webp')).size > 50_000);
   assert.match(marketing, /Operating sequence: qualitative, not measured performance/);
+});
+
+test('controlled-start steps keep their copy and use ordered, decorative workflow icons', () => {
+  const marketing = read('components/Marketing.tsx');
+  const icons = read('components/Icons.tsx');
+  const css = read('app/globals.css');
+  const start = marketing.indexOf('const onboardingSteps = [');
+  const end = marketing.indexOf('\n];', start);
+  const steps = marketing.slice(start, end);
+  const expected = [
+    ['Choose one recurring queue', 'Start with work that has known inputs and an existing owner.', 'QueueListIcon'],
+    ['Set the handoff boundary', 'Name the source, expected output, access level, reviewer, and exception path.', 'ShieldIcon'],
+    ['Review a bounded sample', 'Compare completed work with the acceptance checklist and keep each exception visible.', 'ClipboardCheckIcon'],
+    ['Expand only after review', 'Add scope when the owner can inspect the record and explain the next action.', 'ExpandArrowsIcon'],
+  ];
+  let cursor = -1;
+  for (const [title, copy, icon] of expected) {
+    const next = steps.indexOf(`title: '${title}'`, cursor + 1);
+    assert.ok(next > cursor, `${title} should stay in order`);
+    assert.ok(steps.slice(next).includes(`copy: '${copy}'`), `${title} copy should remain unchanged`);
+    assert.ok(steps.slice(next).includes(`Icon: ${icon}`), `${title} should use ${icon}`);
+    assert.match(icons, new RegExp(`function ${icon}\\(\\)[^\\n]*aria-hidden="true"`));
+    cursor = next;
+  }
+  assert.match(marketing, /className="home-onboarding-icon" aria-hidden="true"><Icon \/><\/span>/);
+  assert.doesNotMatch(steps, /padStart|index \+/);
+  assert.match(css, /\.home-onboarding-icon\{display:grid;width:3rem;height:3rem/);
+  assert.match(css, /\.home-onboarding-icon\{margin-bottom:1rem\}/);
 });
 
 test('blog and research indexes include every published family and expose working search and topic filters', () => {

@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { site } from '@/lib/site';
 import { blogPosts } from '@/lib/content';
-import { ArrowIcon, CheckIcon, SparkIcon } from './Icons';
+import { ArrowIcon, CheckIcon, ClipboardCheckIcon, ExpandArrowsIcon, QueueListIcon, ShieldIcon, SparkIcon } from './Icons';
 
 const CTA = ({ id, children }: { id: string; children: React.ReactNode }) => <Link id={id} className="button primary" href="/contact-us">{children} <ArrowIcon /></Link>;
 
@@ -18,10 +18,10 @@ const handoffStages = [
 ];
 
 const onboardingSteps = [
-  ['Choose one recurring queue', 'Start with work that has known inputs and an existing owner.'],
-  ['Set the handoff boundary', 'Name the source, expected output, access level, reviewer, and exception path.'],
-  ['Review a bounded sample', 'Compare completed work with the acceptance checklist and keep each exception visible.'],
-  ['Expand only after review', 'Add scope when the owner can inspect the record and explain the next action.'],
+  { title: 'Choose one recurring queue', copy: 'Start with work that has known inputs and an existing owner.', Icon: QueueListIcon },
+  { title: 'Set the handoff boundary', copy: 'Name the source, expected output, access level, reviewer, and exception path.', Icon: ShieldIcon },
+  { title: 'Review a bounded sample', copy: 'Compare completed work with the acceptance checklist and keep each exception visible.', Icon: ClipboardCheckIcon },
+  { title: 'Expand only after review', copy: 'Add scope when the owner can inspect the record and explain the next action.', Icon: ExpandArrowsIcon },
 ];
 
 const homeFaqs = [
@@ -52,7 +52,7 @@ export function HomePage() {
     <section className="section method"><div className="process-panel"><p className="process-caption">Operating sequence: qualitative, not measured performance</p><ol className="process-diagram"><li><span>Input</span><strong>Name the recurring queue</strong></li><li><span>Control</span><strong>Set owner and exception rules</strong></li><li><span>Review</span><strong>Inspect a bounded sample</strong></li></ol></div><div><p className="eyebrow">A useful working model</p><h2>Define. Delegate. Improve.</h2><p>Start with the recurring work that already has an owner, a standard, and a clear escalation path. Then create a small review loop that makes the handoff stronger over time.</p><ol><li><strong>Define the boundary.</strong> Separate preparation and coordination from licensed or executive judgment.</li><li><strong>Document the handoff.</strong> Set inputs, output format, review points, and exception rules.</li><li><strong>Improve with evidence.</strong> Review a focused sample and update the process when patterns emerge.</li></ol><CTA id="cta-home-method-consultation">Plan a free consultation</CTA></div></section>
     <section className="section home-onboarding" aria-labelledby="home-onboarding-heading">
       <div className="section-heading"><p className="eyebrow">A controlled start</p><h2 id="home-onboarding-heading">Onboard the workflow before expanding the role.</h2><p>Useful support begins with a bounded queue, clear access, and a reviewable handoff.</p></div>
-      <ol className="home-onboarding-steps">{onboardingSteps.map(([title, copy], index) => <li key={title}><span>{String(index + 1).padStart(2, '0')}</span><h3>{title}</h3><p>{copy}</p></li>)}</ol>
+      <ol className="home-onboarding-steps">{onboardingSteps.map(({ title, copy, Icon }) => <li key={title}><span className="home-onboarding-icon" aria-hidden="true"><Icon /></span><h3>{title}</h3><p>{copy}</p></li>)}</ol>
     </section>
     <section className="section home-fit" aria-labelledby="home-fit-heading">
       <div className="section-heading"><p className="eyebrow">Fit and boundaries</p><h2 id="home-fit-heading">Delegate preparation. Keep authority clear.</h2></div>
