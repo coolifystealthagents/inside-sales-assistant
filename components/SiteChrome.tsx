@@ -5,7 +5,17 @@ import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
 import { site } from '@/lib/site';
 import { nav } from '@/lib/content';
-import { ArrowIcon } from './Icons';
+import styles from './SiteChrome.module.css';
+
+const exploreLinks = [
+  { href: '/services', label: 'All services' },
+  { href: '/about', label: 'About' },
+  { href: '/blog', label: 'Blog' },
+  { href: '/research', label: 'Research' },
+  { href: '/contact-us', label: 'Contact Us' },
+  { href: '/privacy', label: 'Privacy' },
+  { href: '/terms', label: 'Terms' },
+];
 
 export function Header() {
   const [open, setOpen] = useState(false);
@@ -48,13 +58,48 @@ export function Header() {
 }
 
 export function Footer() {
-  return <footer>
-    <div className="footer-identity">
-      <Link className="brand inverse" href="/"><Image src="/logo.svg" alt="" width={44} height={44} /><span>{site.name}</span></Link>
-      <p>Specialist remote staff for {site.audience}.</p>
-      <div className="powered powered-footer"><Image src="/images/stealth-agents-logo-black.png" alt="StealthAgents" width={126} height={30} /><span>Powered by StealthAgents</span></div>
+  return <footer className={styles.footer}>
+    <div className={styles.content}>
+      <div className={styles.mainGrid}>
+        <div className={styles.brandColumn}>
+          <Link className={styles.brand} href="/" aria-label={`${site.name} home`}>
+            <Image src="/logo.svg" alt="" width={48} height={48} />
+            <span>{site.name}</span>
+          </Link>
+          <p className={styles.brandCredit}>Powered by StealthAgents</p>
+          <p className={styles.brandDescription}>{site.heroBody}</p>
+        </div>
+        <nav className={styles.linkColumn} aria-labelledby="footer-services-heading">
+          <h2 className={styles.columnHeading} id="footer-services-heading">Services</h2>
+          <ul className={styles.linkList}>
+            {site.services.map(service => <li key={service.slug}><Link href={`/services/${service.slug}`}>{service.name}</Link></li>)}
+          </ul>
+        </nav>
+        <nav className={styles.linkColumn} aria-labelledby="footer-explore-heading">
+          <h2 className={styles.columnHeading} id="footer-explore-heading">Explore</h2>
+          <ul className={styles.linkList}>
+            {exploreLinks.map(item => <li key={item.href}><Link href={item.href}>{item.label}</Link></li>)}
+          </ul>
+        </nav>
+      </div>
+
+      <section className={styles.parentCompany} aria-labelledby="footer-parent-heading">
+        <div className={styles.parentLogoPlate}>
+          <Image src="/images/stealth-agents-logo-black.png" alt="Stealth Agents" width={149} height={50} />
+        </div>
+        <div className={styles.parentCopy}>
+          <p className={styles.parentLabel} id="footer-parent-heading">Parent Company</p>
+          <p className={styles.parentDescription}>StealthAgents supports candidate matching and managed remote staffing around a role your business can supervise. {site.name} remains focused on sales operations support.</p>
+          <a className={styles.parentLink} href="https://stealthagents.com/" target="_blank" rel="noopener noreferrer">
+            Powered by StealthAgents <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </section>
+
+      <div className={styles.copyrightBar}>
+        <p>© {new Date().getFullYear()} {site.name}</p>
+        <Link href="/">{site.domain}</Link>
+      </div>
     </div>
-    <div className="footer-links">{nav.map(item => <Link key={item.href} href={item.href}>{item.label}</Link>)}<Link href="/blog">Blog</Link><Link href="/research">Research</Link><Link href="/privacy">Privacy</Link><Link href="/terms">Terms</Link></div>
-    <p className="copyright">© {new Date().getFullYear()} {site.name}</p>
   </footer>;
 }

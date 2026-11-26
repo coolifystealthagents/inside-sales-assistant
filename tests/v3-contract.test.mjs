@@ -79,10 +79,45 @@ test('subsidiary and parent branding remain visible in shared chrome', () => {
   assert.equal(occurrences(chrome, /src="\/logo\.svg"/g).length, 2, 'subsidiary /logo.svg must appear in header and footer');
   assert.equal(occurrences(chrome, /src="\/images\/stealth-agents-logo-black\.png"/g).length, 1, 'parent logo must remain in the footer');
   assert.match(chrome, /className="standard-brand-credit">Powered by Stealth Agents<\/small>/, 'header must keep the parent-brand attribution');
-  assert.match(chrome, /className="powered powered-footer"[\s\S]*<span>Powered by StealthAgents<\/span>/, 'footer must retain the parent logo and attribution');
-  const css = read('app/globals.css');
-  assert.match(css, /\.powered-footer\s*\{[^{}]*max-width\s*:\s*100%[^{}]*\}/, 'footer attribution must fit the available column');
-  assert.doesNotMatch(css, /\.powered-footer\s*\{[^{}]*width\s*:\s*max-content\b[^{}]*\}/, 'footer attribution must not force minimum-width clipping');
+  assert.match(chrome, /className=\{styles\.brandCredit\}>Powered by StealthAgents<\/p>/, 'footer must keep its parent-brand attribution');
+  assert.match(chrome, /className=\{styles\.parentLogoPlate\}[\s\S]*<Image src="\/images\/stealth-agents-logo-black\.png" alt="Stealth Agents"/);
+  assert.match(chrome, /href="https:\/\/stealthagents\.com\/"[\s\S]*Powered by StealthAgents/);
+  const css = read('components/SiteChrome.module.css');
+  assert.match(css, /\.parentLogoPlate\s*\{[^}]*border-radius:[^}]*background:\s*#fff/);
+  assert.match(css, /\.footer\s+:is\(a, button\):focus-visible\s*\{/);
+  assert.match(css, /\.linkList a\s*\{[^}]*min-height:\s*44px/);
+});
+
+
+test('shared footer keeps service, Explore, parent-company, and copyright tiers in order', () => {
+  const chrome = read('components/SiteChrome.tsx');
+  const css = read('components/SiteChrome.module.css');
+  const footer = chrome.slice(chrome.indexOf('export function Footer()'));
+  const explore = chrome.match(/const exploreLinks = \[([\s\S]*?)\];/);
+  assert.ok(explore, 'footer Explore links must be declared');
+  const exploreLinks = [...explore[1].matchAll(/\{ href: '([^']+)', label: '([^']+)' \}/g)]
+    .map(([, href, label]) => ({ href, label }));
+  assert.deepEqual(exploreLinks, [
+    { href: '/services', label: 'All services' },
+    { href: '/about', label: 'About' },
+    { href: '/blog', label: 'Blog' },
+    { href: '/research', label: 'Research' },
+    { href: '/contact-us', label: 'Contact Us' },
+    { href: '/privacy', label: 'Privacy' },
+    { href: '/terms', label: 'Terms' },
+  ]);
+
+  assert.match(footer, /site\.services\.map\(service\s*=>[\s\S]*href=\{`\/services\/\$\{service\.slug\}`\}[\s\S]*\{service\.name\}/);
+  assert.match(footer, /<h2 className=\{styles\.columnHeading\} id="footer-services-heading">Services<\/h2>/);
+  assert.match(footer, /<h2 className=\{styles\.columnHeading\} id="footer-explore-heading">Explore<\/h2>/);
+  assert.match(footer, /Parent Company/);
+  assert.match(footer, /\{site\.domain\}/);
+  assert.ok(footer.indexOf('className={styles.mainGrid}') < footer.indexOf('className={styles.parentCompany}'));
+  assert.ok(footer.indexOf('className={styles.parentCompany}') < footer.indexOf('className={styles.copyrightBar}'));
+  assert.match(css, /\.mainGrid\s*\{[^}]*grid-template-columns:\s*minmax\(0,\s*1\.3fr\)/);
+  assert.match(css, /@media\s*\(max-width:\s*760px\)[\s\S]*\.mainGrid\s*\{[^}]*grid-template-columns:\s*minmax\(0,\s*1fr\)/);
+  assert.match(css, /@media\s*\(max-width:\s*760px\)[\s\S]*\.parentCompany\s*\{[^}]*grid-template-columns:\s*minmax\(0,\s*1fr\)/);
+  assert.match(css, /@media\s*\(max-width:\s*760px\)[\s\S]*\.copyrightBar a\s*\{[^}]*align-self:\s*flex-end/);
 });
 
 
