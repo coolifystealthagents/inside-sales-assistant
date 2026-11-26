@@ -29,6 +29,11 @@ export const imagery = {
     src: '/images/inside-sales/collaboration.webp',
     alt: 'Two remote-work colleagues collaborating at a laptop',
     position: 'center center'
+  },
+  homeWorkflow: {
+    src: '/images/inside-sales/home-method-team.webp',
+    alt: 'Three coworkers review a laptop together in a bright office.',
+    position: 'center center'
   }
 } satisfies Record<string, SiteImage>;
 

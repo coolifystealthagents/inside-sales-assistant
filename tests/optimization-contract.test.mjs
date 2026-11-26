@@ -20,7 +20,8 @@ test('approved contextual photography is mapped with provenance without changing
     'follow-up-call.webp',
     'pipeline-review.webp',
     'sales-enablement.webp',
-    'collaboration.webp'
+    'collaboration.webp',
+    'home-method-team.webp'
   ];
 
   for (const file of serviceFiles) {
@@ -112,7 +113,6 @@ test('homepage first fold keeps the primary CTA before imagery with natural resp
   assert.match(css, /\.home \.hero\{[^}]*min-height:0;height:auto/);
   assert.doesNotMatch(css, /\.home \.hero\{[^}]*min-height:calc\(100(?:s|l)?vh/);
   assert.match(css, /@media\(max-width:600px\)[\s\S]*\.home \.hero-actions \.button\{width:100%\}/);
-  assert.match(marketing, /Operating sequence: qualitative, not measured performance/);
   assert.doesNotMatch(marketing, /className="method-art"/);
 });
 
@@ -140,7 +140,32 @@ test('homepage adds reviewable operating depth without unsupported performance c
   assert.match(site, /heroImage:\s*'\/optimization\/home\.webp'/);
   assert.ok(sources.some((asset) => asset.file === '/optimization/home.webp' && asset.photograph === true && asset.license));
   assert.ok(statSync(join(root, 'public/optimization/home.webp')).size > 50_000);
-  assert.match(marketing, /Operating sequence: qualitative, not measured performance/);
+  assert.match(marketing, /Review a focused sample and update the process when patterns emerge/);
+});
+
+test('homepage method uses licensed collaboration photography and keeps the workflow guidance and CTA', () => {
+  const marketing = read('components/Marketing.tsx');
+  const mapping = read('lib/site-imagery.ts');
+  const css = read('components/Marketing.module.css');
+  const provenance = read('ASSET_PROVENANCE.md');
+  const start = marketing.indexOf('<section className="section method"');
+  const end = marketing.indexOf('<section className="section home-onboarding"', start);
+  const method = marketing.slice(start, end);
+
+  assert.ok(start >= 0 && end > start, 'homepage method section should remain before onboarding');
+  assert.match(method, /<figure className=\{styles\.methodPhoto\}>/);
+  assert.match(method, /src=\{imagery\.homeWorkflow\.src\} alt=\{imagery\.homeWorkflow\.alt\} width=\{2400\} height=\{1600\}/);
+  assert.doesNotMatch(method, /process-panel|process-diagram/);
+  for (const detail of ['recurring work that already has an owner', 'clear escalation path', 'Define the boundary.', 'Document the handoff.', 'Improve with evidence.', 'Set inputs, output format, review points, and exception rules.', 'Review a focused sample']) {
+    assert.ok(method.includes(detail), `homepage method must retain ${detail}`);
+  }
+  assert.match(method, /id="cta-home-method-consultation"/);
+  assert.match(method, /Plan a free consultation/);
+  assert.match(mapping, /homeWorkflow:\s*\{[^}]*home-method-team\.webp[^}]*alt:/);
+  assert.match(mapping, /Three coworkers review a laptop together in a bright office/);
+  assert.match(provenance, /home-method-team\.webp[^\n]*https:\/\/www\.pexels\.com\/photo\/focused-business-team-with-laptop-discussing-project-3932229\//);
+  assert.match(css, /\.methodPhoto\s*\{[^}]*aspect-ratio:\s*3 \/ 2/);
+  assert.match(css, /\.methodPhoto img\s*\{[^}]*object-fit:\s*cover/);
 });
 
 test('controlled-start steps keep their copy and use ordered, decorative workflow icons', () => {
