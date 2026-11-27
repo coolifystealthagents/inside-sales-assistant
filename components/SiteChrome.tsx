@@ -42,7 +42,7 @@ export function Header() {
 
   return <>
     <a className="skip-link" href="#main-content">Skip to main content</a>
-    <header className={`site-header${scrolled ? ' is-scrolled' : ''}`}>
+    <header data-site-header="sticky" className={`site-header${scrolled ? ' is-scrolled' : ''}`}>
       <Link className="brand" href="/" aria-label={`${site.name} home`} onClick={() => setOpen(false)}>
         <Image src="/logo.svg" alt="" width={42} height={42} priority />
         <span>{site.name}<small className="standard-brand-credit">Powered by Stealth Agents</small></span>
@@ -58,7 +58,7 @@ export function Header() {
 }
 
 export function Footer() {
-  return <footer className={styles.footer}>
+  return <footer data-site-footer="true" className={styles.footer}>
     <div className={styles.content}>
       <div className={styles.mainGrid}>
         <div className={styles.brandColumn}>
@@ -69,15 +69,15 @@ export function Footer() {
           <p className={styles.brandCredit}>Powered by StealthAgents</p>
           <p className={styles.brandDescription}>{site.heroBody}</p>
         </div>
-        <nav className={styles.linkColumn} aria-labelledby="footer-services-heading">
+        <nav data-footer-menu="true" className={styles.linkColumn} aria-labelledby="footer-services-heading">
           <h2 className={styles.columnHeading} id="footer-services-heading">Services</h2>
-          <ul className={styles.linkList}>
+          <ul data-footer-menu="true" className={styles.linkList}>
             {site.services.map(service => <li key={service.slug}><Link href={`/services/${service.slug}`}>{service.name}</Link></li>)}
           </ul>
         </nav>
-        <nav className={styles.linkColumn} aria-labelledby="footer-explore-heading">
+        <nav data-footer-menu="true" className={styles.linkColumn} aria-labelledby="footer-explore-heading">
           <h2 className={styles.columnHeading} id="footer-explore-heading">Explore</h2>
-          <ul className={styles.linkList}>
+          <ul data-footer-menu="true" className={styles.linkList}>
             {exploreLinks.map(item => <li key={item.href}><Link href={item.href}>{item.label}</Link></li>)}
           </ul>
         </nav>
