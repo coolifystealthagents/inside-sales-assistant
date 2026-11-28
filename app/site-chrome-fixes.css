@@ -16,7 +16,7 @@
 html, body { overflow-x: clip !important; }
 
 /* Continuous movement must not snap back to each card on every frame. */
-.testimonials-rail { scroll-snap-type: none; scroll-behavior: auto; }
+.testimonials-rail { scroll-snap-type: none !important; scroll-behavior: auto !important; }
 @media(prefers-reduced-motion:reduce) { .testimonials-rail [aria-hidden="true"] { display:none; } }
 
 [data-site-footer] > div > .site-parent-company { width:100%; }
